@@ -1,0 +1,239 @@
+// Part 2 skeleton
+
+module part2
+	(
+		CLOCK_50,						//	On Board 50 MHz
+		// Your inputs and outputs here
+        KEY,
+        SW,
+		// The ports below are for the VGA output.  Do not change.
+		VGA_CLK,   						//	VGA Clock
+		VGA_HS,							//	VGA H_SYNC
+		VGA_VS,							//	VGA V_SYNC
+		VGA_BLANK_N,						//	VGA BLANK
+		VGA_SYNC_N,						//	VGA SYNC
+		VGA_R,   						//	VGA Red[9:0]
+		VGA_G,	 						//	VGA Green[9:0]
+		VGA_B   						//	VGA Blue[9:0]
+	);
+
+	input			CLOCK_50;				//	50 MHz
+	input   [9:0]   SW;
+	input   [3:0]   KEY;
+
+	// Declare your inputs and outputs here
+	// Do not change the following outputs
+	output			VGA_CLK;   				//	VGA Clock
+	output			VGA_HS;					//	VGA H_SYNC
+	output			VGA_VS;					//	VGA V_SYNC
+	output			VGA_BLANK_N;				//	VGA BLANK
+	output			VGA_SYNC_N;				//	VGA SYNC
+	output	[9:0]	VGA_R;   				//	VGA Red[9:0]
+	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
+	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
+	
+	wire resetn;
+	assign resetn = KEY[0];
+	
+	// Create the colour, x, y and writeEn wires that are inputs to the controller.
+	wire [2:0] colour;
+	wire [7:0] x;
+	wire [6:0] y;
+	wire writeEn;
+	
+	wire ld_x, ld_y, ld_colour;
+
+	// Create an Instance of a VGA controller - there can be only one!
+	// Define the number of colours as well as the initial background
+	// image file (.MIF) for the controller.
+	vga_adapter VGA(
+			.resetn(resetn),
+			.clock(CLOCK_50),
+			.colour(colour),
+			.x(x),
+			.y(y),
+			.plot(writeEn),
+			/* Signals for the DAC to drive the monitor. */
+			.VGA_R(VGA_R),
+			.VGA_G(VGA_G),
+			.VGA_B(VGA_B),
+			.VGA_HS(VGA_HS),
+			.VGA_VS(VGA_VS),
+			.VGA_BLANK(VGA_BLANK_N),
+			.VGA_SYNC(VGA_SYNC_N),
+			.VGA_CLK(VGA_CLK));
+		defparam VGA.RESOLUTION = "160x120";
+		defparam VGA.MONOCHROME = "FALSE";
+		defparam VGA.BITS_PER_COLOUR_CHANNEL = 1;
+		defparam VGA.BACKGROUND_IMAGE = "black.mif";
+			
+	// Put your code here. Your code should produce signals x,y,colour and writeEn/plot
+	// for the VGA controller, in addition to any other functionality your design may require.
+    
+    // Instansiate datapath
+	datapath d0(
+				.clk(CLOCK_50),
+				.resetn(resetn),
+				.colour_in(SW[9:7]),
+				.coordinate(SW[6:0]),
+				.ld_x(ld_x),
+				.ld_y(ld_y),
+				.ld_colour(ld_colour),
+				.x_out(x),
+				.y_out(y),
+				.colour_out(colour)
+				);
+
+    // Instansiate FSM control
+    control c0(
+				.clk(CLOCK_50),
+				.resetn(resetn),
+				.go(~KEY[1]),
+				.load(~KEY[3]),
+				.ld_x(ld_x),
+				.ld_y(ld_y),
+				.ld_colour(ld_colour),
+				.writeEn(writeEn)
+	);
+    
+endmodule
+
+module control(
+    input clk,
+    input resetn,
+    input go,
+	input load,
+
+    output reg  ld_x, ld_y, ld_colour,
+	output reg writeEn
+    );
+
+    reg [2:0] current_state, next_state; 
+    
+    localparam  S_LOAD_X = 4'd0,
+				S_LOAD_X_WAIT = 4'd1,
+				S_LOAD_Y_COLOUR = 4'd2,
+				S_LOAD_Y_COLOUR_WAIT = 4'd3,
+				PLOT = 4'd4;
+    
+    // Next state logic aka our state table
+    always@(*)
+    begin: state_table 
+            case (current_state)
+                S_LOAD_X: next_state = load ? S_LOAD_X_WAIT : S_LOAD_X; // Loop in current state until value is input
+                S_LOAD_X_WAIT: next_state = load ? S_LOAD_X_WAIT : S_LOAD_Y_COLOUR; // Loop in current state until go signal goes low
+                S_LOAD_Y_COLOUR: next_state = go ? S_LOAD_Y_COLOUR_WAIT : S_LOAD_Y_COLOUR; // Loop in current state until value is input
+                S_LOAD_Y_COLOUR_WAIT: next_state = go ? S_LOAD_Y_COLOUR_WAIT : PLOT; // Loop in current state until go signal goes low
+                PLOT: next_state = load ? S_LOAD_X : PLOT; // Loop in current state until value is input
+            default: next_state = S_LOAD_X;
+        endcase
+    end // state_table
+   
+
+    // Output logic aka all of our datapath control signals
+    always @(*)
+    begin: enable_signals
+        // By default make all our signals 0
+        ld_x = 1'b0;
+        ld_y = 1'b0;
+        ld_colour = 1'b0;
+		writeEn = 1'b0;
+
+        case (current_state)
+            S_LOAD_X: ld_x = 1'b1;
+            S_LOAD_Y_COLOUR: begin
+				ld_y = 1'b1;
+				ld_colour = 1'b1;
+			end
+            PLOT: writeEn = 1'b1;
+        // default:    // don't need default since we already made sure all of our outputs were assigned a value at the start of the always block
+        endcase
+    end // enable_signals
+   
+    // current_state registers
+    always@(posedge clk)
+    begin: state_FFs
+        if(!resetn)
+            current_state <= S_LOAD_X;
+        else
+            current_state <= next_state;
+    end // state_FFS
+endmodule
+
+module datapath(
+    input clk,
+    input resetn,
+    input [2:0] colour_in,
+    input [6:0] coordinate,
+    input ld_x, ld_y, ld_colour, 
+    output [7:0] x_out,
+	output [6:0] y_out,
+    output [2:0] colour_out
+    );
+    
+    // input registers
+    reg [7:0] x;
+	reg[6:0] y;
+	reg[2:0] colour;
+
+    reg [1:0] count_x, count_y;
+
+	wire enable_y;
+    
+    // Registers a, b, c, x with respective input logic
+    always @ (posedge clk) begin
+        if (!resetn) begin
+            x <= 8'd0; 
+            y <= 7'd0; 
+            colour <= 3'd0; 
+        end
+        else begin
+            if (ld_x)
+                x <= {1'b0, coordinate};
+            if (ld_y)
+                y <= coordinate;
+            if (ld_colour)
+                colour <= colour_in;
+        end
+    end
+	
+	// counter for x
+	always @(posedge clk) begin
+		if (!resetn) 
+			count_x <= 2'b00;
+		else 
+			count_x <= count_x + 1'b1;
+	end	
+	
+	assign enable_y = (count_x == 2'b11) ? 1 : 0;
+	
+	// counter for y
+	always @(posedge clk) begin
+		if (!resetn)
+			count_y <= 2'b00;
+		else if (enable_y)
+			count_y <= count_y + 1'b1;
+	end
+
+	assign x_out = x + count_x;
+	assign y_out = y + count_y;
+	assign colour_out = colour;
+    
+endmodule
+
+module combined(
+	input clk, resetn, load, go,
+	input [2:0] colour_in,
+	input [6:0] coordinate,
+	output [7:0] x_out,
+	output [6:0] y_out,
+	output [2:0] colour_out
+	);
+	
+	wire ld_x, ld_y, ld_colour, writeEn;
+	
+	control c0(clk, resetn, go, load, ld_x, ld_y, ld_colour, writeEn);
+	
+	datapath d0(clk, resetn, colour_in, coordinate, ld_x, ld_y, ld_colour, x_out, y_out, colour_out);
+
+endmodule

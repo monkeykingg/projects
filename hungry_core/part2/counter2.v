@@ -1,0 +1,130 @@
+`timescale 1ns / 1ns
+
+module counter2(clk, lower, higher, done, reset_countdown);
+	input clk; // SW[0] and [1] are signals for mux4to1; SW[2] for reset; SW[3] for parload.
+	output [6:0] lower, higher;
+	output done;
+	input reset_countdown;
+
+	set s(.clock(clk),
+	.sig(2'b01),
+	.clear_b(reset_countdown),
+	.parload(1'b0),
+	.H0(lower),
+	.H1(higher),
+	.q(done)
+	);
+
+endmodule
+
+module set(
+	input clock,
+	input [1:0] sig,
+	input clear_b,
+	input parload,
+	output [6:0] H0,
+	output [6:0] H1,
+	output reg q);
+
+	reg [28:0] rate100, rate050, rate025;
+	wire [28:0] load100, load050, load025;
+	wire clock100, clock050, clock025;
+	assign load100 = 28'd49999999; // 1HZ, 50 million
+	assign load050 = 28'd99999999; // 0.5HZ, 100 million
+	assign load025 = 28'd199999999; // 0.25HZ, 200 million
+
+	always @(posedge clock) // triggered every time clock rises
+	begin
+		if (parload == 1'b1)
+			begin
+			rate100  <= load100; // "<=" is non-blocking assignment
+			rate050  <= load050;
+			rate025  <= load025;
+			end
+		else if (rate100 == 0)
+			rate100  <= load100;
+		else if (rate050 == 0)
+			rate050  <= load050;
+		else if (rate025 == 0)
+			rate025  <= load025;
+		else
+		begin
+			rate100 <= rate100 - 1'd1;
+			rate050 <= rate050 - 1'd1;
+			rate025 <= rate025 - 1'd1;
+		end
+	end
+
+	assign clock100 = (rate100 == 0) ? 1 : 0;
+	assign clock050 = (rate050 == 0) ? 1 : 0;
+	assign clock025 = (rate025 == 0) ? 1 : 0;
+
+	reg enable;
+	wire [1:0] s;
+	assign s[1:0] = sig[1:0];
+
+	always @(*)
+	begin
+		case(s[1:0])
+			2'b00: enable = clock; // clock speed
+			2'b01: enable = clock100;
+			2'b10: enable = clock050;
+			2'b11: enable = clock025;
+			default: enable = 0;
+		endcase
+	end
+
+	reg [7:0] out;
+	wire [7:0] bits;
+
+	always @(posedge clock) // triggered every time clock rises
+	begin
+		if (clear_b == 1'b1) // when Clear b is 0
+			out <= 8'b01100000;
+			q <= 0;
+		if(enable == 1'b1 && q == 0)
+			out <= out - 1'b1;
+		if(out[3:0] == 4'b1111)
+			out <= out - 6;
+		if(out == 8'b0000000)
+			q <= 1;
+	end
+
+	assign bits = out;
+	//assign q[7:0] = bits[7:0];
+	//assign q[8] = enable;
+
+	segments segs0(.x(bits[3:0]), .z(H0[6:0]));
+
+	segments segs1(.x(bits[7:4]), .z(H1[6:0]));
+
+endmodule
+
+module segments(input  [3:0]x,
+    			output reg [6:0]z);
+
+always @*
+case (x)
+4'b0000 :      	//Hexadecimal 0
+z = 7'b1000000;
+4'b0001 :    		//Hexadecimal 1
+z = 7'b1111001;
+4'b0010 :  		// Hexadecimal 2
+z = 7'b0100100 ;
+4'b0011 : 		// Hexadecimal 3
+z = 7'b0110000 ;
+4'b0100 :		// Hexadecimal 4
+z = 7'b0011001 ;
+4'b0101 :		// Hexadecimal 5
+z = 7'b0010010 ;
+4'b0110 :		// Hexadecimal 6
+z = 7'b0000010 ;
+4'b0111 :		// Hexadecimal 7
+z = 7'b1111000;
+4'b1000 :     		 //Hexadecimal 8
+z = 7'b0000000;
+4'b1001 :    		//Hexadecimal 9
+z = 7'b0010000 ;
+endcase
+
+endmodule

@@ -1,0 +1,420 @@
+Analysis & Synthesis report for counter2
+Sat Apr 01 09:59:23 2017
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "set:s"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Apr 01 09:59:23 2017       ;
+; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                   ; counter2                                    ;
+; Top-level Entity Name           ; counter2                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 96                                          ;
+; Total pins                      ; 28                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; counter2           ; counter2           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path       ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; ../../../Downloads/counter2.v    ; yes             ; User Verilog HDL File  ; C:/Users/Dell/Downloads/counter2.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 144            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 226            ;
+;     -- 7 input functions                    ; 4              ;
+;     -- 6 input functions                    ; 58             ;
+;     -- 5 input functions                    ; 20             ;
+;     -- 4 input functions                    ; 11             ;
+;     -- <=3 input functions                  ; 133            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 96             ;
+;                                             ;                ;
+; I/O pins                                    ; 28             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 96             ;
+; Total fan-out                               ; 1133           ;
+; Average fan-out                             ; 3.00           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------+-------------+--------------+
+; |counter2                  ; 226 (0)           ; 96 (0)       ; 0                 ; 0          ; 28   ; 0            ; |counter2                      ; counter2    ; work         ;
+;    |set:s|                 ; 226 (196)         ; 96 (96)      ; 0                 ; 0          ; 0    ; 0            ; |counter2|set:s                ; set         ; work         ;
+;       |segments:segs0|     ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |counter2|set:s|segments:segs0 ; segments    ; work         ;
+;       |segments:segs1|     ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |counter2|set:s|segments:segs1 ; segments    ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++-----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal       ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------+------------------------+
+; set:s|segments:segs0|z[0]                           ; set:s|segments:segs0|Mux7 ; yes                    ;
+; set:s|segments:segs0|z[1]                           ; set:s|segments:segs0|Mux7 ; yes                    ;
+; set:s|segments:segs0|z[2]                           ; set:s|segments:segs0|Mux7 ; yes                    ;
+; set:s|segments:segs0|z[3]                           ; set:s|segments:segs0|Mux7 ; yes                    ;
+; set:s|segments:segs0|z[4]                           ; set:s|segments:segs0|Mux7 ; yes                    ;
+; set:s|segments:segs0|z[5]                           ; set:s|segments:segs0|Mux7 ; yes                    ;
+; set:s|segments:segs0|z[6]                           ; set:s|segments:segs0|Mux7 ; yes                    ;
+; set:s|segments:segs1|z[0]                           ; set:s|segments:segs1|Mux7 ; yes                    ;
+; set:s|segments:segs1|z[1]                           ; set:s|segments:segs1|Mux7 ; yes                    ;
+; set:s|segments:segs1|z[2]                           ; set:s|segments:segs1|Mux7 ; yes                    ;
+; set:s|segments:segs1|z[3]                           ; set:s|segments:segs1|Mux7 ; yes                    ;
+; set:s|segments:segs1|z[4]                           ; set:s|segments:segs1|Mux7 ; yes                    ;
+; set:s|segments:segs1|z[5]                           ; set:s|segments:segs1|Mux7 ; yes                    ;
+; set:s|segments:segs1|z[6]                           ; set:s|segments:segs1|Mux7 ; yes                    ;
+; Number of user-specified and inferred latches = 14  ;                           ;                        ;
++-----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++---------------------------------------+---------------------+
+; Register name                         ; Reason for Removal  ;
++---------------------------------------+---------------------+
+; set:s|stop                            ; Merged with set:s|q ;
+; Total Number of Removed Registers = 1 ;                     ;
++---------------------------------------+---------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 96    ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |counter2|set:s|out[3]      ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |counter2|set:s|rate025[15] ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |counter2|set:s|rate025[12] ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |counter2|set:s|rate100[13] ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |counter2|set:s|rate100[16] ;
+; 5:1                ; 19 bits   ; 57 LEs        ; 38 LEs               ; 19 LEs                 ; Yes        ; |counter2|set:s|rate050[20] ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |counter2|set:s|rate050[19] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "set:s"        ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; sig[1] ; Input ; Info     ; Stuck at GND ;
+; sig[0] ; Input ; Info     ; Stuck at VCC ;
++--------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 96                          ;
+;     ENA               ; 24                          ;
+;     ENA SCLR          ; 30                          ;
+;     plain             ; 42                          ;
+; arriav_lcell_comb     ; 227                         ;
+;     arith             ; 101                         ;
+;         1 data inputs ; 100                         ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 4                           ;
+;         7 data inputs ; 4                           ;
+;     normal            ; 122                         ;
+;         0 data inputs ; 1                           ;
+;         3 data inputs ; 32                          ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 20                          ;
+;         6 data inputs ; 58                          ;
+; boundary_port         ; 28                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.70                        ;
+; Average LUT depth     ; 3.26                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Sat Apr 01 09:59:01 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off counter2 -c counter2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 3 design units, including 3 entities, in source file /users/dell/downloads/counter2.v
+    Info (12023): Found entity 1: counter2 File: C:/Users/Dell/Downloads/counter2.v Line: 3
+    Info (12023): Found entity 2: set File: C:/Users/Dell/Downloads/counter2.v Line: 20
+    Info (12023): Found entity 3: segments File: C:/Users/Dell/Downloads/counter2.v Line: 109
+Info (12127): Elaborating entity "counter2" for the top level hierarchy
+Warning (10034): Output port "LEDR[7..0]" at counter2.v(7) has no driver File: C:/Users/Dell/Downloads/counter2.v Line: 7
+Info (12128): Elaborating entity "set" for hierarchy "set:s" File: C:/Users/Dell/Downloads/counter2.v Line: 16
+Warning (10230): Verilog HDL assignment warning at counter2.v(59): truncated value with size 32 to match size of target (1) File: C:/Users/Dell/Downloads/counter2.v Line: 59
+Warning (10230): Verilog HDL assignment warning at counter2.v(60): truncated value with size 32 to match size of target (1) File: C:/Users/Dell/Downloads/counter2.v Line: 60
+Warning (10230): Verilog HDL assignment warning at counter2.v(61): truncated value with size 32 to match size of target (1) File: C:/Users/Dell/Downloads/counter2.v Line: 61
+Warning (10230): Verilog HDL assignment warning at counter2.v(92): truncated value with size 32 to match size of target (8) File: C:/Users/Dell/Downloads/counter2.v Line: 92
+Info (12128): Elaborating entity "segments" for hierarchy "set:s|segments:segs0" File: C:/Users/Dell/Downloads/counter2.v Line: 103
+Warning (10270): Verilog HDL Case Statement warning at counter2.v(113): incomplete case statement has no default case item File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Warning (10240): Verilog HDL Always Construct warning at counter2.v(113): inferring latch(es) for variable "z", which holds its previous value in one or more paths through the always construct File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Info (10041): Inferred latch for "z[0]" at counter2.v(113) File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Info (10041): Inferred latch for "z[1]" at counter2.v(113) File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Info (10041): Inferred latch for "z[2]" at counter2.v(113) File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Info (10041): Inferred latch for "z[3]" at counter2.v(113) File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Info (10041): Inferred latch for "z[4]" at counter2.v(113) File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Info (10041): Inferred latch for "z[5]" at counter2.v(113) File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Info (10041): Inferred latch for "z[6]" at counter2.v(113) File: C:/Users/Dell/Downloads/counter2.v Line: 113
+Warning (13012): Latch set:s|segments:segs0|z[0] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[1] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs0|z[1] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[2] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs0|z[2] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[2] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs0|z[3] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[1] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs0|z[4] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[2] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs0|z[5] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[1] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs0|z[6] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[1] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs1|z[0] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[5] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs1|z[1] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[6] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs1|z[2] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[5] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs1|z[3] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[5] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs1|z[4] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[5] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs1|z[5] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[5] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13012): Latch set:s|segments:segs1|z[6] has unsafe behavior File: C:/Users/Dell/Downloads/counter2.v Line: 113
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal set:s|out[5] File: C:/Users/Dell/Downloads/counter2.v Line: 81
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Dell/Downloads/counter2.v Line: 7
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Dell/Downloads/counter2.v Line: 5
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Dell/Downloads/counter2.v Line: 5
+Info (21057): Implemented 254 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 226 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 951 megabytes
+    Info: Processing ended: Sat Apr 01 09:59:23 2017
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:51
+
+

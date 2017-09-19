@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at project.v(239): object "reset_counter" differs only in case from object "RESET_COUNTER" in the same scope File: C:/CSC258W/part2/project.v Line: 239
