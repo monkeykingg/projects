@@ -1,0 +1,29 @@
+Stage 1
+Of 20 initial problems, 12 were solved in less than 8 seconds by this solver.
+Of the 12 problems that were solved, the cost of 12 matched or outperformed the benchmark.
+Problems that remain unsolved in the set are Problems: [11, 12, 13, 14, 16, 17, 18, 19]
+The benchmark implementation solved 15 out of the 20 practice problems given 8 seconds.
+
+Of 20 initial problems, 13 were solved in less than 8 seconds by this solver.
+Problems that remain unsolved in the set are Problems: [3, 5, 13, 14, 16, 17, 19]
+The benchmark implementation solved 15 out of 20 practice problems given 8 seconds.
+
+Stage 2
+Of 20 initial problems, 17 were solved in less than 8 seconds by this solver.
+Of the 17 problems that were solved, the cost of 15 matched or outperformed the benchmark.
+Problems that remain unsolved in the set are Problems: [14, 17, 19]
+The benchmark implementation solved 15 out of the 20 practice problems given 8 seconds.
+
+Of 20 initial problems, 17 were solved in less than 8 seconds by this solver.
+Problems that remain unsolved in the set are Problems: [14, 17, 19]
+The benchmark implementation solved 15 out of 20 practice problems given 8 seconds.
+
+Final Stage
+Of 20 initial problems, 19 were solved in less than 8 seconds by this solver.
+Of the 19 problems that were solved, the cost of 17 matched or outperformed the benchmark.
+Problems that remain unsolved in the set are Problems: [17]
+The benchmark implementation solved 15 out of the 20 practice problems given 8 seconds.
+
+Of 20 initial problems, 19 were solved in less than 8 seconds by this solver.
+Problems that remain unsolved in the set are Problems: [17]
+The benchmark implementation solved 15 out of the 20 practice problems given 8 seconds.

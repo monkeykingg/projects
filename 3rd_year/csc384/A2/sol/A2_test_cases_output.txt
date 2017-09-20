@@ -1,0 +1,54 @@
+Solving board
+=======================================================
+FC
+CSP Kenken solved. CPU Time used = 0.0005383340000000014
+CSP Kenken  Assignments = 
+Var--V11  =  1     Var--V12  =  3     Var--V13  =  2     Var--V21  =  2     Var--V22  =  1     Var--V23  =  3     Var--V31  =  3     Var--V32  =  2     Var--V33  =  1     
+bt_search finished
+Search made 9 variable assignments and pruned 16 variable values
+Solution
+[1, 3, 2]
+[2, 1, 3]
+[3, 2, 1]
+Solving board
+=======================================================
+FC
+CSP Kenken solved. CPU Time used = 0.0034035659999999968
+CSP Kenken  Assignments = 
+Var--V11  =  3     Var--V12  =  1     Var--V13  =  2     Var--V14  =  4     Var--V21  =  2     Var--V22  =  4     Var--V23  =  3     Var--V24  =  1     Var--V31  =  1     Var--V32  =  2     Var--V33  =  4     Var--V34  =  3     Var--V41  =  4     Var--V42  =  3     Var--V43  =  1     Var--V44  =  2     
+bt_search finished
+Search made 29 variable assignments and pruned 116 variable values
+Solution
+[3, 1, 2, 4]
+[2, 4, 3, 1]
+[1, 2, 4, 3]
+[4, 3, 1, 2]
+Solving board
+=======================================================
+FC
+CSP Kenken solved. CPU Time used = 0.012249382000000003
+CSP Kenken  Assignments = 
+Var--V11  =  5     Var--V12  =  2     Var--V13  =  1     Var--V14  =  4     Var--V15  =  3     Var--V21  =  1     Var--V22  =  4     Var--V23  =  5     Var--V24  =  3     Var--V25  =  2     Var--V31  =  2     Var--V32  =  5     Var--V33  =  3     Var--V34  =  1     Var--V35  =  4     Var--V41  =  3     Var--V42  =  1     Var--V43  =  4     Var--V44  =  2     Var--V45  =  5     Var--V51  =  4     Var--V52  =  3     Var--V53  =  2     Var--V54  =  5     Var--V55  =  1     
+bt_search finished
+Search made 113 variable assignments and pruned 561 variable values
+Solution
+[5, 2, 1, 4, 3]
+[1, 4, 5, 3, 2]
+[2, 5, 3, 1, 4]
+[3, 1, 4, 2, 5]
+[4, 3, 2, 5, 1]
+Solving board
+=======================================================
+FC
+CSP Kenken solved. CPU Time used = 0.09347860400000002
+CSP Kenken  Assignments = 
+Var--V11  =  5     Var--V12  =  6     Var--V13  =  3     Var--V14  =  4     Var--V15  =  1     Var--V16  =  2     Var--V21  =  6     Var--V22  =  1     Var--V23  =  4     Var--V24  =  5     Var--V25  =  2     Var--V26  =  3     Var--V31  =  4     Var--V32  =  5     Var--V33  =  2     Var--V34  =  3     Var--V35  =  6     Var--V36  =  1     Var--V41  =  3     Var--V42  =  4     Var--V43  =  1     Var--V44  =  2     Var--V45  =  5     Var--V46  =  6     Var--V51  =  2     Var--V52  =  3     Var--V53  =  6     Var--V54  =  1     Var--V55  =  4     Var--V56  =  5     Var--V61  =  1     Var--V62  =  2     Var--V63  =  5     Var--V64  =  6     Var--V65  =  3     Var--V66  =  4     
+bt_search finished
+Search made 646 variable assignments and pruned 4551 variable values
+Solution
+[5, 6, 3, 4, 1, 2]
+[6, 1, 4, 5, 2, 3]
+[4, 5, 2, 3, 6, 1]
+[3, 4, 1, 2, 5, 6]
+[2, 3, 6, 1, 4, 5]
+[1, 2, 5, 6, 3, 4]

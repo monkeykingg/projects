@@ -1,0 +1,19 @@
+1. Try to move big snowball first than other snowballs, second is the medium one.
+   Because big snowball should be the first one at destination, then the medium
+   one.
+
+2. Record coordinates at the UP, DOWN, LEFT, RIGHT sides of snowballs.
+   Coordinates can help you to check if snowballs' position leads to no
+   solutions, like snowballs at corner.
+
+3. If destination at corner, then only if snowballs not stick to edges or
+   stick to the same edges as destination’s edges can continue moving robot.
+   Otherwise lead to no solution.
+
+4. If there is a snowman is formed by placing a small snowball atop a medium one
+   on the game board, then these situations should be considered as no solution case.
+   Same as a snowman is formed by placing a small snowball atop a big one.
+
+5. If there is a complete snowman or a snowman formed by placing a medium snowball
+   atop a big one, then it have to be at destination.
+   Otherwise this situation leads to no solution.
