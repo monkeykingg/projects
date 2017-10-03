@@ -1,0 +1,21 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
+$red:#EF5350; $green:#2ecc71; $blue:#2980b9; $purple:#BF4A67;
+.button{margin:8px;font-family:'Open Sans',sans-serif;cursor:pointer;transition:all 0.3s}
+.button:focus{outline:0}
+.button_3d {padding:1em 1.3em .9em;border: 0;box-shadow: inset 0 -7px 0 rgba(0, 0, 0, 0.15);font-size: 1.2em;border-radius: 6px;color: #e6e6e6;background: #b4b4b4;transition:all 0.1s;
+  &:hover {box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.15)}}
+.button_em {padding:.9em 1.3em .8em;border:0;font-size:1.2em;border-radius:5px;color:#e6e6e6;background:#b4b4b4;box-shadow:inset 0 0 0 4.5px rgba(255, 255, 255, 0.65);
+  &:hover {box-shadow: inset 0 0 0 4.5px rgba(255, 255, 255, 0.25)}}
+.button_border {padding: .85em 1.3em .65em;font-size: 1.2em;background: none;border-width: 2.7px;border-style: solid;border-color: #a0a0a0;border-radius: 4px;color: #787878;}
+.button_shadow {padding: .85em 1.3em .65em;font-size: 1.2em;background: #fafafa;border: 0;box-shadow: 0 0 20px silver;color: #787878;}
+.button_normal {padding: .85em 1.3em .65em;font-size: 1.2em;background: silver;border: 0;color: white;
+  &:hover {background:darken(silver,10)} &[data-button=red]:hover {background:darken($red,10)} &[data-button=blue]:hover {background:darken($blue,10)} &[data-button=green]:hover {background:darken($green,10)} &[data-button=purple]:hover {background:darken($purple,10)}
+}
+.button_3d, .button_em, .button_normal {
+  &[data-button=red] {background: $red;}  &[data-button=green] {background: $green;}  &[data-button=blue] {background: $blue;}  &[data-button=purple] {background: $purple;}}
+.button_shadow, .button_border {
+  &:hover {color: #fff !important;background: #a0a0a0}
+  &[data-button=red] {border-color: $red;color: $red}  &[data-button=blue] {border-color: $blue;color: $blue}  &[data-button=green] {border-color: $green;color: $green}  &[data-button=purple] {border-color: $purple;color: $purple}  &[data-button=red]:hover {background: $red}  &[data-button=blue]:hover {background: $blue}  &[data-button=green]:hover {background: $green}  &[data-button=purple]:hover {background: $purple}}
+.button_arrow {&:hover:after {content:" 》";position:absolute;margin-left:4px;opacity:.6}  &:hover {padding-left:1em;padding-right:1.6em}}
+.button_disabled {opacity: 0.5;cursor: not-allowed;}
+.button_group {margin:16px -2px 0}

@@ -1,0 +1,20 @@
+[工作日志-王志鸿]2016.7.13
+
+【一、今天的工作】
+
+1. 学习JavaScript的Window、Screen、Location、History、Navigator、PopupAlert、Timing、Cookies等。
+2. 学习jQuery并研究jQuery与JavaScript和CSS的联动。
+
+【二、问题与分析】
+
+1. id重名时，网页会以最后被执行的id作为输出的参照。
+2. document.write会覆盖全部的网页内容，除非必要，尽量不要使用，体验感很差。
+3. Cookie的应用必须和网络挂钩，只是使用不需要网络的html会导致每次重新打开网页，事件就被初始化。
+
+【三、明天的计划】
+
+1. 深入研究jQuery
+2. 学习Bootstrap
+
+【四、输出结果】
+测试用网页，见附件

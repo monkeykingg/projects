@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+  font-family: 'Source Sans Pro';
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1 {
+  line-height: 1.3;
+}
+p,
+h1,
+h3 {
+  margin: 0 0 25px 0;
+}
+.wrapper {
+  min-height: 100vh;
+  padding: 10vh 10vw;
+  background: #fffafa;
+}
+/* button base */
+.btn {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 8.333333333333334px;
+  padding: 10px 25px;
+  border-radius: 2px;
+  line-height: normal;
+  font-size: 16px;
+  color: #fff;
+  background: #fff;
+/* svg icon */
+/* reveal svg icon */
+/* large button */
+/* styles */
+}
+.btn-icon {
+  will-change: width, transform;
+  width: 0;
+  height: 24px;
+  padding: 4px;
+  border-radius: 50%;
+  fill: #fff;
+  background: rgba(0,0,0,0.15);
+  margin-left: 0;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+/* if you want the icon visible always */
+}
+.btn-icon--vis {
+  width: 24px;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  margin-left: 8.333333333333334px;
+}
+.btn:hover .btn-icon {
+  width: 24px;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  margin-left: 8.333333333333334px;
+}
+.btn--large {
+  font-size: 20px;
+}
+.btn--large .btn-icon {
+  height: 28px;
+}
+.btn--large:hover .btn-icon {
+  width: 28px;
+}
+.btn--style1 {
+  position: relative;
+  z-index: 1;
+}
+.btn--style1:before {
+  will-change: opacity;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 2px;
+  background: #000;
+  opacity: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn--style1:hover:before {
+  opacity: 0.2;
+}
+.btn--style2 .btn-icon {
+  -webkit-transform: scale(0) rotate(-360deg);
+      -ms-transform: scale(0) rotate(-360deg);
+          transform: scale(0) rotate(-360deg);
+}
+.btn--style3 {
+  position: relative;
+  z-index: 1;
+}
+.btn--style3:before {
+  will-change: opacity;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 2px;
+  background: #000;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
+  opacity: 0.2;
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn--style3:hover:before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.btn--style4 {
+  position: relative;
+  z-index: 1;
+}
+.btn--style4:before {
+  will-change: opacity;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 2px;
+  background: #000;
+  -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: center bottom;
+      -ms-transform-origin: center bottom;
+          transform-origin: center bottom;
+  opacity: 0.2;
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn--style4:hover:before {
+  -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+          transform: scaleY(1);
+}
+/* block buttons */
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex > .btn {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 3px;
+}
+.flex > .btn:last-child {
+  margin-right: 0;
+}
+.max-w {
+  max-width: 600px;
+}
+/* color classes */
+.red {
+  background: #f44336;
+}
+.pink {
+  background: #e91e63;
+}
+.purple {
+  background: #9c27b0;
+}
+.blue {
+  background: #2196f3;
+}
+.teal {
+  background: #009688;
+}
+.green {
+  background: #4caf50;
+}
+.yellow {
+  background: #ffeb3b;
+}

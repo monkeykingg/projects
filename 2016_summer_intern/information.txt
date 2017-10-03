@@ -1,0 +1,50 @@
+张贵潭：zhanggt@itep.com.cn
+李年健：li-nj@itep.com.cn
+马超：machao0597@163.com
+林尧禹（我们的BOSS）： linyy@itep.com.cn
+
+1、工作日志：每天下班后发一封邮件，主送 贵潭，抄送我、马超、林尧禹
+工作日志体现这几块内容：
+
+【今天的工作】
+【问题与分析】
+【明天的计划】
+
+2、每天学习的内容，需要有输出结果，在工作日志中反馈下：可以是每天学习时写的代码、DEMO例子；
+
+
+
+
+
+
+
+
+
+
+
+1、Javascript：
+A、入门基础：http://www.runoob.com/js/js-tutorial.html
+B、书籍： 《Javascript面向对象编程》（参见附件）
+
+2、HTML 操作DOM：
+A、入门基础：http://www.runoob.com/htmldom/htmldom-tutorial.html
+备注： 访问节点、访问属性、修改节点、事件
+
+3、Javascript框架——jQuery：
+A、入门基础：http://www.runoob.com/jquery/jquery-tutorial.html
+备注：jQuery选择器、jQuery事件、jQuery操作HTML、jQuery的Ajax
+
+4、CSS：
+A、入门基础：http://www.runoob.com/css/css-tutorial.html
+
+5、前端UI框架：Bootstrap
+A、官网：http://v3.bootcss.com
+B、入门教程：http://www.runoob.com/bootstrap/bootstrap-tutorial.html
+备注：珊格系统、表格、表单、按钮、图片、Javascript组件、Javascript插件（模态框、弹出框等）
+
+6、前端主流图表插件：Highcharts
+A、入门：http://www.runoob.com/highcharts/highcharts-tutorial.html
+备注：平时主要用到 条形图、柱形图、饼图以及曲线图
+
+7、Javascript框架-AngularJS
+A、入门：http://www.runoob.com/angularjs/angularjs-tutorial.html

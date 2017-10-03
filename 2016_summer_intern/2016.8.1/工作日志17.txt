@@ -1,0 +1,30 @@
+[工作日志-王志鸿]2016.8.1
+
+【一、今天的工作】
+
+1. 学习MVC。
+2. 学习EL表达式。
+3. 学习JSTL标签库。
+4. 学习MVC。
+
+【二、问题与分析】
+
+1. 在MVC中，C（controller）指Servlet，V（view）指JSP，M（model）指Javabean。
+2. EL表达式（${标识符}）用于获取数据，如果对象不存在，返回""。
+3. EL表达式可以使用${customerBean.address}的形式访问JavaBean对象的属性。
+4. EL表达式也可以使用${0==0}的形式进行逻辑判断。
+5. JSTL是一套标签库，可以用来替换脚本代码。
+6. web开发的三层架构思想分别是：一、web层（包括servlet、JSP、EL、JSTL），二、业务逻辑层（包括service、Javabean），三、数据访问层（包括DAO、Jdbc、Hibernate）。
+7. 要想办法找齐开发库。
+
+【三、明天的计划】
+
+1. 研究MVC。
+2. 学习spring。
+3. 学习springMVC。
+4. 学习Mybatis。
+
+【四、输出结果】
+
+web应用，见附件
+

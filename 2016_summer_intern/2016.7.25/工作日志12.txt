@@ -1,0 +1,23 @@
+[工作日志-王志鸿]2016.7.25
+
+【一、今天的工作】
+
+1. 学习MVC以及其框架springMVC。
+2. 学习Servlet。
+3. 安装Eclipse J2EE，Tomcat。
+
+【二、问题与分析】
+
+1. MVC（模型-视图-控制器）是一种设计创建web的应用程序的模式。
+2. 学习springMVC之前，要先理解Servlet，Servlet是指Java语言实现的一个接口。
+3. 学习Servlet前，要安装Eclipse J2EE和Tomcat。
+4. 开Tomcat不要run Eclipse J2EE里的代码，反之亦然。
+5. 安装这些种类型的软件时要避免使用中文路径。
+
+【三、明天的计划】
+
+1. 学习Servlet。
+
+【四、输出结果】
+
+测试用jsp文件 + web project压缩包

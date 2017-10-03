@@ -1,0 +1,824 @@
+<!DOCTYPE HTML>
+<html>
+
+<body bgcolor="#C0C0C0">
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--避免中文乱码-->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+
+
+<!--引入jQuery-->
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.barrager.js"></script>  
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>   
+
+<!--白云特效-->
+<style type="text/css">
+		/*Lets start with the cloud formation rather*/
+
+		/*The container will also serve as the SKY*/
+
+		*{ margin: 0; padding: 0;}
+
+		body {
+			/*To hide the horizontal scroller appearing during the animation*/
+			/*overflow: hidden;*/
+		}
+
+		#clouds{
+			padding: 20px 0;
+			background: #c9dbe9;
+			background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 75%);
+			background: -linear-gradient(top, #c9dbe9 0%, #fff 75%);
+			background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 75%);
+		}
+
+		/*Time to finalise the cloud shape*/
+		.cloud {
+			width: 200px; height: 60px;
+			background: #fff;
+			
+			border-radius: 200px;
+			-moz-border-radius: 200px;
+			-webkit-border-radius: 200px;
+			
+			position: relative; 
+		}
+
+		.cloud:before, .cloud:after {
+			content: '';
+			position: absolute; 
+			background: #fff;
+			width: 100px; height: 80px;
+			position: absolute; top: -15px; left: 10px;
+			
+			border-radius: 100px;
+			-moz-border-radius: 100px;
+			-webkit-border-radius: 100px;
+			
+			-webkit-transform: rotate(30deg);
+			transform: rotate(30deg);
+			-moz-transform: rotate(30deg);
+		}
+
+		.cloud:after {
+			width: 120px; height: 120px;
+			top: -55px; left: auto; right: 15px;
+		}
+
+		/*Time to animate*/
+		.x1 {
+			-webkit-animation: moveclouds 15s linear infinite;
+			-moz-animation: moveclouds 15s linear infinite;
+			-o-animation: moveclouds 15s linear infinite;
+		}
+
+		/*variable speed, opacity, and position of clouds for realistic effect*/
+		.x2 {
+			left: 200px;
+			
+			-webkit-transform: scale(0.6);
+			-moz-transform: scale(0.6);
+			transform: scale(0.6);
+			opacity: 0.6; /*opacity proportional to the size*/
+			
+			/*Speed will also be proportional to the size and opacity*/
+			/*More the speed. Less the time in 's' = seconds*/
+			-webkit-animation: moveclouds 25s linear infinite;
+			-moz-animation: moveclouds 25s linear infinite;
+			-o-animation: moveclouds 25s linear infinite;
+		}
+
+		.x3 {
+			left: -250px; top: -200px;
+			
+			-webkit-transform: scale(0.8);
+			-moz-transform: scale(0.8);
+			transform: scale(0.8);
+			opacity: 0.8; /*opacity proportional to the size*/
+			
+			-webkit-animation: moveclouds 20s linear infinite;
+			-moz-animation: moveclouds 20s linear infinite;
+			-o-animation: moveclouds 20s linear infinite;
+		}
+
+		.x4 {
+			left: 470px; top: -250px;
+			
+			-webkit-transform: scale(0.75);
+			-moz-transform: scale(0.75);
+			transform: scale(0.75);
+			opacity: 0.75; /*opacity proportional to the size*/
+			
+			-webkit-animation: moveclouds 18s linear infinite;
+			-moz-animation: moveclouds 18s linear infinite;
+			-o-animation: moveclouds 18s linear infinite;
+		}
+
+		.x5 {
+			left: -150px; top: -150px;
+			
+			-webkit-transform: scale(0.8);
+			-moz-transform: scale(0.8);
+			transform: scale(0.8);
+			opacity: 0.8; /*opacity proportional to the size*/
+			
+			-webkit-animation: moveclouds 20s linear infinite;
+			-moz-animation: moveclouds 20s linear infinite;
+			-o-animation: moveclouds 20s linear infinite;
+		}
+
+		@-webkit-keyframes moveclouds {
+			0% {margin-left: 1000px;}
+			100% {margin-left: -1000px;}
+		}
+		@-moz-keyframes moveclouds {
+			0% {margin-left: 1000px;}
+			100% {margin-left: -1000px;}
+		}
+		@-o-keyframes moveclouds {
+			0% {margin-left: 1000px;}
+			100% {margin-left: -1000px;}
+		}
+	</style>
+
+
+<!--特效按钮-->
+<style class="cp-pen-styles">
+@import url(http://fonts.useso.com/css?family=Open+Sans:800);
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+.button {
+  display: block;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 140%;
+  left: 9%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #000000;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) inset;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.button span {
+  display: block;
+  position: absolute;
+  top: 6px;
+  width: 160px;
+  height: 90px;
+  background-color: #1c1d1f;
+  -webkit-transition: -webkit-transform 300ms ease, box-shadow 300ms ease;
+          transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.button span:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-size: 48px;
+  -webkit-transition: text-shadow 800ms ease 100ms, color 800ms ease 100ms;
+          transition: text-shadow 800ms ease 100ms, color 800ms ease 100ms;
+}
+.button span:after {
+  content: "";
+  width: 4px;
+  height: 108px;
+  position: absolute;
+  top: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.5) 0%, transparent 50%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, transparent 50%);
+  -webkit-transition: opacity 300ms ease;
+          transition: opacity 300ms ease;
+}
+.button span:first-of-type {
+  left: 6px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  -webkit-transform-style: preserve3d;
+          transform-style: preserve3d;
+  -webkit-transform-origin: right center;
+      -ms-transform-origin: right center;
+          transform-origin: right center;
+  -webkit-transform: perspective(2000px) rotateY(40deg);
+          transform: perspective(2000px) rotateY(40deg);
+  box-shadow: -1px 0 1px rgba(255, 255, 255, 0.1) inset, 4px 0 8px rgba(255, 255, 255, 0.1) inset, 1px 0 0 rgba(255, 255, 255, 0.1) inset, -10px 0 8px rgba(40, 42, 44, 0.9), -20px 0 8px rgba(28, 29, 31, 0.7), -30px 0 8px rgba(28, 29, 31, 0.4);
+}
+.button span:first-of-type:before {
+  content: "ON";
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 4px 6px #1c1d1f, 0 0 0 #000000, 1px 4px 6px #1c1d1f;
+}
+.button span:first-of-type:after {
+  left: -1px;
+}
+.button span:last-of-type {
+  right: 6px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
+  box-shadow: -1px 1px 1px rgba(255, 255, 255, 0.1) inset, 2px 0 2px rgba(255, 255, 255, 0.05) inset;
+}
+.button span:last-of-type:before {
+  content: "OFF";
+  color: #ff4847;
+  text-shadow: 0 0 24px rgba(255, 72, 71, 0.6);
+}
+.button span:last-of-type:after {
+  right: -1px;
+  opacity: 0;
+}
+.button input[type="checkbox"] {
+  display: none;
+}
+.button input[type="checkbox"]:checked ~ span:first-of-type {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1) inset, -2px 0 2px rgba(255, 255, 255, 0.05) inset;
+}
+.button input[type="checkbox"]:checked ~ span:first-of-type:before {
+  color: #93c913;
+  text-shadow: 0 0 24px rgba(147, 201, 19, 0.6);
+}
+.button input[type="checkbox"]:checked ~ span:first-of-type:after {
+  opacity: 0;
+}
+.button input[type="checkbox"]:checked ~ span:last-of-type {
+  -webkit-transform: perspective(2000px) rotateY(-40deg);
+          transform: perspective(2000px) rotateY(-40deg);
+  box-shadow: 1px 0 1px rgba(255, 255, 255, 0.1) inset, -4px 0 8px rgba(255, 255, 255, 0.1) inset, -1px 0 0 rgba(255, 255, 255, 0.1) inset, 10px 0 8px rgba(40, 42, 44, 0.9), 20px 0 8px rgba(28, 29, 31, 0.7), 30px 0 8px rgba(28, 29, 31, 0.4);
+}
+.button input[type="checkbox"]:checked ~ span:last-of-type:before {
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 4px 6px #1c1d1f, 0 0 0 #000000, 1px 4px 6px #1c1d1f;
+}
+.button input[type="checkbox"]:checked ~ span:last-of-type:after {
+  opacity: 1;
+}
+</style>
+
+
+<!--动画效果-->
+
+
+
+<!--滑动效果-->
+<script>
+$(document).ready(function()
+  {
+  $("button").click(function(){
+    $("#p1").css("color","red").slideUp(2000).slideDown(2000);
+  });
+});
+</script>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+$(".flip").click(function(){
+    $(".panel").slideToggle("slow");
+  });
+});
+</script>
+ 
+
+<!--工作日志04使用到的独立样式-->
+<style type="text/css"> 
+div.panel,p.flip
+{
+margin:0px;
+padding:5px;
+text-align:center;
+background:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+div.panel
+{
+height:500px;
+display:none;
+}
+</style>
+
+
+<!--应用在输入框内，点击输入框后高亮-->
+<script>
+$(document).ready(function(){
+  $("input").focus(function(){
+    $(this).css("background-color","#87CEFA");
+  });
+  $("input").blur(function(){
+    $(this).css("background-color","#ffffff");
+  });
+});
+</script>
+
+
+<!--在网页最下端，功能为隐藏网页上的所有段落-->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#hide").click(function(){
+  $("p").hide(1000);
+  });
+  $("#show").click(function(){
+  $("p").show(1000);
+  });
+});
+</script>
+
+<script>
+
+
+/* 用于显示时间 */ 
+function displayDate()
+{
+document.getElementById("demo1").innerHTML=Date();
+}
+
+
+/* 用于背景颜色 */ 
+function myFunction(x)
+{
+x.style.background="#87CEFA";
+}
+
+
+/* 用于将字母转换成大写 */ 
+function myFunction3()
+{
+var x=document.getElementById("fname");
+x.value=x.value.toUpperCase();
+}
+
+</script>
+
+
+<!--CSS运用，网页样式-->
+<style type="text/css">
+
+h1 {color: black}
+
+div.container
+{
+width:100%;
+margin:0px;
+border:10px #1E90FF;
+line-height:200%;
+}
+div.header,div.footer
+{
+padding:1em;
+color:white;
+background-color:#1E90FF;
+clear:left;
+}
+h1.header
+{
+padding:5;
+margin:0;
+}
+div.left
+{
+float:left;
+width:300px;
+margin:0;
+padding:1em;
+}
+div.right
+{
+float:right;
+width:300px;
+margin:0;
+padding:1em;
+}
+div.content
+{
+width:1100px;
+margin-left:400px;
+border-left:10px blue;
+padding:1em;
+}
+</style>
+
+<style>
+
+
+/* 全局属性定义 */ 
+p.ex {color:rgb(0,0,255);}
+p.date {text-align:right;}
+p.main {text-align:justify;}
+h2 {text-align:center;}
+h2 {color: red}
+a:link,a:visited
+{
+display:block;
+font-weight:bold;
+color:#FF4500;
+background-color:#87CEFA;
+width:150px;
+text-align:center;
+padding:4px;
+text-decoration:none;
+}
+a:hover,a:active
+{
+background-color:#8470FF;
+}
+
+/* 邮件样式 */ 
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+</style>
+
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<!--星星特效-->
+
+<!--白云特效-->
+<div id="clouds">
+			<div class="cloud x1"></div>
+			<div class="cloud x2"></div>
+			<div class="cloud x3"></div>
+			<div class="cloud x4"></div>
+			<div class="cloud x5"></div>
+</div>
+
+<div class="container">  
+
+<div class="header"><h1 class="header">测试用网页ver.1.9.1</h1></div>
+
+<div class="left">
+
+<p id="time"></p>
+
+<script>
+var myVar=setInterval(function(){myTimer()},1000);
+
+function myTimer()
+{
+var d=new Date();
+var t=d.toLocaleTimeString();
+document.getElementById("time").innerHTML=t;
+}
+</script>
+
+<!--特效按钮-->
+<p></p>
+<label class="button">
+  <input type="checkbox">
+  <span></span>
+  <span></span>
+</label>
+<p></p>
+
+<p id="p1">HELLO!</p>
+
+<p></p>
+
+<button onclick="assign()">每日签到</button>
+
+<p id="demo2"></p>
+
+<script>
+function assign()
+{
+	var x;
+
+	var person=prompt("请输入你的名字","");
+	if (person!=null && person!="")
+	{
+	    x="你好! " + person;
+	    document.getElementById("demo2").innerHTML=x;
+	}
+}
+</script>
+<p></p>
+
+<script>
+function myFunction2()
+{
+try
+{ 
+var x=document.getElementById("demo").value;
+if(x=="")    throw "值为空";
+if(isNaN(x)) throw "不是数字";
+if(x>2007)     throw "太大";
+if(x<2007)      throw "太小";
+if(x==2007)     throw "正确";
+}
+catch(err)
+{
+var y=document.getElementById("mess");
+y.innerHTML= err;
+}
+}
+</script>
+
+<h1>Quiz</h1>
+<p>请问质量效应初代的发行年份是？：</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction2()">输入数字</button>
+<p id="mess"></p>
+
+<button id="myBtn">提示</button>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", function(){
+    alert("2007");
+});
+</script>
+
+<h1>Email</h1>
+
+<div class="dropdown">
+  <button class="dropbtn">邮件地址列表</button>
+  <div class="dropdown-content">
+    <a href="mailto:zhanggt@itep.com.cn">张贵潭</a>
+    <a href="mailto:li-nj@itep.com.cn">李年健</a>
+    <a href="mailto:machao0597@163.com">马超</a>
+    <a href="mailto:linyy@itep.com.cn">林尧禹</a>
+  </div>
+</div>
+
+</div>
+
+<div class="right">
+
+<table class="table table-hover">
+   <h1>Tutorials</h1>
+   <thead>
+      <tr>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>
+           <a href="http://www.runoob.com/js/js-tutorial.html" target="_blank">
+           1. Javascript</a>
+           <p>书籍：《Javascript面向对象编程》</p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+           <a href="http://www.runoob.com/htmldom/htmldom-tutorial.html" target="_blank">
+           2. HTML DOM</a>
+           <p>备注：访问节点、访问属性、修改节点、事件</p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+           <a href="http://www.runoob.com/jquery/jquery-tutorial.html" target="_blank">
+           3. jQuery</a>
+           <p>备注：jQuery选择器、jQuery事件、jQuery操作HTML、jQuery的Ajax</p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+           <a href="http://www.runoob.com/css/css-tutorial.html" target="_blank">
+           4. CSS</a>
+         </td>
+      </tr>
+      <tr>
+         <td>
+           <a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank">
+           5. 前端UI框架 Bootstrap</a>
+           <br />
+           <a href="http://v3.bootcss.com" target="_blank">
+           官网</a>
+           <p>备注：珊格系统、表格、表单、按钮、图片、Javascript组件、Javascript插件（模态框、弹出框等）</p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+           <a href="http://www.runoob.com/highcharts/highcharts-tutorial.html" target="_blank">
+           6. 前端主流图表插件 Highcharts</a>
+           <p>备注：平时主要用到 条形图、柱形图、饼图以及曲线图</p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+           <a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank">
+           7. AngularJS</a>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+<a href="http://space.bilibili.com/226875" target="_blank">
+<img src="http://7xw4st.com1.z0.glb.clouddn.com/miku%20love.gif" width="250" height="219" alt="My space" />
+</a>
+
+<p><a href="http://7xw4st.com1.z0.glb.clouddn.com/joker.mp3">play music</a></p>
+
+<p><a href="http://7xw4st.com1.z0.glb.clouddn.com/mmd.mp4">play video</a></p>
+
+</div>
+
+<div class="content">
+
+<div class="panel">
+
+<h4>一、今天的工作</h4>
+<p id="p1">1. 研究Bootstrap并整合应用所学的所有知识。</p>
+<p id="p1">2. 建立新的测试用网页。</p>
+<p id="p1">3. 建立手机平台用界面。</p>
+
+<h4>二、问题与分析</h4>
+<p id="p1">1. 和“a”有关的属性很容易被应用到全局，一定要养成打注释的习惯，不然自己都找不到属性在哪儿。</p>
+<p id="p1">2. 用空格隔开不同的“div”能有效提高可读性并且降低出错概率。</p>
+<p id="p1">3. from在排版时十分高效。</p>
+
+<h4>三、明天的计划</h4>
+<p id="p1">1. 学习echarts。</p>
+<p id="p1">2. 学习AngularJS。</p>
+
+<h4>四、输出结果</h4>
+<p id="p1"><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用网页+工作用文件</a></p>
+
+</div>
+
+<p class="flip" onmouseover="style.color='green'" onmouseout="style.color='red'">工作日志06-2016.7.15</p>
+
+<div class="panel">
+
+<h4>一、今天的工作</h4>
+<p id="p1">1. 研究jQuery与JavaScript和CSS的联动。</p>
+<p id="p1">2. 研究jQuery动画模板、插件。</p>
+<p id="p1">3. 学习Bootstrap。</p>
+
+<h4>二、问题与分析</h4>
+<p id="p1">1. 点击动画按钮后出现网页内所有元素全部动画化的现象，说明按钮元素被全局化了。除非必要，尽量避免全局化的按钮。</p>
+<p id="p1">2. 当代码内没有任何语法、逻辑等方面的错误时网页仍然出错，很可能是写代码时不小心使用中文输入法写了重要的标点符号，比如“”、:、；等<。/p>
+<p id="p1">3. 使用插件时，很容易出现效果无法呈现的问题。首先要确认是否加载了所需要的库，然后再确认是否存在命名重复，最后查看浏览器的兼容性。</p>
+
+<h4>三、明天的计划</h4>
+<p id="p1">1. 研究Bootstrap，尝试建立美观的网页</p>
+
+<h4>四、输出结果</h4>
+<p id="p1"><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用网页</a></p>
+
+</div>
+
+<p class="flip" onmouseover="style.color='green'" onmouseout="style.color='red'">工作日志05-2016.7.14</p>
+
+<div class="panel">
+
+<h4>一、今天的工作</h4>
+<p id="p1">1. 学习JavaScript的Window、Screen、Location、History、Navigator、PopupAlert、Timing、Cookies等。</p>
+<p id="p1">2. 学习jQuery并研究jQuery与JavaScript和CSS的联动。</p>
+
+<h4>二、问题与分析</h4>
+<p id="p1">1. id重名时，网页会以最后被执行的id作为输出的参照。</p>
+<p id="p1">2. document.write会覆盖全部的网页内容，除非必要，尽量不要使用，体验感很差。</p>
+<p id="p1">3. Cookie的应用必须和网络挂钩，只是使用不需要网络的html会导致每次重新打开网页，事件就被初始化。</p>
+
+<h4>三、明天的计划</h4>
+<p id="p1">1. 深入研究jQuery</p>
+<p id="p1">2. 学习Bootstrap</p>
+
+<h4>四、输出结果</h4>
+<p id="p1"><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用网页</a></p>
+
+</div>
+
+<p class="flip" onmouseover="style.color='green'" onmouseout="style.color='red'">工作日志04-2016.7.13</p>
+
+<h2 onmouseover="style.color='blue'" onmouseout="style.color='red'">工作日志03</h2>
+
+<p class="date">2016.7.12</p>
+
+<h4>一、今天的工作</h4>
+<p >1. 学习JavaScript以及HTML DOM，包括输出、语句、语法、注释、变量、数据类型、对象、函数、运算符、比较、事件、循环、错误等。</p>
+<p >2. 研究JavaScript在网页内的行为，并应用。</p>
+<p >3. 尝试研究已有网页的源代码并拆解原网页。</p>
+
+<h4>二、问题与分析</h4>
+<p >1. 保存任意网页后再用Visual Studio Code打开，有很大几率会出现中文乱码。解决方案：先将文件扩展名（html）改为txt，另存为utx-8的格式后再将扩展名改回html。</p>
+<p >2. 拆解已有网页时，容易出现明明没有删除某内容，但是网页里对应的某内容消失的问题。解决方案：先仔细阅读head部分，如果无问题再仔细查看div、h、p等body内部块元素是否有缺失自己对应的头尾的现象。</p>
+<p >3. 函数重名时，网页最后显示出的结果来自于最末行的同名函数。</p>
+
+<h4>三、明天的计划</h4>
+<p>1. 深入研究JavaScript与HTML DOM。</p>
+
+<h4>四、输出结果</h4>
+<p ><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用网页与拆解后网页</a></p>
+
+<h2>工作日志02</h2>
+
+<p class="date">2016.7.11</p>
+
+<h4>一、今天的工作</h4>
+<p >1. 学习CSS，包括语法、选择器、样式、框模型、定位等</p>
+<p >2. 初步学习JavaScript</p>
+<p >3. 研究HTML与CSS的联动</p>
+
+<h4>二、问题与分析</h4>
+<p >1. 直接在head里设置UTF-8会导致中文乱码，使用选择内置中文即可。</p>
+<p >2. 设置边框时，默认的边框会框住网页从左至右的所有区域，即使需要框住的文本很少。调整内边距能有效解决问题。</p>
+<p >3. 设置字体时，可能会遇到用户没有特定字体而无法显示网页内容的问题。可以通过设置多种备用字体来解决。</p>
+<p >4. 创建标题、段落或行时没有关闭，导致乱码。一定要牢记关闭符。</p>
+<p >5. 设置成背景的图片会失去除了背景以外功能。也就是说，无法添加隐藏、去除等用户可以使用的特殊属性。</p>
+
+<h4>三、明天的计划</h4>
+<p>1. 深入学习JavaScript，研究它与HTML、CSS的联动。</p>
+
+<h4>四、输出结果</h4>
+<p ><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用html</a></p>
+
+<h2>工作日志01</h2>
+
+<p class="date">2016.7.8</p>
+
+<p class="main">1. 今天的工作</p>
+<p class="main">今天学习了HTML的基础知识，包括HTML的元素、属性、标题、段落、格式化、样式、链接、背景、颜色、图像、音频、视频等，并尝试应用。</p>
+
+<p class="main">2. 问题与分析</p>
+<p class="main">html如何与Javascript、CSS达成联动？如何更合理地在网页中添加图片、音频与视频？如何制作出对用户友善的网页？
+我认为对于网页来说，可读性十分重要。所以我们在设计网页时，一定要注意好兼容性，尽量避免或减轻因为不同用户的浏览器版本不同而造成的网页可读性下降的问题，比如无法显示图像、音频、视频等。在写代码时，也要保证语法细节上的正确以及通用，因为有些语法虽然在某些浏览器中没有问题，但是在其他的浏览器中会导致出错。最后要善于利用外部样式等影响全局的操作手段，有效节省时间。</p>
+
+<p class="main">3. 明天的计划</p>
+<p>学习CSS、Javascript并研究它们之间的联动。</p>
+
+<p class="main">4. 输出结果</p>
+<p class="main"><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用html</a></p>
+
+</div>
+
+<div class="footer">隐藏或显示网页内所有段落元素
+
+<button id="hide" type="button">隐藏</button>
+<button id="show" type="button">显示</button>
+
+</div>
+
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+
+</body>
+</html>

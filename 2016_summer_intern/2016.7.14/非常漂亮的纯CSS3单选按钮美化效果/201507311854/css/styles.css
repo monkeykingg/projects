@@ -1,0 +1,110 @@
+.radioGroup {
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.radioGroup > legend {
+  color: #79EAC5;
+}
+.radioGroup label {
+  position: relative;
+  padding-left: 1.3em;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+}
+.radioGroup label:hover {
+  color: #FFF;
+}
+.radioGroup label::before, .radioGroup label::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+.radioGroup label::before {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25), 0 2px 5px 6px rgba(0, 0, 0, 0.5) inset;
+}
+.radioGroup label::after {
+  background: #79EAC5;
+  opacity: .2;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.radioGroup label:hover::after {
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.radioGroup input {
+  position: absolute;
+  left: -24px;
+  z-index: -1;
+  opacity: 0;
+}
+.radioGroup input:checked + label::after {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 1;
+  box-shadow: 0 0 15px -1px #79EAC5;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  text-align: center;
+  font: 1.5em 'Roboto Condensed', arial;
+  background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+  background-image: -moz-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+  background-image: -o-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+  background-image: -ms-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+  background-image: radial-gradient(circle cover at top, #3c3b52 0%, #252233 80%);
+}
+
+fieldset {
+  display: inline-block;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 30px 60px 50px;
+  border: 4px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 -160px 50px -80px rgba(0, 0, 0, 0.1) inset;
+  border-radius: 20px;
+  margin: 50px auto;
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+fieldset:focus {
+  border-color: rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+legend {
+  padding: 0 20px;
+  dislpay: inline-block;
+  text-transform: uppercase;
+}
+
+fieldset label {
+  margin: 0 20px;
+}

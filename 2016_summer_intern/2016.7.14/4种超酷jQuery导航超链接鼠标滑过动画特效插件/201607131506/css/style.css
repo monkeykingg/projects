@@ -1,0 +1,48 @@
+body, ul, li, h1, h2, h3 {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #191919; }
+
+* {
+  color: #fff;
+  /*font-family: 'Ubuntu', sans-serif;*/
+  text-align: center;
+  font-size: 16px; }
+
+li {
+  display: inline-block; }
+
+h3 {
+  font-size: 13px; }
+  h3.space {
+    margin-top: 25px; }
+
+a {
+  text-decoration: none; }
+
+.c {
+  min-width: 1280px;
+  margin: 0 auto; }
+
+.t {
+  padding: 25px 0;
+  font-size: 25px;
+  text-transform: uppercase; }
+  .t--sm {
+    padding: 0;
+    font-size: 14px; }
+
+.nav {
+  margin: 25px auto; }
+  .nav.default {
+    line-height: 35px;
+    height: 35px; }
+  .nav.twiceBorder, .nav.underline, .nav.overline {
+    line-height: 30px;
+    height: 30px; }
+  .nav a {
+    padding: 0 10px; }
+
+/*# sourceMappingURL=style.css.map */

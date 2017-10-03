@@ -1,0 +1,32 @@
+Current taking:
+CSC309H1  Prog on the Web
+CSC318H1  Interact Comp Media
+CSC343H1  Intro to Databases
+CSC411H1  Machine Learning
+EAS120Y1  Mod Std Japanese I
+
+Learned:
+CSC373H1  Algo Design & Analysis
+CSC384H1  Intro Artif Intell 
+CSC209H1  Soft Tools & Sys Prog
+CSC258H1  Computer Organizatn
+CSC263H1  Data Structures & Analysis
+CSC207H1  Software Design
+CSC236H1  Intro to Theory Comp
+CSC148H1  Intro to Comp Sci
+CSC165H1  Math Expr&Rsng for Cs
+CSC108H1  Intro to Comp Prog
+STA257H1  Probability & Stat I
+MAT235Y1  Calculus Sci II
+MAT223H1  Linear Algebra I
+MAT137Y1  Calculus!
+PHL245H1  Mod Symbolic Logic
+ECO100Y1  Intro Economics
+PSY100H1  Intro Psychology
+
+Going to learn:
+CSC301H1  Intro to Soft Eng
+CSC320H1  Intro Visual Compt 
+CSC358H1  Intro Comp Networks
+CSC369H1  Operating Systems
+STA248H1  Stats For Comp Sci

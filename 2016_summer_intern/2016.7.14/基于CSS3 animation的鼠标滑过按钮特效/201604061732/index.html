@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基于CSS3 animation的鼠标滑过按钮特效|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<script src="js/modernizr.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>基于CSS3 animation的鼠标滑过按钮特效 <span>Button Hover Effects</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/css3/css3donghua/201604063307.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="centerer">
+		  <h1>Just Some More</h1>
+		  <h1>Button Hover Effects</h1>
+		  <h4>By: <a href="http://kylebrumm.com">Kyle Brumm</a></h4>
+
+		  <div class="wrap">
+		    <a class="btn-0" href="#">Swipe</a>
+		    <a class="btn-1" href="#">Diagonal Swipe</a>
+		    <a class="btn-1-2" href="#">Double Swipe</a>
+		    <a class="btn-2" href="#">Diagonal Close</a>
+		    <a class="btn-3" href="#"><span>Zoning In</span></a>
+		    <a class="btn-4" href="#"><span>4 Corners</span></a>
+		    <a class="btn-5" href="#">Slice</a>
+		  </div>
+		  <div class="wrap">
+		    <a class="btn-6" href="#">Position Aware<span></span></a>
+		    <a class="btn-7" href="#"><span>Alternate</span></a>
+		    <a class="btn-8" href="#">Smoosh</a>
+		    <a class="btn-9" href="#"><span>Vertical Overlap</span></a>
+		    <a class="btn-10" href="#"><span>Horizontal Overlap</span></a>
+		    <a class="btn-11" href="#">Collision</a>
+		  </div>
+		</div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/css3/css3donghua/201603313284.html">
+			  <img src="related/1.jpg" width="300" alt="9种纯CSS3鼠标滑过彩色按钮动画特效"/>
+			  <h3>9种纯CSS3鼠标滑过彩色按钮动画特效</h3>
+			</a>
+			<a href="http://www.htmleaf.com/css3/ui-design/201602263152.html">
+			  <img src="related/2.jpg" width="300" alt="6种纯CSS3手绘风格卡通按钮设计效果"/>
+			  <h3>6种纯CSS3手绘风格卡通按钮设计效果</h3>
+			</a>
+		</div>
+	</div>
+	
+	<script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+	<script type="text/javascript">
+		$(function () {
+		    $('.btn-6').on('mouseenter', function (e) {
+		        var parentOffset = $(this).offset(), relX = e.pageX - parentOffset.left, relY = e.pageY - parentOffset.top;
+		        $(this).find('span').css({
+		            top: relY,
+		            left: relX
+		        });
+		    }).on('mouseout', function (e) {
+		        var parentOffset = $(this).offset(), relX = e.pageX - parentOffset.left, relY = e.pageY - parentOffset.top;
+		        $(this).find('span').css({
+		            top: relY,
+		            left: relX
+		        });
+		    });
+		    $('[href=#]').click(function () {
+		        return false;
+		    });
+		});
+	</script>
+</body>
+</html>

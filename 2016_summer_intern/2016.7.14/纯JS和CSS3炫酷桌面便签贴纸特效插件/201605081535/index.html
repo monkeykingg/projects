@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>纯JS和CSS3炫酷桌面便签贴纸特效插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<style type="text/css">
+	        ul, li {
+		    margin: 0;
+		    padding: 0;
+		    list-style: none;
+		    display: block;
+		    position: relative;
+		}
+		.heroes > ul {
+		    position: relative;
+		    margin: 10px auto 0 auto;
+		    width: 720px;
+		    height: 420px;
+		}
+		.heroes > ul > li {
+		    margin: 30px 30px 0 30px;
+		}
+
+	        .heroes-sticker, .example {
+	            width: 180px;
+	            height: 180px;
+	            float: left;
+	        }
+	        .heroes-1 .sticker-img {
+	            background-image: url(img/heroes-1.png);
+	        }
+	        .heroes-2 .sticker-img {
+	            background-image: url(img/heroes-2.png);
+	        }
+	        .heroes-3 .sticker-img {
+	            background-image: url(img/heroes-3.png);
+	        }
+	        .heroes-4 .sticker-img {
+	            background-image: url(img/heroes-4.png);
+	        }
+	        .heroes-5 .sticker-img {
+	            background-image: url(img/heroes-5.png);
+	        }
+	        .heroes-6 .sticker-img {
+	            background-image: url(img/heroes-6.png);
+	        }
+	        .color-1 .sticker-img{
+	        	background-color: #535F6F;
+	        }
+	        .color-2 .sticker-img{
+	        	background-color: #f1457c;
+	        }
+	        .color-3 .sticker-img{
+	        	background-color: #b0d153;
+	        }
+	        .example .sticker-shadow {
+	            opacity: 0.6;
+	        }
+	</style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>纯JS和CSS3炫酷桌面便签贴纸特效插件 <span>A Javascript library that allows you to create a Sticker Effect</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/css3/css3donghua/201605083439.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<section class="heroes">
+			<ul>
+				<li class="sticker heroes-sticker heroes-1"></li>
+				<li class="sticker heroes-sticker heroes-2"></li>
+				<li class="sticker heroes-sticker heroes-3"></li>
+				<li class="sticker heroes-sticker heroes-4"></li>
+				<li class="sticker heroes-sticker heroes-5"></li>
+				<li class="sticker heroes-sticker heroes-6"></li>
+				<li class="sticker color-1 example"></li>
+				<li class="sticker color-2 example"></li>
+				<li class="sticker color-3 example"></li>
+			</ul>
+		</section>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/css3/ui-design/201601022976.html">
+			  <img src="related/1.jpg" width="300" alt="纯CSS3实现图片双色调彩色滤光特效"/>
+			  <h3>纯CSS3实现图片双色调彩色滤光特效</h3>
+			</a>
+			<a href="http://www.htmleaf.com/css3/css3donghua/201603153216.html">
+			  <img src="related/2.jpg" width="300" alt="imagehover.css-纯CSS3鼠标滑过图片效果动画库"/>
+			  <h3>imagehover.css-纯CSS3鼠标滑过图片效果动画库</h3>
+			</a>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/sticker.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+	            Sticker.init('.sticker');
+	        }
+	</script>
+</body>
+</html>

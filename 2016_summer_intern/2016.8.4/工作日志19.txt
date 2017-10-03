@@ -1,0 +1,25 @@
+[工作日志-王志鸿]2016.8.4
+
+【一、今天的工作】
+
+1. 研究MVC。
+2. 学习spring。
+3. 学习springMVC。
+4. 学习Mybatis。
+
+【二、问题与分析】
+
+1. MyBatis是支持普通SQL查询，存储过程和高级映射的优秀持久层框架.
+2. MyEclipse和Eclipse的区别还是有的，在处理MyBatis上，双方的用户界面相当不一样。
+3. Mybatis和springMVC都需要引入各种类型的jar包，尽量想办法找到最新版本的包。
+
+【三、明天的计划】
+
+1. 研究springMVC。
+2. 学习Mybatis。
+3. 学习avalonjs
+
+【四、输出结果】
+
+web应用，见附件
+

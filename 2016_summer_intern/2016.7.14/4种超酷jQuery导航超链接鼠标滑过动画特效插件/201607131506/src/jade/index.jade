@@ -1,0 +1,62 @@
+- navArr = ['Home', 'Fashion', 'Lifestyles', 'Travels', 'Music', 'About us', 'Contact'];
+mixin navigation
+	ul
+		each item in navArr
+			if item == 'Home'
+				li.nav__item.active
+					a(href="#")= item
+			else
+				li.nav__item
+					a(href="#")= item
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Hover slippery
+		link(rel="stylesheet", href="css/style.css")
+		script(type='text/javascript' src='../bower_components/jquery/dist/jquery.min.js')
+	body
+		//- c = container
+		.c
+			//- t = title
+			h1.t Hover slippery
+			//- t-sm = small title (modifier)
+			h2.t--sm jQuery plugin
+			//- Def navigation
+			h3.space Default
+			nav.nav.default
+				+navigation
+			//- Twice border
+			h3 Twice border
+			nav.nav.twiceBorder
+				+navigation
+			//- Underline
+			h3 Underline
+			nav.nav.underline
+				+navigation
+			//- Underline
+			h3 overline
+			nav.nav.overline
+				+navigation
+
+		script(type='text/javascript' src='../dist/hoverSlippery.js')
+		script.
+			$(document).ready(function(){
+				//- Default 
+				$('.default').hoverSlippery();
+				//- Twice border
+				$('.twiceBorder').hoverSlippery({
+					border: true,
+					twiceBorder : true
+				})
+				//- Underline
+				$('.underline').hoverSlippery({
+					border: true,
+					underline: true
+				})
+				//- Overline
+				$('.overline').hoverSlippery({
+					border: true,
+					overline: true
+				})
+			})

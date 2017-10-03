@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html>
+
+<body bgcolor="#C0C0C0">
+
+<head>
+
+<script>
+
+function displayDate()
+{
+document.getElementById("demo1").innerHTML=Date();
+}
+
+function myFunction(x)
+{
+x.style.background="#87CEFA";
+}
+
+function myFunction3()
+{
+var x=document.getElementById("fname");
+x.value=x.value.toUpperCase();
+}
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+
+<style type="text/css">
+
+h1 {color: black}
+
+div.container
+{
+width:100%;
+margin:0px;
+border:1px #1E90FF;
+line-height:200%;
+}
+div.header,div.footer
+{
+padding:1em;
+color:white;
+background-color:#1E90FF;
+clear:left;
+}
+h1.header
+{
+padding:5;
+margin:0;
+}
+div.left
+{
+float:left;
+width:160px;
+margin:0;
+padding:1em;
+}
+div.content
+{
+margin-left:200px;
+border-left:10px blue;
+padding:1em;
+}
+</style>
+
+<style>
+
+body 
+{
+background-image:url('http://7xw4st.com1.z0.glb.clouddn.com/me3.gif');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:right top;
+}
+
+p.ex {color:rgb(0,0,255);}
+
+p.date {text-align:right;}
+
+p.main {text-align:justify;}
+
+h2 {text-align:center;}
+h2 {color: red}
+
+p {text-indent:30px;}
+
+a:link,a:visited
+{
+display:block;
+font-weight:bold;
+color:#FF4500;
+background-color:#87CEFA;
+width:120px;
+text-align:center;
+padding:4px;
+text-decoration:none;
+}
+a:hover,a:active
+{
+background-color:#8470FF;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+</style>
+
+<script type="text/javascript">
+<!--
+//-->
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header"><h1 class="header">测试用网页</h1></div>
+
+<div class="left">
+
+<button onclick="this.innerHTML=Date()">显示日期与时间</button>
+
+<p></p>
+<p></p>
+
+<a href="#pos">跳转至工作日志</a>
+
+<script>
+function myFunction2()
+{
+try
+{ 
+var x=document.getElementById("demo2").value;
+if(x=="")    throw "值为空";
+if(isNaN(x)) throw "不是数字";
+if(x>2007)     throw "太大";
+if(x<2007)      throw "太小";
+if(x==2007)     throw "正确";
+}
+catch(err)
+{
+var y=document.getElementById("mess");
+y.innerHTML= err;
+}
+}
+</script>
+
+<h1>Quiz</h1>
+<p>请问质量效应初代的发行年份是？：</p>
+<input id="demo2" type="text" onfocus="myFunction(this)">
+<button type="button" onclick="myFunction2()">输入数字</button>
+<p id="mess"></p>
+
+<button id="myBtn">提示</button>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", function(){
+    alert("2007");
+});
+</script>
+
+<h1>字母大写转换器</h1>
+<input type="text" id="fname" onfocus="myFunction(this)" onchange="myFunction3()">
+
+<h1>Email</h1>
+
+<div class="dropdown">
+  <button class="dropbtn">邮件地址列表</button>
+  <div class="dropdown-content">
+    <a href="mailto:zhanggt@itep.com.cn">张贵潭</a>
+    <a href="mailto:li-nj@itep.com.cn">李年健</a>
+    <a href="mailto:machao0597@163.com">马超</a>
+    <a href="mailto:linyy@itep.com.cn">林尧禹</a>
+  </div>
+</div>
+
+</div>
+
+<div class="content">
+
+<h1>Tutorials</h1>
+
+<a href="http://www.runoob.com/js/js-tutorial.html" target="_blank">
+1. Javascript</a>
+<p>书籍：《Javascript面向对象编程》</p>
+<hr />
+
+<a href="http://www.runoob.com/htmldom/htmldom-tutorial.html" target="_blank">
+2. HTML DOM</a>
+<p>备注：访问节点、访问属性、修改节点、事件</p>
+<hr />
+
+<a href="http://www.runoob.com/jquery/jquery-tutorial.html" target="_blank">
+3. jQuery</a>
+<p>备注：jQuery选择器、jQuery事件、jQuery操作HTML、jQuery的Ajax</p>
+<hr />
+
+<a href="http://www.runoob.com/css/css-tutorial.html" target="_blank">
+4. CSS</a>
+<hr />
+
+<a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank">
+5. 前端UI框架 Bootstrap</a>
+<br />
+<br />
+<a href="http://v3.bootcss.com" target="_blank">
+官网</a>
+<p>备注：珊格系统、表格、表单、按钮、图片、Javascript组件、Javascript插件（模态框、弹出框等）</p>
+<hr />
+
+<a href="http://www.runoob.com/highcharts/highcharts-tutorial.html" target="_blank">
+6. 前端主流图表插件 Highcharts</a>
+<p>备注：平时主要用到 条形图、柱形图、饼图以及曲线图</p>
+<hr />
+
+<a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank">
+7. AngularJS</a>
+<hr />
+
+<a href="http://space.bilibili.com/226875" target="_blank">
+<img src="http://7xw4st.com1.z0.glb.clouddn.com/ME3-3.png" width="1280" height="720" alt="My space" />
+</a>
+
+<p><a href="http://7xw4st.com1.z0.glb.clouddn.com/joker.mp3">play music</a></p>
+
+<p><a href="http://7xw4st.com1.z0.glb.clouddn.com/mmd.mp4">play video</a></p>
+
+<p id="pos">.</p>
+<h2>工作日志01</h2>
+
+<p class="date">2016.7.8</p>
+
+<p class="main">1. 今天的工作</p>
+<p class="main">今天学习了HTML的基础知识，包括HTML的元素、属性、标题、段落、格式化、样式、链接、背景、颜色、图像、音频、视频等，并尝试应用。</p>
+
+<p class="main">2. 问题与分析</p>
+<p class="main">html如何与Javascript、CSS达成联动？如何更合理地在网页中添加图片、音频与视频？如何制作出对用户友善的网页？
+我认为对于网页来说，可读性十分重要。所以我们在设计网页时，一定要注意好兼容性，尽量避免或减轻因为不同用户的浏览器版本不同而造成的网页可读性下降的问题，比如无法显示图像、音频、视频等。在写代码时，也要保证语法细节上的正确以及通用，因为有些语法虽然在某些浏览器中没有问题，但是在其他的浏览器中会导致出错。最后要善于利用外部样式等影响全局的操作手段，有效节省时间。</p>
+
+<p class="main">3. 明天的计划</p>
+<p>学习CSS、Javascript并研究它们之间的联动。</p>
+
+<p class="main">4. 输出结果</p>
+<p class="main"><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用html</a></p>
+
+<h2>工作日志02</h2>
+
+<p class="date">2016.7.11</p>
+
+<h4>一、今天的工作</h4>
+<p >1. 学习CSS，包括语法、选择器、样式、框模型、定位等</p>
+<p >2. 初步学习JavaScript</p>
+<p >3. 研究HTML与CSS的联动</p>
+
+<h4>二、问题与分析</h4>
+<p >1. 直接在head里设置UTF-8会导致中文乱码，使用选择内置中文即可。</p>
+<p >2. 设置边框时，默认的边框会框住网页从左至右的所有区域，即使需要框住的文本很少。调整内边距能有效解决问题。</p>
+<p >3. 设置字体时，可能会遇到用户没有特定字体而无法显示网页内容的问题。可以通过设置多种备用字体来解决。</p>
+<p >4. 创建标题、段落或行时没有关闭，导致乱码。一定要牢记关闭符。</p>
+<p >5. 设置成背景的图片会失去除了背景以外功能。也就是说，无法添加隐藏、去除等用户可以使用的特殊属性。</p>
+
+<h4>三、明天的计划</h4>
+<p>1. 深入学习JavaScript，研究它与HTML、CSS的联动。</p>
+
+<h4>四、输出结果</h4>
+<p ><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用html</a></p>
+
+<h2 onmouseover="style.color='blue'" onmouseout="style.color='red'">工作日志03</h2>
+
+<p class="date">2016.7.12</p>
+
+<h4>一、今天的工作</h4>
+<p >1. 学习JavaScript以及HTML DOM，包括输出、语句、语法、注释、变量、数据类型、对象、函数、运算符、比较、事件、循环、错误等。</p>
+<p >2. 研究JavaScript在网页内的行为，并应用。</p>
+<p >3. 尝试研究已有网页的源代码并拆解原网页。</p>
+
+<h4>二、问题与分析</h4>
+<p >1. 保存任意网页后再用Visual Studio Code打开，有很大几率会出现中文乱码。解决方案：先将文件扩展名（html）改为txt，另存为utx-8的格式后再将扩展名改回html。</p>
+<p >2. 拆解已有网页时，容易出现明明没有删除某内容，但是网页里对应的某内容消失的问题。解决方案：先仔细阅读head部分，如果无问题再仔细查看div、h、p等body内部块元素是否有缺失自己对应的头尾的现象。</p>
+<p >3. 函数重名时，网页最后显示出的结果来自于最末行的同名函数。</p>
+
+<h4>三、明天的计划</h4>
+<p>1. 深入研究JavaScript与HTML DOM。</p>
+
+<h4>四、输出结果</h4>
+<p ><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用网页与拆解后网页</a></p>
+
+</div>
+
+<div class="footer">测试用网页</div>
+</div>
+
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+
+</body>
+</html>

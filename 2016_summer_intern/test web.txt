@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+
+<body bgcolor="#C0C0C0">
+
+<head>
+
+<script>
+function displayDate()
+{
+document.getElementById("demo").innerHTML=Date();
+}
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+
+<style type="text/css">
+h1 {color: red}
+</style>
+
+<style>
+
+p.serif{font-family:"Times New Roman",Times,serif;}
+p.sansserif{font-family:Arial,Helvetica,sans-serif;}
+
+body 
+{
+background-image:url('http://7xw4st.com1.z0.glb.clouddn.com/me3.gif');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:right top;
+}
+
+p.ex {color:rgb(0,0,255);}
+
+p.date {text-align:right;}
+
+p.main {text-align:justify;}
+
+h2 {text-align:center;}
+h2 {color: red}
+
+p {text-indent:30px;}
+
+a:link,a:visited
+{
+display:block;
+font-weight:bold;
+color:#FF4500;
+background-color:#87CEFA;
+width:120px;
+text-align:center;
+padding:4px;
+text-decoration:none;
+}
+a:hover,a:active
+{
+background-color:#8470FF;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<p id="demo">Javascript test</p>
+<button type="button" onclick="displayDate()">显示日期</button>
+
+<h1>Email</h1>
+
+<div class="dropdown">
+  <button class="dropbtn">邮件地址列表</button>
+  <div class="dropdown-content">
+    <a href="mailto:zhanggt@itep.com.cn">张贵潭</a>
+    <a href="mailto:li-nj@itep.com.cn">李年健</a>
+    <a href="mailto:machao0597@163.com">马超</a>
+    <a href="mailto:linyy@itep.com.cn">林尧禹</a>
+  </div>
+</div>
+
+<h1>Tutorials</h1>
+
+<a href="http://www.runoob.com/js/js-tutorial.html" target="_blank">
+1. Javascript</a>
+<p>书籍：《Javascript面向对象编程》</p>
+<hr />
+
+<a href="http://www.runoob.com/htmldom/htmldom-tutorial.html" target="_blank">
+2. HTML DOM</a>
+<p>备注：访问节点、访问属性、修改节点、事件</p>
+<hr />
+
+<a href="http://www.runoob.com/jquery/jquery-tutorial.html" target="_blank">
+3. jQuery</a>
+<p>备注：jQuery选择器、jQuery事件、jQuery操作HTML、jQuery的Ajax</p>
+<hr />
+
+<a href="http://www.runoob.com/css/css-tutorial.html" target="_blank">
+4. CSS</a>
+<hr />
+
+<a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank">
+5. 前端UI框架 Bootstrap</a>
+<br />
+<br />
+<a href="http://v3.bootcss.com" target="_blank">
+官网</a>
+<p>备注：珊格系统、表格、表单、按钮、图片、Javascript组件、Javascript插件（模态框、弹出框等）</p>
+<hr />
+
+<a href="http://www.runoob.com/highcharts/highcharts-tutorial.html" target="_blank">
+6. 前端主流图表插件 Highcharts</a>
+<p>备注：平时主要用到 条形图、柱形图、饼图以及曲线图</p>
+<hr />
+
+<a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank">
+7. AngularJS</a>
+<hr />
+
+<a href="http://space.bilibili.com/226875" target="_blank">
+<img src="http://7xw4st.com1.z0.glb.clouddn.com/ME3-3.png" width="1280" height="720" alt="My space" />
+</a>
+
+<p><a href="http://7xw4st.com1.z0.glb.clouddn.com/joker.mp3">play music</a></p>
+
+<p><a href="http://7xw4st.com1.z0.glb.clouddn.com/mmd.mp4">play video</a></p>
+
+
+<h2>工作日志01</h2>
+
+<p class="date">2016.7.8</p>
+
+<p class="main">1. 今天的工作</p>
+<p class="main">今天学习了HTML的基础知识，包括HTML的元素、属性、标题、段落、格式化、样式、链接、背景、颜色、图像、音频、视频等，并尝试应用。</p>
+
+<p class="main">2. 问题与分析</p>
+<p class="main">html如何与Javascript、CSS达成联动？如何更合理地在网页中添加图片、音频与视频？如何制作出对用户友善的网页？
+我认为对于网页来说，可读性十分重要。所以我们在设计网页时，一定要注意好兼容性，尽量避免或减轻因为不同用户的浏览器版本不同而造成的网页可读性下降的问题，比如无法显示图像、音频、视频等。在写代码时，也要保证语法细节上的正确以及通用，因为有些语法虽然在某些浏览器中没有问题，但是在其他的浏览器中会导致出错。最后要善于利用外部样式等影响全局的操作手段，有效节省时间。</p>
+
+<p class="main">3. 明天的计划</p>
+<p>学习CSS、Javascript并研究它们之间的联动。</p>
+
+<p class="main">4. 输出结果</p>
+<p class="main"><a href="http://pan.baidu.com/s/1bpmfCHT" target="_blank">
+测试用html</a></p>
+
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+
+</body>
+</html>

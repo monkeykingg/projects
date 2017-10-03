@@ -1,0 +1,7 @@
+javax.servlet cannot be resolved to a type
+String cannot be resolved to a type
+java cannot be resolved to a type
+Object cannot be resolved to a type
+Undefined attribute name (ms-controller)
+Undefined attribute name (ms-click).
+The word 'href' is not correctly spelled

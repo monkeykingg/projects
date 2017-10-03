@@ -1,0 +1,168 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  /*background: #efefef;
+  color: #121221;*/
+  font: 700 14px/1 Montserrat, sans-serif;
+  letter-spacing: 0.125em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn {
+  background: none;
+  border: 2px solid;
+  border-bottom-width: 4px;
+  font: inherit;
+  letter-spacing: inherit;
+  margin: 1em;
+  padding: 1em 2em;
+  text-transform: inherit;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+.btn-1 {
+  color: #9c89f7;
+}
+.btn-1:hover {
+  -webkit-animation: halftone 1s forwards;
+          animation: halftone 1s forwards;
+  background: -webkit-radial-gradient(circle, #9c89f7 0.2em, rgba(0, 0, 0, 0) 0.25em) 0 0/1.25em 1.25em, -webkit-radial-gradient(circle, #9c89f7 0.2em, rgba(0, 0, 0, 0) 0.25em) 6.25em 6.25em/1.25em 1.25em;
+  background: radial-gradient(circle, #9c89f7 0.2em, rgba(0, 0, 0, 0) 0.25em) 0 0/1.25em 1.25em, radial-gradient(circle, #9c89f7 0.2em, rgba(0, 0, 0, 0) 0.25em) 6.25em 6.25em/1.25em 1.25em;
+  color: #e4f789;
+}
+
+@-webkit-keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}
+
+@keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}
+.btn-2 {
+  color: #82f6d8;
+}
+.btn-2:hover {
+  -webkit-animation: stripes-move 0.75s infinite linear;
+          animation: stripes-move 0.75s infinite linear;
+  background: -webkit-repeating-linear-gradient(45deg, #82f6d8 0, #82f6d8 0.25em, transparent 0.25em, transparent 0.5em);
+  background: repeating-linear-gradient(45deg, #82f6d8 0, #82f6d8 0.25em, transparent 0.25em, transparent 0.5em);
+  color: #f682a0;
+}
+
+@-webkit-keyframes stripes-move {
+  100% {
+    background-position: 5em 0px;
+  }
+}
+
+@keyframes stripes-move {
+  100% {
+    background-position: 5em 0px;
+  }
+}
+.btn-3 {
+  color: #d3f169;
+}
+.btn-3:hover {
+  -webkit-animation: sawtooth 0.35s infinite linear;
+          animation: sawtooth 0.35s infinite linear;
+  background: -webkit-linear-gradient(45deg, #d3f169 0.5em, transparent 0.5em) 0 0/1em 1em, -webkit-linear-gradient(135deg, #d3f169 0.5em, transparent 0.5em) 0 0/1em 1em;
+  background: linear-gradient(45deg, #d3f169 0.5em, transparent 0.5em) 0 0/1em 1em, linear-gradient(-45deg, #d3f169 0.5em, transparent 0.5em) 0 0/1em 1em;
+  color: #8769f1;
+}
+
+@-webkit-keyframes sawtooth {
+  100% {
+    background-position: 1em 0;
+  }
+}
+
+@keyframes sawtooth {
+  100% {
+    background-position: 1em 0;
+  }
+}
+.btn-4 {
+  color: #eea163;
+}
+.btn-4:hover {
+  -webkit-animation: zigzag 1s linear infinite;
+          animation: zigzag 1s linear infinite;
+  background: -webkit-linear-gradient(315deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) -0.5em 0, -webkit-linear-gradient(225deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) -0.5em 0, -webkit-linear-gradient(135deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) 0 0, -webkit-linear-gradient(45deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) 0 0;
+  background: linear-gradient(135deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) -0.5em 0, linear-gradient(225deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) -0.5em 0, linear-gradient(315deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) 0 0, linear-gradient(45deg, rgba(238, 161, 99, 0.25) 0.25em, transparent 0.25em) 0 0;
+  background-size: 0.75em 0.75em;
+  color: #63b0ee;
+}
+
+@-webkit-keyframes zigzag {
+  100% {
+    background-position: 1em 0, 1em 0, -0.75em 0 , -0.75em 0;
+  }
+}
+
+@keyframes zigzag {
+  100% {
+    background-position: 1em 0, 1em 0, -0.75em 0 , -0.75em 0;
+  }
+}
+.btn-5 {
+  color: #7cf07f;
+}
+.btn-5:hover {
+  -webkit-animation: blinds 0.75s linear forwards;
+          animation: blinds 0.75s linear forwards;
+  background: -webkit-linear-gradient(90deg, #7cf07f 25%, transparent 25%) 0 0/0.5em 0.5em, -webkit-linear-gradient(90deg, #88d6f3 50%, transparent 50%) 0 0/1em 1em;
+  background: linear-gradient(0deg, #7cf07f 25%, transparent 25%) 0 0/0.5em 0.5em, linear-gradient(0deg, #88d6f3 50%, transparent 50%) 0 0/1em 1em;
+  color: #f07ced;
+}
+
+@-webkit-keyframes blinds {
+  100% {
+    background-position: 0 0, 0 -3em;
+    background-size: 0 0, 1em 6em;
+  }
+}
+
+@keyframes blinds {
+  100% {
+    background-position: 0 0, 0 -3em;
+    background-size: 0 0, 1em 6em;
+  }
+}
+.btn-6 {
+  color: #f9879b;
+}
+.btn-6:hover {
+  -webkit-animation: pulse 1s ease-in infinite;
+          animation: pulse 1s ease-in infinite;
+  background: -webkit-radial-gradient(circle, rgba(249, 135, 155, 0.25) 43%, rgba(0, 0, 0, 0) 50%) 0 0/1em 1em, -webkit-radial-gradient(circle, rgba(249, 135, 155, 0.25) 43%, rgba(0, 0, 0, 0) 50%) 0.5em 0.5em/2em 2em;
+  background: radial-gradient(circle, rgba(249, 135, 155, 0.25) 43%, rgba(0, 0, 0, 0) 50%) 0 0/1em 1em, radial-gradient(circle, rgba(249, 135, 155, 0.25) 43%, rgba(0, 0, 0, 0) 50%) 0.5em 0.5em/2em 2em;
+  color: #0bdcb7;
+}
+
+@-webkit-keyframes pulse {
+  50% {
+    background-position: 0.66em 0.66em, -0.33em -0.33em;
+  }
+  100% {
+    background-size: 2em 2em, 1em 1em;
+    background-position: -1.5em -1.5em, -1em -1em;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    background-position: 0.66em 0.66em, -0.33em -0.33em;
+  }
+  100% {
+    background-size: 2em 2em, 1em 1em;
+    background-position: -1.5em -1.5em, -1em -1em;
+  }
+}
