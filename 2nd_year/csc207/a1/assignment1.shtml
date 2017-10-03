@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.18.1), see www.w3.org">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="http://www.cdf.toronto.edu/~csc207h/fall/styles.css" type="text/css">
+        <title>
+            CSC207 &#8212; Assignment 1
+        </title>
+    </head>
+    <body>
+        <div class="title">
+            <h1>
+                Fall 2016 &#8212; Introduction to Software Design &#8212; Assignment 1
+            </h1>
+        </div>
+        <p>
+            <strong>Group size:</strong> Individual
+        </p>
+        <h2>
+            Learning objectives
+        </h2>
+        <ul>
+            <li>Use Git
+            </li>
+            <li>Use Eclipse to develop a full program
+            </li>
+            <li>Understand the basics of Java's type system
+            </li>
+            <li>Work with the file system using Java
+            </li>
+            <li>Implement concepts from CSC148 (trees and recursion) in Java
+            </li>
+            <li>Prepare you for A2, A3, and A4 &#8212; the concepts and code in this assignment will feed directly into the rest of the assignment sequence.
+            </li>
+        </ul>
+        <h2>
+            Due dates
+        </h2>
+        <p>
+            This assignment has two parts. We are extending the due date of Part 1 to <b>Friday 7 October at 11am</b>. We are extending the due date of Part 2 to <b>Friday 21 October at 11am</b>.
+        </p>
+        <h2>
+            Overview
+        </h2>
+        <p>
+            Part 1 has you practice working with Java in order to read the contents of a directory, as well as complete the code for a binary tree class.
+        </p>
+        <p>
+            Part 2 has you use more advanced Java concepts in order to build a tree representation of a directory and its contents. You will write a program that can list the contents of any directory on your hard drive. You will represent the directory tree structure using a tree of nodes. <b>This part of the handout will appear in a few days, and we will send an announcement when you should run <code>git pull</code>.</b>
+        </p>
+        <h2>
+            Getting set up
+        </h2>
+        <p>
+            You should have checked out your repository in order to read this handout. Inside that repository is a directory called <code>a1</code>, and it contains this handout. It also contains two subdirectories: <code>part1</code> and <code>part2</code>. Each of those has a subdirectory called <code>src</code>. Inside the <code>src</code> directories are directories for the Java packages used by the starter code, as well as the starter code itself.
+        </p>
+        <h2>
+            Part 1
+        </h2>
+        <h3>
+            Setting up Eclipse
+        </h3>
+        <p>
+            You will create an Eclipse project in the <code>a1/part1</code> directory. Here are the steps:
+        </p>
+        <ul>
+            <li>Start Eclipse using the default workspace.
+            </li>
+            <li>Create a new Java project. In the New Java Project dialog, name your project anything you like, but <b>don't use the default location</b>. Instead, uncheck the <code>Use default location</code> checkbox, click the <code>Browse</code> button, and navigate to the <code>part1</code> directory in your repository. Create the project in <code>part1</code>. (This will create a <code>bin</code> directory that is used by Eclipse. You should not add this directory to your repository.)
+            </li>
+        </ul>
+        <p>
+            In <code>part1</code> are two Java packages, <code>directory_viewer</code> and <code>binary_tree</code>.
+        </p>
+        <h3>
+            Printing the contents of a directory
+        </h3>
+        <p>
+            In Eclipse, open and run file <code>directory_viewer/DirectoryReader.java</code>. You should be prompted for a directory, and when you select one, the full path to that directory should be printed.
+        </p>
+        <p>
+            Now add code to method <code>main</code> to print the names of the files and directories inside the directory that is chosen, prefixed with a hyphen and a space. Print <code>/</code> after directory names. For example, if you select a directory <code>/u/users/pgries</code> that has a directory called <code>dir1</code> and two files called <code>f1.txt</code> and <code>f2.txt</code>, then this should be printed:
+        </p>
+        <pre>
+/u/users/pgries
+- dir1/
+- f1.txt
+- f2.txt
+</pre>
+        <p>
+            To accomplish this, you are going to need to explore Java's <code>java.io</code> package, and in particular class <a target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html"><code>java.io.File</code></a>.
+        </p>
+        <p>
+            Push your changes.
+        </p>
+        <h3>
+            Finishing a binary tree class
+        </h3>
+        <p>
+            We have provided starter code for a binary tree application in file <code>BinaryTree.java</code>. Search for "TODO" to find the parts you will complete.
+        </p>
+        <p>
+            When you are done, your code should print this:
+        </p>
+        <pre>
+()
+(A () ())
+(A () (B () ()))
+(A () (B (C () ()) ()))
+(A (D () ()) (B (C () ()) ()))
+</pre>
+        <p>
+            We will, of course, test with different trees.
+        </p>
+        <p>
+            Push your changes.
+        </p>
+        <h2>
+            Part 2: Coming soon
+        </h2>
+        <p>
+            This will be updated by the end of the weekend. We will send an announcement when we have modified this file, and you will be able to get the changes by running <code>git pull</code>.
+        </p>
+    </body>
+</html>

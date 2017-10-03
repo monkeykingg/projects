@@ -1,0 +1,194 @@
+Script started on Sat Mar 25 13:03:44 2017
+]0;wangz154@b2220-11:/h/u15/c5/00/wangz154/CSC209/wangz154/ex10b2220-11:~/CSC209/wangz154/ex10$ exitrandclient 127.0.0.1n[Krandclient 127.0.0.1n[Krandclient 127.0.0.1exit[K[Kgdb bufserver
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bufserver...done.
+(gdb) break main
+Breakpoint 1 at 0x400aee: file bufserver.c, line 65.
+(gdb) run
+Starting program: /h/u15/c5/00/wangz154/CSC209/wangz154/ex10/bufserver 
+
+Breakpoint 1, main () at bufserver.c:65
+65	int main() {
+(gdb) n
+77	  listenfd = setup();
+(gdb) n
+Listening on 30561
+79	    socklen = sizeof(peer);
+(gdb) n
+83	    if ((fd = accept(listenfd, (struct sockaddr *)&peer, &socklen)) < 0) {
+(gdb) n
+n 87	      printf("New connection on port %d\n", ntohs(peer.sin_port));
+(gdb) n
+New connection on port 39506
+90	      inbuf = 0;          // buffer is empty; has no bytes
+(gdb) n
+91	      room = sizeof(buf); // room == capacity of the whole buffer
+(gdb) n
+92	      after = buf;        // start writing at beginning of buf
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n
+96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+109	          buf[where] = '\n';
+(gdb) n
+110	          buf[where + 1] = '\0';
+(gdb) n
+112	          printf("Next message: %s", buf);
+(gdb) n
+Next message: A stitch in time
+119	          inbuf = inbuf - where - 2;
+(gdb) n
+124	          memmove(buf, buf + where + 2, inbuf);
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n
+n
+n
+n
+n
+96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) 
+n
+n
+96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n96			inbuf += nbytes;
+(gdb) nn 
+99			where = find_network_newline(buf, inbuf);
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+109	          buf[where] = '\n';
+(gdb) n
+110	          buf[where + 1] = '\0';
+(gdb) n
+112	          printf("Next message: %s", buf);
+(gdb) n
+Next message: A stitch in time
+119	          inbuf = inbuf - where - 2;
+(gdb) n
+124	          memmove(buf, buf + where + 2, inbuf);
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n96			inbuf += nbytes;
+(gdb) n
+99			where = find_network_newline(buf, inbuf);
+(gdb) b
+Breakpoint 2 at 0x400b79: file bufserver.c, line 99.
+(gdb) n
+101	        if (where >= 0) { // OK. we have a full line
+(gdb) n
+128	        room = sizeof(buf) - inbuf;
+(gdb) n
+129	        after = buf + inbuf;
+(gdb) n
+94	      while ((nbytes = read(fd, after, room)) > 0) {
+(gdb) n
+n96			inbuf += nbytes;
+(gdb) n quit
+A debugging session is active.
+
+	Inferior 1 [process 49106] will be killed.
+
+Quit anyway? (y or n) y
+]0;wangz154@b2220-11:/h/u15/c5/00/wangz154/CSC209/wangz154/ex10b2220-11:~/CSC209/wangz154/ex10$ exit
+exit
+
+Script done on Sat Mar 25 13:08:25 2017

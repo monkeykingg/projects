@@ -1,0 +1,1494 @@
+SteveCase
+Steve Case
+Washington DC
+http://www.revolution.com
+Co-founder of AOL; now Chairman of Case Foundation and Revolution (Zipcar, LivingSocial, Exclusive Resorts, Everyday Health, Revolution Money, Miraval, etc)
+ENDBIO
+mattcohler
+davemcclure
+paulg
+bhorowitz
+END
+gerrypower
+Gerry Power
+Toronto, Ontario
+http://gerrypower.wordpress.com/
+Passionate about Rails, Java, Objective-C and the high performance teams that put it all together!
+ENDBIO
+kenstruys
+drscan
+chanian
+michaelcvet
+JonasBrandon
+karaswisher
+gridcentric
+adinscannell
+viveklak
+google
+timtoronto
+END
+yorchopolis
+Jorge Aranda
+Toronto
+http://catenary.wordpress.com/
+I'm a PhD student at the University of Toronto studying communication and coordination in software teams.  I'm Mexican, vegetarian, and a boardgame collector.
+ENDBIO
+ifoox
+zuzelvp
+LilaFontes
+isaacezer
+swcarpentry
+mike_conley
+leilaboujnane
+dianelynnhorton
+irvingreid
+cjmuise
+andrewtrusty
+pgries
+giovannathron
+amgrubb555
+jonpipitone
+lmds
+timtoronto
+END
+irvingreid
+Irving Reid
+Toronto
+http://www.controlledflight.ca
+Used to do identity & access management s/w, now doing heath care IT
+ENDBIO
+yorchopolis
+hypatiadotca
+drscan
+zuzelvp
+AccordionGuy
+isaacezer
+codinghorror
+shazow
+swcarpentry
+asmartbear
+spolsky
+hyfen
+aran_donohue
+jddimarco
+torontoist
+dianelynnhorton
+adinscannell
+END
+garrytan
+Garry Tan
+San Francisco, CA
+http://garry.posterous.com
+Cofounder of posterous.com - I like to code and draw boxes.
+ENDBIO
+quixotic
+timoreilly
+paulg
+google
+bhorowitz
+newsycombinator
+END
+mattcohler
+Matt Cohler
+
+
+
+ENDBIO
+jack
+Caterina
+cshirky
+mlevchin
+fredwilson
+peterfenton
+TechCrunch
+marissamayer
+kevinrose
+quixotic
+arrington
+sacca
+BarackObama
+karaswisher
+END
+jack
+Jack Dorsey
+NYC & San Francisco
+
+Creator, Co-founder and Chairman of Twitter; CEO of Square.
+ENDBIO
+mattcohler
+sacca
+END
+kenstruys
+Ken Struys
+Toronto, Canada
+http://struys.ca
+Frontend developer. plt-racketeer (aka serious schemer).
+ENDBIO
+gerrypower
+paulg
+gvwilson
+dwf
+adinscannell
+viveklak
+isaacezer
+codinghorror
+shazow
+chanian
+drewhouston
+uoft_cs
+wolever
+michaelcvet
+spolsky
+timtoronto
+hyfen
+kevinrose
+timoreilly
+newsycombinator
+END
+cjmuise
+Christian Muise
+iPhone: 43.667969,-79.397385
+http://www.haz.ca/
+PhD student at the University of Toronto.
+ENDBIO
+yorchopolis
+gvwilson
+dwf
+andrewtrusty
+TheOnion
+zuzelvp
+LilaFontes
+lizblankenship
+wilw
+google
+alex77
+uoft_cs
+wolever
+plagal
+hyfen
+phyllers
+aran_donohue
+bwinton
+torontoist
+END
+gridcentric
+GridCentric Inc.
+Toronto
+http://www.gridcentriclabs.com
+GridCentric is a Toronto area Cloud Computing / Virtualization start-up.
+ENDBIO
+gerrypower
+chanian
+michaelcvet
+JonasBrandon
+timtoronto
+dwf
+adinscannell
+drscan
+viveklak
+soravanahalli
+END
+Caterina
+Caterina
+37.775201,-122.432742
+http://www.caterina.net
+Cofounder of Flickr and Hunch
+ENDBIO
+jack
+TEDchris
+marissamayer
+spolsky
+END
+dustinfreeman
+dustinfreeman
+Toronto, Canada
+http://www.dustinfreeman.org
+frantic leaning wind soar crunch the rubber fluffyburst sandbox
+ENDBIO
+ConanOBrien
+END
+ifoox
+Igor Foox
+Toronto, ON
+
+Zzzz
+ENDBIO
+shazow
+hyfen
+yorchopolis
+langel1234
+lmds
+wolever
+gvwilson
+isaacezer
+END
+paulg
+Paul Graham
+
+http://paulgraham.com
+
+ENDBIO
+garrytan
+ycombinator
+mlevchin
+fredwilson
+drewhouston
+paultoo
+cdixon
+quixotic
+sacca
+timoreilly
+davemcclure
+END
+ycombinator
+Y Combinator
+Mountain View
+http://ycombinator.com
+
+ENDBIO
+garrytan
+paulg
+mlevchin
+drewhouston
+paultoo
+sacca
+END
+cshirky
+Clay Shirky
+New York City
+http://www.Shirky.com/weblog/
+Bald. Unreliable. Easily distracte
+ENDBIO
+KatieS
+TEDchris
+marissamayer
+cdixon
+timoreilly
+drewhouston
+ericschmidt
+END
+rabois
+Keith Rabois
+SF, CA
+
+Internet entrepreneur, investor, contrarian
+ENDBIO
+jack
+Caterina
+cdixon
+garrytan
+paulg
+bhorowitz
+END
+vkhosla
+Vinod Khosla
+
+http://khoslaventures.com
+entrepreneurship zealot
+ENDBIO
+SteveCase
+mattcohler
+TechCrunch
+jack
+Caterina
+markpinc
+cshirky
+rabois
+marissamayer
+BillGates
+quixotic
+arrington
+TEDchris
+ericschmidt
+timoreilly
+fredwilson
+END
+gvwilson
+Greg Wilson
+Toronto, Ontario
+http://www.third-bit.com
+Data is zeroes and ones - software is zeroes and ones and hard work.
+ENDBIO
+yorchopolis
+irvingreid
+ifoox
+flaps
+TheOnion
+drscan
+zuzelvp
+LilaFontes
+lizblankenship
+VevWong
+AccordionGuy
+shazow
+jonpipitone
+jrrmzz
+langel1234
+uoft_cs
+swcarpentry
+mike_conley
+asmartbear
+lmds
+wolever
+spolsky
+timtoronto
+hyfen
+rtulk
+phyllers
+jaygoldman
+bwinton
+END
+KatieS
+Katie Jacobs Stanton
+San Francisco, California
+http://www.twitter.com
+Mom of 3. Twitter Globetrotter.  Cupcake Connoisseur. 
+ENDBIO
+ycombinator
+cdixon
+mlevchin
+peterfenton
+paultoo
+kevinrose
+arrington
+END
+aplusk
+ashton kutcher
+Los Angeles, California
+http://www.facebook.com/Ashton
+I make stuff, actually I make up stuff, stories mostly, collaborations of thoughts, dreams, and actions. Thats me.
+ENDBIO
+marissamayer
+markpinc
+END
+dwf
+Dave W-F
+Cote-des-Neiges, Montreal
+http://www-etud.iro.umontreal.ca/~wardefar/
+Machine learning PhD student at U de Montreal. U of Toronto (CS) expatriate. Python addict, politics wonk, armchair media critic, lapsed musician.
+ENDBIO
+gridcentric
+adinscannell
+viveklak
+END
+andrewtrusty
+andrewtrusty
+Toronto
+http://andrewtrusty.com/
+programmer, entrepreneur, environmental activist
+ENDBIO
+codinghorror
+shazow
+mike_conley
+dustinfreeman
+wolever
+gvwilson
+hyfen
+hypatiadotca
+rtulk
+aran_donohue
+bwinton
+END
+flaps
+Alan Rosenthal
+southern Ontario
+
+Sysadmin
+ENDBIO
+irvingreid
+yorchopolis
+gvwilson
+hypatiadotca
+zuzelvp
+pgries
+amgrubb555
+lizblankenship
+alex77
+lmds
+wolever
+plagal
+karenreid
+jddimarco
+dianelynnhorton
+END
+hypatiadotca
+Leigh Honeywell
+Toronto, Ontario, Canada, CA
+http://hypatia.ca/about
+Belated undergrad, @HackLabTO co-founder, security consultant, Ubuntu member, geek feminist.
+ENDBIO
+END
+TheOnion
+The Onion
+New York, NY
+http://www.theonion.com
+America's Finest News Source
+ENDBIO
+END
+adinscannell
+Adin Scannell
+Toronto
+http://www.gridcentriclabs.com
+Software gearhead, technology addict, founder / CTO @gridcentric
+ENDBIO
+kenstruys
+AccordionGuy
+shazow
+asmartbear
+michaelcvet
+JonasBrandon
+quixotic
+leilaboujnane
+sacca
+davemcclure
+BarackObama
+karenreid
+torontoist
+irvingreid
+fredwilson
+wilw
+uoft_cs
+kevinrose
+newsycombinator
+END
+TEDchris
+Chris Anderson
+New York City
+http://www.ted.com
+TED = Ideas worth spreading!
+ENDBIO
+karaswisher
+aplusk
+google
+markpinc
+BillGates
+ericschmidt
+END
+drscan
+David Scannell
+
+http://david.scannell.ca
+
+ENDBIO
+gerrypower
+irvingreid
+gridcentric
+ifoox
+gvwilson
+dwf
+flaps
+adinscannell
+viveklak
+AccordionGuy
+codinghorror
+shazow
+jonpipitone
+langel1234
+lmds
+wolever
+michaelcvet
+timtoronto
+hyfen
+rtulk
+karenreid
+bwinton
+soravanahalli
+END
+zuzelvp
+Zuzel Vera
+Toronto
+http://zuzelvp47uoft.wordpress.com
+Grad student at UofT
+ENDBIO
+irvingreid
+yorchopolis
+cjmuise
+gvwilson
+flaps
+VevWong
+AccordionGuy
+jrrmzz
+mike_conley
+wolever
+plagal
+rtulk
+phyllers
+aran_donohue
+karenreid
+bwinton
+END
+mlevchin
+Max Levchin
+SF, CA
+http://www.slide.com
+entrepreneur (PayPal, Slide), investor (Yelp, etc), l33t h@x0r, cyclist
+ENDBIO
+mattcohler
+jack
+Caterina
+rabois
+TechCrunch
+marissamayer
+cdixon
+sacca
+karaswisher
+SteveCase
+vkhosla
+fredwilson
+peterfenton
+markpinc
+kevinrose
+BillGates
+ericschmidt
+END
+pgries
+Paul Gries
+
+
+
+
+
+ENDBIO
+irvingreid
+yorchopolis
+alex77
+mike_conley
+lmds
+wolever
+cssu
+gvwilson
+plagal
+dwf
+hyfen
+flaps
+karenreid
+jddimarco
+bwinton
+isaacezer
+dianelynnhorton
+END
+giovannathron
+Giovanna Thron
+Toronto
+
+
+ENDBIO
+yorchopolis
+dustinfreeman
+plagal
+dwf
+andrewtrusty
+rtulk
+aran_donohue
+BarackObama
+LilaFontes
+amgrubb555
+END
+fredwilson
+Fred Wilson
+New York City
+http://avc.com
+I am a VC
+ENDBIO
+mattcohler
+Caterina
+KatieS
+marissamayer
+BarackObama
+paulg
+vkhosla
+ConanOBrien
+bhorowitz
+BillGates
+END
+LilaFontes
+LilaFontes
+North America
+http://lilaprime.blogspot.com
+CS grad student, easily delighted by reality's ridiculousness.
+ENDBIO
+yorchopolis
+cjmuise
+dustinfreeman
+gvwilson
+andrewtrusty
+rtulk
+aran_donohue
+END
+amgrubb555
+aqs des
+
+
+
+ENDBIO
+jrrmzz
+yorchopolis
+dustinfreeman
+rtulk
+aran_donohue
+BarackObama
+giovannathron
+LilaFontes
+END
+viveklak
+Vivek Lakshmanan
+Toronto, ON
+http://www.gridcentriclabs.com
+Storage Lead at GridCentric Inc., systems software developer, and all round nice guy.
+ENDBIO
+gerrypower
+kenstruys
+gridcentric
+ifoox
+gvwilson
+dwf
+adinscannell
+drscan
+shazow
+jrrmzz
+chanian
+langel1234
+google
+TechCrunch
+uoft_cs
+lmds
+michaelcvet
+timtoronto
+hyfen
+newsycombinator
+soravanahalli
+END
+lizblankenship
+lizblankenship
+
+http://www.lizblankenship.com
+
+ENDBIO
+shazow
+mike_conley
+wolever
+hyfen
+phyllers
+karenreid
+irvingreid
+cjmuise
+gvwilson
+VevWong
+bwinton
+END
+VevWong
+Veronica Wong
+Toronto, Ontario
+http://www.signedbyv.com
+CompSci @ U of T; Information Achitect @ Mindblossom; artist; designer; cyclist
+ENDBIO
+gvwilson
+zuzelvp
+lizblankenship
+mike_conley
+wolever
+cssu
+hyfen
+phyllers
+jaygoldman
+karenreid
+bwinton
+dianelynnhorton
+END
+wilw
+Wil Wheaton
+Los Angeles
+http://bit.ly/cJ8Hst
+I'm just this guy, you know?
+ENDBIO
+ConanOBrien
+END
+AccordionGuy
+Joey deVilla
+Toronto, Ontario, Canada
+http://joeydevilla.com
+Developer Evangelist at Microsoft in Toronto, Thrilla from Manila, rock and roll accordion player, casual cyclist, clotheshorse and all-round bon vivant.
+ENDBIO
+TEDchris
+arrington
+END
+isaacezer
+isaacezer
+Tokyo
+http://isaacezer.com
+Canadian In Tokyo to play jazz, lindy-hop and write software
+ENDBIO
+kenstruys
+BarackObama
+TheOnion
+langel1234
+markpinc
+END
+peterfenton
+Peter Fenton
+UT: 34.043732,-118.256163
+http://www.benchmark.com
+Rookie father
+ENDBIO
+cshirky
+timoreilly
+BarackObama
+davemcclure
+karaswisher
+paulg
+vkhosla
+ConanOBrien
+arrington
+END
+codinghorror
+Jeff Atwood
+Bay Area, CA
+http://www.codinghorror.com/blog
+Is it more interesting to talk about software than it is to develop software?
+ENDBIO
+cshirky
+fredwilson
+AccordionGuy
+spolsky
+timoreilly
+END
+shazow
+Andrey Petrov
+Palo Alto, CA
+http://shazow.net/
+stickfigure artist, js+py coder, scifi lover, sporadic writer, aspiring world dominator.
+ENDBIO
+ycombinator
+drscan
+michaelcvet
+marissamayer
+paulg
+adinscannell
+viveklak
+wilw
+END
+jonpipitone
+Jon Pipitone
+
+
+
+ENDBIO
+jrrmzz
+andrewtrusty
+yorchopolis
+alex77
+mike_conley
+giovannathron
+gvwilson
+END
+jrrmzz
+Jason
+Toronto
+
+I shoot people.  With cameras.  Usually ;)
+ENDBIO
+yorchopolis
+rtulk
+aran_donohue
+gvwilson
+END
+chanian
+Ian Chan
+Toronto -> San Francisco
+http://chanian.com
+Coding, ui, ux, usability and creating fun software that's easy to use. I am an Engineer at Twitter
+ENDBIO
+ycombinator
+cshirky
+paulg
+viveklak
+wilw
+bhorowitz
+END
+drewhouston
+Drew Houston
+San Francisco, CA
+http://www.dropbox.com
+Founder/CEO of Dropbox
+ENDBIO
+ycombinator
+cshirky
+marissamayer
+cdixon
+garrytan
+paulg
+markpinc
+BillGates
+ericschmidt
+END
+langel1234
+Lillian Angel
+Toronto, ON
+
+
+ENDBIO
+drscan
+michaelcvet
+BarackObama
+karenreid
+aplusk
+viveklak
+google
+ConanOBrien
+lmds
+END
+google
+A Googler
+Mountain View, CA
+http://www.google.com/support/
+News and updates from Google
+ENDBIO
+KatieS
+fredwilson
+arrington
+END
+ConanOBrien
+Conan O'Brien
+Los Angeles
+http://teamcoco.com
+I had a show. Then I had a different show. Now I have a Twitter account.
+ENDBIO
+END
+alex77
+Neil Ernst
+Toronto
+http://neilernst.net
+An essentially private man who wished his total indifference to public notice to be universally recognized. 
+ENDBIO
+gvwilson
+jonpipitone
+uoft_cs
+END
+TechCrunch
+TechCrunch
+Silicon Valley
+http://www.techcrunch.com
+Breaking Technology News And Opinions From TechCrunch
+ENDBIO
+END
+bhorowitz
+bhorowitz
+
+http://bhorowitz.com
+
+ENDBIO
+peterfenton
+SteveCase
+TechCrunch
+markpinc
+paulg
+kevinrose
+quixotic
+arrington
+karaswisher
+fredwilson
+END
+uoft_cs
+Computer Science UoT
+Toronto, Canada
+http://www.cs.toronto.edu
+The Computer Science Department at the University of Toronto.
+ENDBIO
+END
+swcarpentry
+Software Carpentry
+Science
+http://software-carpentry.org/
+
+ENDBIO
+gvwilson
+END
+mike_conley
+Mike Conley
+Toronto
+http://www.mikeconley.ca
+CS Grad Student at UofT. HBSc in CompSci+Drama. Web Dev'ing in Django, Rails, etc.
+ENDBIO
+yorchopolis
+hypatiadotca
+zuzelvp
+codinghorror
+jrrmzz
+swcarpentry
+asmartbear
+leilaboujnane
+aran_donohue
+torontoist
+flaps
+TheOnion
+VevWong
+wilw
+jonpipitone
+uoft_cs
+plagal
+rtulk
+END
+markpinc
+mark pincus
+sf
+http://markpincus.typepad.com
+
+ENDBIO
+mattcohler
+Caterina
+TEDchris
+marissamayer
+quixotic
+sacca
+davemcclure
+BarackObama
+SteveCase
+vkhosla
+aplusk
+mlevchin
+peterfenton
+kevinrose
+ericschmidt
+END
+asmartbear
+Jason Cohen
+Austin, TX
+http://blog.asmartbear.com
+Founder, Smart Bear Software; Blogger about startups + marketing + geekery
+ENDBIO
+timoreilly
+davemcclure
+END
+lmds
+Laurie MacDougall S.
+Toronto
+
+Software developer in healthcare, hammock enthusiast, cookie lover, married lady.  (Laurie MacDougall Sookraj, name now too long to fit in the field)
+ENDBIO
+drscan
+gridcentric
+aplusk
+TheOnion
+viveklak
+langel1234
+END
+wolever
+David Wolever
+Waterloo, Ontario
+http://wolever.net/~wolever/
+
+ENDBIO
+kenstruys
+drscan
+zuzelvp
+chanian
+swcarpentry
+VevWong
+END
+cssu
+CSSU
+Toronto, Canada
+http://www.cssu.ca
+We are the Computer Science Student Union at the University of Toronto
+ENDBIO
+uoft_cs
+phyllers
+pgries
+karenreid
+VevWong
+torontoist
+dianelynnhorton
+END
+michaelcvet
+Mike Cvet
+Toronto
+http://mikecvet.wordpress.com
+I'm a co-founder at Thoora, into software, math, grindcore, death metal, and politics
+ENDBIO
+ifoox
+drscan
+codinghorror
+shazow
+marissamayer
+spolsky
+JonasBrandon
+hyfen
+timoreilly
+BarackObama
+gerrypower
+gridcentric
+paulg
+gvwilson
+adinscannell
+viveklak
+langel1234
+uoft_cs
+timtoronto
+BillGates
+arrington
+ericschmidt
+newsycombinator
+END
+marissamayer
+marissamayer
+San Francisco, CA
+http://www.google.com/corporate/execs.html#marissa
+Search @ Google
+ENDBIO
+mattcohler
+jack
+Caterina
+ycombinator
+rabois
+KatieS
+TEDchris
+BarackObama
+SteveCase
+paulg
+vkhosla
+mlevchin
+ConanOBrien
+markpinc
+paultoo
+kevinrose
+BillGates
+ericschmidt
+END
+plagal
+Michalis Famelis
+Toronto, ON
+http://tinyurl.com/michalis
+full-time Software Engineering grad at UofT, part-time armchair marxist revolutionary
+ENDBIO
+END
+spolsky
+Joel Spolsky
+New York, NY
+http://www.joelonsoftware.com
+Co-founder of Fog Creek Software and Stack Overflow
+ENDBIO
+Caterina
+paulg
+cshirky
+fredwilson
+codinghorror
+asmartbear
+marissamayer
+kevinrose
+cdixon
+BillGates
+BarackObama
+END
+JonasBrandon
+Jonas Brandon
+Toronto
+http://www.startupnorth.ca
+Hello World!
+ENDBIO
+Caterina
+rabois
+hypatiadotca
+marissamayer
+quixotic
+sacca
+paulg
+paultoo
+END
+timtoronto
+Tim Smith
+Toronto
+
+Systems hacker / co-founder / CEO at GridCentric Inc.
+ENDBIO
+kenstruys
+drscan
+chanian
+michaelcvet
+soravanahalli
+gerrypower
+gridcentric
+adinscannell
+viveklak
+rtulk
+END
+paultoo
+Paul Buchheit
+San Francisco, CA
+http://friendfeed.com/paul
+
+ENDBIO
+jack
+ycombinator
+rabois
+TechCrunch
+marissamayer
+timoreilly
+paulg
+TheOnion
+fredwilson
+peterfenton
+google
+ConanOBrien
+kevinrose
+ericschmidt
+END
+hyfen
+Andrew Louis
+Toronto
+http://hyfen.net
+I work at @Torontoist, help run @UCOSP, organize @CUSEC (a student software conference), develop software for @HotInk (in Ruby on Rails), and blog at hyfen.net
+ENDBIO
+drscan
+swcarpentry
+michaelcvet
+JonasBrandon
+timoreilly
+torontoist
+garrytan
+paulg
+adinscannell
+viveklak
+END
+kevinrose
+Kevin Rose
+San Francisco, CA
+http://kevinrose.com
+Tech angel investor. Founder of digg.com, wefollow.com. Random ideas, entrepreneur, climber of rocks, video blogger, & tea drinker.
+ENDBIO
+ycombinator
+rabois
+SteveCase
+paulg
+mlevchin
+bhorowitz
+markpinc
+END
+cdixon
+chris dixon
+nyc
+http://cdixon.org
+http://hunch.com
+http://bit.ly/cdixon
+http://about.me/cdixon
+ENDBIO
+SteveCase
+TheOnion
+END
+BillGates
+Bill Gates
+Seattle, WA
+http://www.thegatesnotes.com
+Sharing cool things I'm learning through my foundation work and other interests...
+ENDBIO
+vkhosla
+KatieS
+aplusk
+TEDchris
+TechCrunch
+BarackObama
+karaswisher
+END
+quixotic
+Reid Hoffman
+Palo Alto, CA
+http://www.linkedin.com/in/reidhoffman
+Entrepreneur. Investor. Strategist. 
+ENDBIO
+jack
+cshirky
+rabois
+TEDchris
+TechCrunch
+karaswisher
+kevinrose
+END
+arrington
+Michael Arrington
+Palo Alto, CA
+http://www.techcrunch.com
+TechCrunch founder. Dog Lover. Sometimes I'm a robot. 
+ENDBIO
+drewhouston
+END
+rtulk
+Rory Tulk
+Toronto
+http://rorytulk.com
+Rory Tulk is a software engineer working, living, and sailing in downtown Toronto.
+ENDBIO
+jrrmzz
+yorchopolis
+alex77
+mike_conley
+gvwilson
+plagal
+andrewtrusty
+TheOnion
+jaygoldman
+pgries
+aran_donohue
+giovannathron
+LilaFontes
+amgrubb555
+bwinton
+wilw
+END
+sacca
+Chris Sacca
+San Francisco and Truckee, CA
+http://www.whatisleft.org
+I'm an investor in Twitter & other startups. Learn more at www.lowercasellc.com. Just finished bicycling across the USA and am thinking about my next adventure.
+ENDBIO
+TechCrunch
+paulg
+bhorowitz
+END
+leilaboujnane
+Leila Boujnane (CEO)
+Toronto
+http://ideeinc.com
+TinEye.com creator. Image Search. Image Recognition. Co-organizer #HoHoTo & DemoCamp. Founder of Hackto. Blogs @ http://hyperbio.net  Toronto
+ENDBIO
+jack
+spolsky
+soravanahalli
+garrytan
+paulg
+drewhouston
+bhorowitz
+newsycombinator
+END
+ericschmidt
+Eric Schmidt
+Mountain View, CA
+http://www.google.com
+CEO Google
+ENDBIO
+vkhosla
+aplusk
+TheOnion
+google
+ConanOBrien
+TechCrunch
+marissamayer
+BillGates
+sacca
+END
+phyllers
+Phyliss Lee
+
+http://phyllers.wordpress.com/
+
+ENDBIO
+shazow
+cjmuise
+mike_conley
+lmds
+wolever
+cssu
+gvwilson
+hyfen
+hypatiadotca
+aran_donohue
+karenreid
+lizblankenship
+bwinton
+VevWong
+AccordionGuy
+isaacezer
+END
+jaygoldman
+Jay Goldman
+Toronto
+http://jaygoldman.com/about/
+Technologist, designer, speaker, O'Reilly and HBR author, host of Status Update, generally swell guy. VP Strategy at klick.com.
+ENDBIO
+drewhouston
+END
+timoreilly
+Tim O'Reilly
+Sebastopol, CA
+http://radar.oreilly.com
+Founder and CEO, O'Reilly Media. Watching the alpha geeks, sharing their stories, helping the future unfold.
+ENDBIO
+KatieS
+aplusk
+markpinc
+BillGates
+ericschmidt
+END
+aran_donohue
+Aran Donohue
+Toronto
+http://arandonohue.com/
+
+ENDBIO
+yorchopolis
+irvingreid
+cjmuise
+dustinfreeman
+ycombinator
+gvwilson
+andrewtrusty
+zuzelvp
+giovannathron
+LilaFontes
+amgrubb555
+AccordionGuy
+jrrmzz
+alex77
+mike_conley
+wolever
+spolsky
+hyfen
+rtulk
+leilaboujnane
+phyllers
+karenreid
+jddimarco
+bwinton
+END
+newsycombinator
+news.yc Popular
+London, UK
+http://news.ycombinator.com/
+I'm a news.ycombinator bot, get the latest from news.yc! Please retweet our stories! Built by @riklomas
+ENDBIO
+END
+davemcclure
+Dave McClure
+Silicon Valley, CA
+http://500hats.typepad.com
+Geeks. Entrepreneurs. Startups. The Internet Revolution. Founder http://500startups.com
+
+ENDBIO
+END
+BarackObama
+Barack Obama
+Washington, DC
+http://www.barackobama.com
+44th President of the United States
+ENDBIO
+END
+karaswisher
+Kara Swisher
+San Francisco
+http://www.kara.allthingsd.com
+Columnist, BoomTown, AllThings D.com
+ENDBIO
+rabois
+KatieS
+cdixon
+quixotic
+davemcclure
+SteveCase
+vkhosla
+peterfenton
+markpinc
+END
+karenreid
+karenreid
+Toronto
+http://www.cs.toronto.edu/~reid/
+
+ENDBIO
+irvingreid
+yorchopolis
+gvwilson
+dwf
+flaps
+hypatiadotca
+adinscannell
+pgries
+lizblankenship
+VevWong
+isaacezer
+shazow
+chanian
+mike_conley
+lmds
+wolever
+cssu
+hyfen
+phyllers
+jaygoldman
+aran_donohue
+jddimarco
+bwinton
+dianelynnhorton
+END
+jddimarco
+jddimarco
+Toronto, Ontario
+http://www.cs.toronto.edu/~jdd
+IT Director, Department of Computer Science, University of Toronto
+ENDBIO
+irvingreid
+dustinfreeman
+gvwilson
+flaps
+pgries
+amgrubb555
+lizblankenship
+uoft_cs
+wolever
+cssu
+spolsky
+leilaboujnane
+aran_donohue
+karenreid
+torontoist
+dianelynnhorton
+END
+bwinton
+bwinton
+Toronto, ON (43.700895,-79.380
+http://weblog.latte.ca/blake/
+Geek (Thunderbird and iPhone Developer).  Dad (2 daughters).  Cyclist.
+ENDBIO
+drscan
+torontoist
+END
+soravanahalli
+Karthik Rao
+Toronto, Canada
+http://www.gridcentric.ca
+Student - 3rd year @Ryerson. start ups, tech and sales. Work+learn with @GridCentric. 
+Trying to learn as much as possible; suggestions always welcome! 
+ENDBIO
+gridcentric
+adinscannell
+drscan
+fredwilson
+viveklak
+ConanOBrien
+JonasBrandon
+timtoronto
+leilaboujnane
+jaygoldman
+END
+torontoist
+Torontoist
+Toronto
+http://www.torontoist.com
+Torontoist is about Toronto and everything in it. Tweets by @dtopping (and sometimes @hamutaldotan). Have tips? E-mail tips@torontoist.com, or @ or DM us.
+ENDBIO
+bwinton
+END
+dianelynnhorton
+dianelynnhorton
+Toronto
+
+
+ENDBIO
+flaps
+irvingreid
+yorchopolis
+pgries
+karenreid
+jddimarco
+wolever
+cssu
+VevWong
+gvwilson
+END
