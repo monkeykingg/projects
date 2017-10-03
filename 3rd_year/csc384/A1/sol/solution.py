@@ -1,3 +1,4 @@
+
 #Look for #IMPLEMENT tags in this file. These tags indicate what has
 #to be implemented to complete the Snowman Puzzle domain.
 
@@ -70,16 +71,18 @@ def heur_alternate(state):
     # init the distance of all snowballs to destination.
     distance = heur_manhattan_distance(state)
 
-    # init a list to store all coordinates of snowballs
-    snowballs = []
-
     # get the position of robot
     robot_position = state.robot
 
-    for key in state.snowballs:
+    # init a list to store all coordinates of snowballs
+    snowballs = []
 
+    for key in state.snowballs:
         # add snowballs coordinates to the list
         snowballs.append(key)
+
+    # get total number of snowballs and snowman
+    total = len(snowballs)
 
     # build a set to store obstacles, including the edges of the stage
     obstacles = set()
@@ -98,17 +101,12 @@ def heur_alternate(state):
         obstacles.add((-1, y))
         obstacles.add((state.width, y))
 
-    # get total number of snowballs and snowman
-    total = len(snowballs)
-
     # if there are 3 snowballs on the stage
     # we should move big snowball first
     if total == 3:
 
         # set a flag to check if current snowball already at destination
         flag = False
-
-        medium = (0, 0)
 
         for snowball in snowballs:
 
@@ -125,8 +123,13 @@ def heur_alternate(state):
                     flag = True
 
             # if the current snowball is the medium snowball
-            elif state.snowballs[snowball] == 1:
+            if state.snowballs[snowball] == 1:
                 medium = snowball
+
+                # if big snowball already at the destination
+                if flag:
+                    distance += abs(robot_position[0] - medium[0]) + \
+                                abs(robot_position[1] - medium[1]) - 1
 
             # check if current snowball at corner
             corners = 0
@@ -154,60 +157,68 @@ def heur_alternate(state):
                 if (flag == False) or (state.snowballs[snowball] != 0):
                     distance += float("inf")
 
-        # if big snowball already at the destination
-        if flag:
-            distance += abs(robot_position[0] - medium[0]) + \
-                        abs(robot_position[1] - medium[1]) - 1
-
     # if there are 1 snowball and 1 snowman on the stage
     # we should move small ball first because we assume medium snowball
     # atop big snowball and they already at the destination
     if total == 2:
 
+        # set a flag to check if big snowball already at destination
+        flag = False
+
         for snowball in snowballs:
+
+            # if the current snowball is the small snowball
+            if state.snowballs[snowball] == 2:
+                distance += abs(robot_position[0] - snowball[0]) + \
+                            abs(robot_position[1] - snowball[1]) - 1
 
             # if current snowball is not small snowball nor medium snowball
             # atop big snowball
-            if state.snowballs[snowball] in [4, 5]:
+            if state.snowballs[snowball] in [0, 1, 4, 5]:
                 distance += float("inf")
 
             # if current snowball is medium snowball atop big snowball
-            elif state.snowballs[snowball] == 3:
+            if state.snowballs[snowball] == 3:
                 m_on_b = snowball
 
                 # if medium snowball atop big snowball are not at destination
                 if m_on_b != state.destination:
                     distance += float("inf")
                 else:
+                    flag = True
 
-                    copy_list = snowballs.copy()
-                    copy_list.remove(snowball)
-                    snowball = copy_list[0]
+            # check if current snowball at corner
+            corners = 0
+            # UP and LEFT
+            if ((snowball[0], snowball[1] - 1) in obstacles) and \
+               ((snowball[0] - 1, snowball[1]) in obstacles):
+                corners += 1
+            # UP and RIGHT
+            if ((snowball[0], snowball[1] - 1) in obstacles) and \
+               ((snowball[0] + 1, snowball[1]) in obstacles):
+                corners += 1
+            # DOWN and LEFT
+            if ((snowball[0], snowball[1] + 1) in obstacles) and \
+               ((snowball[0] - 1, snowball[1]) in obstacles):
+                corners += 1
+            # DOWN and RIGHT
+            if ((snowball[0], snowball[1] + 1) in obstacles) and \
+               ((snowball[0] + 1, snowball[1]) in obstacles):
+                corners += 1
 
-                    # check if current snowball at corner
-                    corners = 0
-                    # UP and LEFT
-                    if ((snowball[0], snowball[1] - 1) in obstacles) and \
-                            ((snowball[0] - 1, snowball[1]) in obstacles):
-                        corners += 1
-                    # UP and RIGHT
-                    if ((snowball[0], snowball[1] - 1) in obstacles) and \
-                            ((snowball[0] + 1, snowball[1]) in obstacles):
-                        corners += 1
-                    # DOWN and LEFT
-                    if ((snowball[0], snowball[1] + 1) in obstacles) and \
-                            ((snowball[0] - 1, snowball[1]) in obstacles):
-                        corners += 1
-                    # DOWN and RIGHT
-                    if ((snowball[0], snowball[1] + 1) in obstacles) and \
-                            ((snowball[0] + 1, snowball[1]) in obstacles):
-                        corners += 1
+            # if current snowball at corner
+            if corners > 0:
 
-                    if corners > 0:
-                        distance += float("inf")
-                    else:
-                        distance += abs(robot_position[0] - snowball[0]) + \
-                                    abs(robot_position[1] - snowball[1]) - 1
+                # if current snowball is not at desination
+                if flag == False:
+                    distance += float("inf")
+
+    # if there are 1 snowman on the stage
+    if total == 1:
+
+        # if the complete snowman is not at destination
+        if snowballs[0] != state.destination:
+            distance += float("inf")
 
     return distance
 
@@ -258,35 +269,32 @@ def anytime_gbfs(initial_state, heur_fn, timebound = 10):
     # get g value for future comparison and update
     best_gval = current_state.gval
 
-    if current_state != False:
+    # time checking
+    while remainning_time > 0:
 
-        # time checking
-        while remainning_time > 0:
+        # time updating
+        current_time = os.times()[0]
+        passed_time = current_time - initial_time
+        remainning_time = remainning_time - passed_time
+        initial_time = current_time
 
-            # time updating
-            current_time = os.times()[0]
-            passed_time = current_time - initial_time
-            remainning_time = remainning_time - passed_time
-            initial_time = current_time
+        # g value comparison and cost bound update
+        if best_gval < cost_bound[0]:
+            new_cost_bound = (best_gval, float("inf"), float("inf"))
+        else:
+            new_cost_bound = cost_bound
 
-            # g value comparison and cost bound update
-            if best_gval < cost_bound[0]:
-                new_cost_bound = (best_gval, float("inf"), float("inf"))
-            else:
-                new_cost_bound = cost_bound
+        # get new state
+        new_state = se.search(remainning_time, new_cost_bound)
 
-            # get new state
-            new_state = se.search(remainning_time, new_cost_bound)
+        # error checking
+        if new_state == False:
+            return current_state
 
-            # error checking
-            if new_state == False:
-                return current_state
-
-            # update current state and g value based on g value comparison
-            else:
-                if new_state.gval < best_gval:
-                    current_state = new_state
-                    best_gval = new_state.gval
+        # update current state and g value based on g value comparison
+        if new_state.gval < best_gval:
+            current_state = new_state
+            best_gval = new_state.gval
 
     return current_state
 
@@ -318,35 +326,32 @@ def anytime_weighted_astar(initial_state, heur_fn, weight=1., timebound = 10):
     # get g value for future comparison and update
     best_gval = current_state.gval
 
-    if current_state != False:
+    # time checking
+    while remainning_time > 0:
 
-        # time checking
-        while remainning_time > 0:
+        # time updating
+        current_time = os.times()[0]
+        passed_time = current_time - initial_time
+        remainning_time = remainning_time - passed_time
+        initial_time = current_time
 
-            # time updating
-            current_time = os.times()[0]
-            passed_time = current_time - initial_time
-            remainning_time = remainning_time - passed_time
-            initial_time = current_time
+        # g value comparison and cost bound update
+        if best_gval < cost_bound[2]:
+            new_cost_bound = (float("inf"), float("inf"), best_gval)
+        else:
+            new_cost_bound = cost_bound
 
-            # g value comparison and cost bound update
-            if best_gval < cost_bound[2]:
-                new_cost_bound = (float("inf"), float("inf"), best_gval)
-            else:
-                new_cost_bound = cost_bound
+        # get new state
+        new_state = se.search(remainning_time, new_cost_bound)
 
-            # get new state
-            new_state = se.search(remainning_time, new_cost_bound)
+        # error checking
+        if new_state == False:
+            return current_state
 
-            # error checking
-            if new_state == False:
-                return current_state
-
-            # update current state and g value based on g value comparison
-            else:
-                if new_state.gval < best_gval:
-                    current_state = new_state
-                    best_gval = new_state.gval
+        # update current state and g value based on g value comparison
+        if new_state.gval < best_gval:
+            current_state = new_state
+            best_gval = new_state.gval
 
     return current_state
 
@@ -407,5 +412,4 @@ if __name__ == "__main__":
   print("{} of {} problems ({} %) solved in less than {} seconds.".format(solved, counter, percent, timebound))
   print("Problems that remain unsolved in the set are Problems: {}".format(unsolved))
   print("*************************************")
-
 
