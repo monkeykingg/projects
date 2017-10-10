@@ -1,7 +1,7 @@
 from sklearn import datasets
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
+import pandas as pad
 
 
 def load_data():
@@ -12,7 +12,7 @@ def load_data():
     return X,y,features
 
 
-def visualize(X, y, features):
+def visualize(X, y, features, coe):
 
     plt.figure(figsize=(20, 5))
     feature_count = X.shape[1]
@@ -20,13 +20,13 @@ def visualize(X, y, features):
     # i: index
     for i in range(feature_count):
         plt.subplot(3, 5, i + 1)
-        #TODO: Plot feature i against y
+        #TODO: plot feature i against y
 
         # Make a scatter plot of X[:, i] vs y. Marker size is scaled by s and marker color is mapped to c.
         plt.scatter(X[:, i], y, s=35, c="c", marker=".", alpha=.5)
 
         # Set the label of x axis.
-        plt.xlabel(features[i])
+        plt.xlabel(features[i]+", Weight = "+str(coe[i]))
 
         # Set the label of y axis.
         plt.ylabel("Housing Price")
@@ -54,7 +54,7 @@ def fit_regression(X,y):
     b = np.dot(X.T, y)
 
     # there is no difference if you use np.linalg.inv. ex: inverse = np.linalg.inv(a)
-    # the theorem is "w^* = (((X^T)X)^(-1)) * ((X^T)y)", simplify to "w^* = a^(-1) * b" or "a(w^*) = b" by matrix def
+    # the theorem is "w^* = (((X^T)X)^(-1)) * ((X^T)y)", simplify to "w^* = (a^(-1))b" or "a(w^*) = b" by matrix def
     # np.linalg.solve can return x in equation "ax = b" by inputting (a, b)
     # and in this part, the equation is "a(w^*) = b", so np.linalg.solve will return w^*
     # use coe to represent coefficient
@@ -87,7 +87,7 @@ def divide_data(X, y, test_sets_size):
             train_X.append(X[i])
             train_y.append(y[i])
 
-    return np.array(test_X),  np.array(test_y), np.array(train_X), np.array(train_y)
+    return np.array(test_X), np.array(test_y), np.array(train_X), np.array(train_y)
 
 
 # A helper to get result of predicted fitted values
@@ -105,27 +105,53 @@ def predictor(X, coe):
     return np.dot(X, coe)
 
 
+# A helper to normalize data
+def normalize(X):
+    mean = X - np.mean(X, axis=0, keepdims=True)
+    std = np.std(X, axis=0, keepdims=True)
+    normal = mean / std
+    return normal
+
+
+# Draw a weight graph for checking, no in requirements.
+def weight_graph(w):
+
+    i = range(len(w))
+
+    plt.title("Weights on different features")
+    plt.plot(i, w, linestyle='-', marker='.')
+
+    plt.xlabel('Features', fontsize=10, color='blue')
+    plt.ylabel('Weight', fontsize=10, color='blue')
+
+    plt.grid(True)
+    plt.show()
+    print(w)
+
+
 def main():
     # Load the data
     X, y, features = load_data()
-    print("Features: {}".format(features))
 
     # Print data for checking and debugging
     print("-------------------------------------------------------------------------------")
     print("Total Data number: ", X.shape[0])
     print("Features number: ", X.shape[1])
+    print("Features: {}".format(features))
+    print("-------------------------------------------------------------------------------")
+
+    X = normalize(X)
+
+    # Print data for checking and debugging
     print("-------------------------------------------------------------------------------")
     print("Data: {}".format(X))
     print("-------------------------------------------------------------------------------")
     print("Features: ")
-    print(pd.DataFrame(X).describe())
+    print(pad.DataFrame(X).describe())
     print("-------------------------------------------------------------------------------")
     print("Targets: ")
-    print(pd.DataFrame(y).describe())
+    print(pad.DataFrame(y).describe())
     print("-------------------------------------------------------------------------------")
-
-    # Visualize the features
-    visualize(X, y, features)
 
     #TODO: Split data into train and test
 
@@ -145,6 +171,9 @@ def main():
     print(train_X)
     print("-------------------------------------------------------------------------------")
 
+    # Visualize the features
+    visualize(X, y, features, w)
+
     # Compute fitted values, MSE(Mean Square Error), etc.
     # Formulas below are all according to lecture slides.
 
@@ -153,25 +182,26 @@ def main():
 
     # "mean" function is able to get average
     # "test_y - fitted_values" can give us the gap between fitted_values and real values in test_y
-    # "**2" aim to make all gap to be positive
+    # "**2" aim to make all gaps to be positive
     train_mse = np.mean((test_y - fitted_values) ** 2)
 
     print("MSE(Mean Square Error): {}".format(train_mse))
 
-    '''
-    # Draw a conclution graph, not in requirements
-    coefficients = plt.figure(1)
-    plt.title("Regression coefficients")
-    indices = range(len(w) - 1)
+    # Compute Root Mean Square Deviation
+    rmsd = train_mse ** 0.5
+    print("RMSD(Root Mean Square Deviation): {}".format(rmsd))
 
-    plt.plot(indices, w[0:-1], linestyle='-', marker='.')
-    plt.xlabel('Indices', fontsize=10, color='black')
-    plt.ylabel('Coefficient', fontsize=10, color='black')
-    plt.grid(True)
-    plt.show()
+    # Compute Mean Absolute Percentage Error
+    element = np.abs((test_y - fitted_values)/test_y)
+    mean = np.mean(element)
+    mape = 100 * mean
+    print("MAPE(Mean Absolute Percentage Error): {}".format(mape))
 
-    print(w)
-    '''
+    print("All results above are after normalizing. If you need results without normalization, please comment line 143 in q1.py.")
+
+    # Draw a weight graph for checking, no in requirements.
+    # weight_graph(w)
+
 
 if __name__ == "__main__":
     main()
