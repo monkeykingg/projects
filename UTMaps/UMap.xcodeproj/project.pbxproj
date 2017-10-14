@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8344C6484BCD5387269CCCBD /* libPods-UMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CB7054EBD56824F64E5611 /* libPods-UMap.a */; };
+		EF252E8E1F6D953C001781A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF252E8D1F6D953C001781A8 /* AppDelegate.swift */; };
+		EF252E901F6D953C001781A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF252E8F1F6D953C001781A8 /* ViewController.swift */; };
+		EF252E931F6D953C001781A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF252E911F6D953C001781A8 /* Main.storyboard */; };
+		EF252E951F6D953C001781A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF252E941F6D953C001781A8 /* Assets.xcassets */; };
+		EF252E981F6D953C001781A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF252E961F6D953C001781A8 /* LaunchScreen.storyboard */; };
+		EF252EA31F6D953C001781A8 /* UMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF252EA21F6D953C001781A8 /* UMapTests.swift */; };
+		EF252EAE1F6D953C001781A8 /* UMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF252EAD1F6D953C001781A8 /* UMapUITests.swift */; };
+		EF252EBC1F6D9787001781A8 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EF252EBB1F6D9787001781A8 /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF252E9F1F6D953C001781A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF252E821F6D953C001781A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF252E891F6D953C001781A8;
+			remoteInfo = UMap;
+		};
+		EF252EAA1F6D953C001781A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF252E821F6D953C001781A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF252E891F6D953C001781A8;
+			remoteInfo = UMap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21CB7054EBD56824F64E5611 /* libPods-UMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6853FF10D07A7D1BFA7B9B3E /* Pods-UMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-UMap/Pods-UMap.release.xcconfig"; sourceTree = "<group>"; };
+		699B36988BF17A4BE1B22A66 /* Pods-UMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UMap/Pods-UMap.debug.xcconfig"; sourceTree = "<group>"; };
+		EF252E8A1F6D953C001781A8 /* UMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF252E8D1F6D953C001781A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF252E8F1F6D953C001781A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF252E921F6D953C001781A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF252E941F6D953C001781A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF252E971F6D953C001781A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF252E991F6D953C001781A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF252E9E1F6D953C001781A8 /* UMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF252EA21F6D953C001781A8 /* UMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UMapTests.swift; sourceTree = "<group>"; };
+		EF252EA41F6D953C001781A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF252EA91F6D953C001781A8 /* UMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF252EAD1F6D953C001781A8 /* UMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UMapUITests.swift; sourceTree = "<group>"; };
+		EF252EAF1F6D953C001781A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF252EBB1F6D9787001781A8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF252E871F6D953C001781A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8344C6484BCD5387269CCCBD /* libPods-UMap.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF252E9B1F6D953C001781A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF252EA61F6D953C001781A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		375123234F2DA5DBFF36DBE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21CB7054EBD56824F64E5611 /* libPods-UMap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E81AD32AF02F7DBAFA5285C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				699B36988BF17A4BE1B22A66 /* Pods-UMap.debug.xcconfig */,
+				6853FF10D07A7D1BFA7B9B3E /* Pods-UMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF252E811F6D953C001781A8 = {
+			isa = PBXGroup;
+			children = (
+				EF252EBB1F6D9787001781A8 /* Podfile */,
+				EF252E8C1F6D953C001781A8 /* UMap */,
+				EF252EA11F6D953C001781A8 /* UMapTests */,
+				EF252EAC1F6D953C001781A8 /* UMapUITests */,
+				EF252E8B1F6D953C001781A8 /* Products */,
+				E81AD32AF02F7DBAFA5285C5 /* Pods */,
+				375123234F2DA5DBFF36DBE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EF252E8B1F6D953C001781A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF252E8A1F6D953C001781A8 /* UMap.app */,
+				EF252E9E1F6D953C001781A8 /* UMapTests.xctest */,
+				EF252EA91F6D953C001781A8 /* UMapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF252E8C1F6D953C001781A8 /* UMap */ = {
+			isa = PBXGroup;
+			children = (
+				EF252E8D1F6D953C001781A8 /* AppDelegate.swift */,
+				EF252E8F1F6D953C001781A8 /* ViewController.swift */,
+				EF252E911F6D953C001781A8 /* Main.storyboard */,
+				EF252E941F6D953C001781A8 /* Assets.xcassets */,
+				EF252E961F6D953C001781A8 /* LaunchScreen.storyboard */,
+				EF252E991F6D953C001781A8 /* Info.plist */,
+			);
+			path = UMap;
+			sourceTree = "<group>";
+		};
+		EF252EA11F6D953C001781A8 /* UMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF252EA21F6D953C001781A8 /* UMapTests.swift */,
+				EF252EA41F6D953C001781A8 /* Info.plist */,
+			);
+			path = UMapTests;
+			sourceTree = "<group>";
+		};
+		EF252EAC1F6D953C001781A8 /* UMapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF252EAD1F6D953C001781A8 /* UMapUITests.swift */,
+				EF252EAF1F6D953C001781A8 /* Info.plist */,
+			);
+			path = UMapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF252E891F6D953C001781A8 /* UMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF252EB21F6D953C001781A8 /* Build configuration list for PBXNativeTarget "UMap" */;
+			buildPhases = (
+				2C018E002FEE3110596A3C49 /* [CP] Check Pods Manifest.lock */,
+				EF252E861F6D953C001781A8 /* Sources */,
+				EF252E871F6D953C001781A8 /* Frameworks */,
+				EF252E881F6D953C001781A8 /* Resources */,
+				960B7FB5B27BD41B8DD2C815 /* [CP] Embed Pods Frameworks */,
+				837DC4495E5F2433DB6F0C8E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UMap;
+			productName = UMap;
+			productReference = EF252E8A1F6D953C001781A8 /* UMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF252E9D1F6D953C001781A8 /* UMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF252EB51F6D953C001781A8 /* Build configuration list for PBXNativeTarget "UMapTests" */;
+			buildPhases = (
+				EF252E9A1F6D953C001781A8 /* Sources */,
+				EF252E9B1F6D953C001781A8 /* Frameworks */,
+				EF252E9C1F6D953C001781A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF252EA01F6D953C001781A8 /* PBXTargetDependency */,
+			);
+			name = UMapTests;
+			productName = UMapTests;
+			productReference = EF252E9E1F6D953C001781A8 /* UMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF252EA81F6D953C001781A8 /* UMapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF252EB81F6D953C001781A8 /* Build configuration list for PBXNativeTarget "UMapUITests" */;
+			buildPhases = (
+				EF252EA51F6D953C001781A8 /* Sources */,
+				EF252EA61F6D953C001781A8 /* Frameworks */,
+				EF252EA71F6D953C001781A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF252EAB1F6D953C001781A8 /* PBXTargetDependency */,
+			);
+			name = UMapUITests;
+			productName = UMapUITests;
+			productReference = EF252EA91F6D953C001781A8 /* UMapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF252E821F6D953C001781A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Yecheng Song";
+				TargetAttributes = {
+					EF252E891F6D953C001781A8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					EF252E9D1F6D953C001781A8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EF252E891F6D953C001781A8;
+					};
+					EF252EA81F6D953C001781A8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EF252E891F6D953C001781A8;
+					};
+				};
+			};
+			buildConfigurationList = EF252E851F6D953C001781A8 /* Build configuration list for PBXProject "UMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF252E811F6D953C001781A8;
+			productRefGroup = EF252E8B1F6D953C001781A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF252E891F6D953C001781A8 /* UMap */,
+				EF252E9D1F6D953C001781A8 /* UMapTests */,
+				EF252EA81F6D953C001781A8 /* UMapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF252E881F6D953C001781A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF252E981F6D953C001781A8 /* LaunchScreen.storyboard in Resources */,
+				EF252E951F6D953C001781A8 /* Assets.xcassets in Resources */,
+				EF252EBC1F6D9787001781A8 /* Podfile in Resources */,
+				EF252E931F6D953C001781A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF252E9C1F6D953C001781A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF252EA71F6D953C001781A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C018E002FEE3110596A3C49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		837DC4495E5F2433DB6F0C8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UMap/Pods-UMap-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UMap/Pods-UMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		960B7FB5B27BD41B8DD2C815 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UMap/Pods-UMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF252E861F6D953C001781A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF252E901F6D953C001781A8 /* ViewController.swift in Sources */,
+				EF252E8E1F6D953C001781A8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF252E9A1F6D953C001781A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF252EA31F6D953C001781A8 /* UMapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF252EA51F6D953C001781A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF252EAE1F6D953C001781A8 /* UMapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF252EA01F6D953C001781A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF252E891F6D953C001781A8 /* UMap */;
+			targetProxy = EF252E9F1F6D953C001781A8 /* PBXContainerItemProxy */;
+		};
+		EF252EAB1F6D953C001781A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF252E891F6D953C001781A8 /* UMap */;
+			targetProxy = EF252EAA1F6D953C001781A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF252E911F6D953C001781A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF252E921F6D953C001781A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF252E961F6D953C001781A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF252E971F6D953C001781A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF252EB01F6D953C001781A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF252EB11F6D953C001781A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF252EB31F6D953C001781A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 699B36988BF17A4BE1B22A66 /* Pods-UMap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hungrycore.com.UMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EF252EB41F6D953C001781A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6853FF10D07A7D1BFA7B9B3E /* Pods-UMap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hungrycore.com.UMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EF252EB61F6D953C001781A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hungrycore.com.UMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UMap.app/UMap";
+			};
+			name = Debug;
+		};
+		EF252EB71F6D953C001781A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hungrycore.com.UMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UMap.app/UMap";
+			};
+			name = Release;
+		};
+		EF252EB91F6D953C001781A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = UMapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hungrycore.com.UMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = UMap;
+			};
+			name = Debug;
+		};
+		EF252EBA1F6D953C001781A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = UMapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hungrycore.com.UMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = UMap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF252E851F6D953C001781A8 /* Build configuration list for PBXProject "UMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF252EB01F6D953C001781A8 /* Debug */,
+				EF252EB11F6D953C001781A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF252EB21F6D953C001781A8 /* Build configuration list for PBXNativeTarget "UMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF252EB31F6D953C001781A8 /* Debug */,
+				EF252EB41F6D953C001781A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF252EB51F6D953C001781A8 /* Build configuration list for PBXNativeTarget "UMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF252EB61F6D953C001781A8 /* Debug */,
+				EF252EB71F6D953C001781A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF252EB81F6D953C001781A8 /* Build configuration list for PBXNativeTarget "UMapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF252EB91F6D953C001781A8 /* Debug */,
+				EF252EBA1F6D953C001781A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF252E821F6D953C001781A8 /* Project object */;
+}
