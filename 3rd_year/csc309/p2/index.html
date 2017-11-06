@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin" content="*" />
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Lilita+One|Righteous" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"> 
+    <title>CSC309 A2 - Food Map</title>
+
+    <style type="text/css">
+        body{margin:0;}
+        body {
+            background-image: url("https://static.pexels.com/photos/588776/pexels-photo-588776.jpeg");
+            background-size: cover;
+            z-index : -1;
+        }
+        .button {
+            font-family: 'Courgette', cursive;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            padding: 0.4% 1%;
+            font-size: 110%;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px #666;
+            background-color: #FFCC33;
+            font-color:#333333;
+        }
+
+        .button-result{
+            font-family: 'Amatic SC', cursive;
+            font-weight: bold;
+            margin-top: 4px;
+            margin-left : 0.5%;
+            margin-bottom: 4px;
+            padding: 0.4% 1%;
+            font-size: 150%;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 15px;
+            background-color: #FF9933;
+            color:#fff;
+            display : inline-block;
+        }
+
+        .button-result:hover {background-color: rgb(120, 120, 120)}
+
+        .button-result:active {
+            box-shadow: 0 5px rgb(60, 60, 60);
+            transform: translateY(2px);
+        }
+
+        .button:hover {background-color: rgb(120, 120, 120)}
+
+        .button:active {
+            box-shadow: 0 5px rgb(60, 60, 60);
+            transform: translateY(2px);
+        }
+
+        .app{
+            margin-top:1.5%;
+            margin-left:2%;
+            margin-right:2%;
+            width:32%;
+            vertical-align: middle;
+            text-align: center;
+            font-size:120%;
+        }
+
+        .comment{
+            left:0%;
+            width:50%;
+            height:100%;
+            position: absolute;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #dropback {
+            position: fixed;
+            top:0;
+            left: 0;
+            right: 0;
+            background-image: url("https://static.pexels.com/photos/80841/sushi-food-dinner-chopsticks-80841.jpeg");
+            background-size: cover;
+            z-index: 1000;
+            display: 'block';
+        }
+
+
+        #startbtn{
+            top:50%;
+            left:50%;
+            margin-top: -3%;
+            margin-left: -11%;
+            width:30vh;
+            height:30vh;
+            position: fixed;
+            z-index:1050;
+        }
+
+        #btn1 {
+            font-family: 'Courgette', cursive;
+            display: inline-block;
+            width: 90vh;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 10px;
+            margin-bottom: 70%;
+            padding: 6px 12px;
+            font-size: 72px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            color: #fff;
+            background-color: #FF9999;
+            border-color: #4cae4c;
+            border: 1px solid transparent;
+            box-shadow: 0 9px #CC3333;
+            border-radius: 80px;
+        }
+
+        #btn1:hover{background-color: #FF6666}
+        #btn1:active {
+            box-shadow: 0 5px #993333;
+            transform: translateY(2px);
+        }
+
+        #result{
+            font-family: 'Courgette', cursive;
+            display : inline-block;
+            margin-left:3%;
+            margin-top: 18%;
+            width:30%;
+            height:58%;
+            position: absolute;
+            background-color: #FFCC33;
+            color: #333333;
+            font-size:100%;
+        }
+
+        #map{
+            display : none;
+            margin-top: 2%;
+            margin-left: 30%;
+            margin-right: 5%;
+            width:60%;
+            height:100%;
+            position: absolute;
+            background-color: rgb(60, 60, 60);
+        }
+        #map2{
+            display :inline-block;
+            margin-top: 2%;
+            margin-left: 35%;
+            margin-right: 5%;
+            width: 63%;
+            height: 88.5%;
+            position: absolute;
+            border: 1px solid #fafafa;
+        }
+
+        body{padding-top: 2%}
+        #top{
+            position: fixed;
+            top:0;
+            width:100%;
+            height: 3%;
+            z-index:800;
+            font-color: #333333;
+        }
+
+        #p1{
+            font-family: 'Courgette', cursive;
+            font-size: 100%;
+            margin-top:5%;
+            margin-left:2%;
+            color: #fff;
+            display: inline-block;
+        }
+        #p2{
+        	font-family: 'Courgette', cursive;
+            font-size: 100%;
+            color: #fff;
+            display: inline-block;
+        }
+
+        #list{
+            font-family: 'Courgette', cursive;
+            display : inline-block;
+            background: rgb(255, 255, 236);
+            font-size: 85%;
+            margin-left: 2%;
+        }
+
+        #inputBound{
+        	font-family: 'Courgette', cursive;
+            display : inline-block;
+            background: rgb(255, 255, 236);
+            font-size: 85%;
+            margin-left: 2%;
+        }
+
+        #choice{
+            font-family: 'Courgette', cursive;
+            color: #fff;
+            font-size:100%;
+            length: 90%;
+            margin-top: 1%;
+            margin-left: 2%;
+        }
+
+        #command{
+            font-family: 'Courgette', cursive;
+            margin-top: 2%;
+            margin-left: 2%;
+            font-size:140%;
+            background: rgb(255, 255, 236);
+        }
+
+        #inputName{
+            font-family: 'Courgette', cursive;
+            font-size:85%;
+        }
+
+
+        .mytxt {
+            color: #333;
+            line-height: normal;
+           font-family: 'Courgette', cursive;
+            font-style: normal;
+            font-variant: normal;
+            font-size-adjust: none;
+            font-stretch: normal;
+            font-weight: normal;
+            margin-top: 0px;
+            margin-bottom: 0px;	
+            margin-left: 0px;
+            padding-top: 4px;
+            padding-right: 4px;
+            padding-bottom: 4px;
+            padding-left: 4px;
+            font-size: 15px;
+            outline-width: medium;
+            outline-style: none;
+            outline-color: invert;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            text-shadow: 0px 1px 2px #fff;
+            background-attachment: scroll;
+            background-repeat: repeat-x;
+            background-position-x: left;
+            background-position-y: top;
+            background-size: auto;
+            background-origin: padding-box;
+            background-clip: border-box;
+            background-color: rgb(255, 255, 255);
+            margin-right: 8px;
+            border-top-color: #ccc;
+            border-right-color: #ccc;
+            border-bottom-color: #ccc;
+            border-left-color: #ccc;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+        }
+        .mytxt:focus {
+            border: 1px solid #fafafa;
+            -webkit-box-shadow: 0px 0px 6px #007eff;
+            -moz-box-shadow: 0px 0px 5px #007eff;
+            box-shadow: 0px 0px 5px #007eff;
+
+        }
+
+        .buttonsubmit{
+            font-family: 'Courgette', cursive;
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 100%;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            background-color: #FFCC33;
+            font-color:#333333;
+            color: black;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5.5px #666666;
+            display:inline-block;
+            width: 50%;
+        }
+
+        .buttonsubmit:hover {background-color: #999999}
+
+        .buttonsubmit:active {
+            background-color: #666666;
+            box-shadow: 0 5px #333333;
+            transform: translateY(4px);
+        }
+
+        #commenttitle{
+            font-family: 'Courgette', cursive;
+            font-size:400%;
+            text-shadow: 3px 3px 3px #333333;
+            color: #fff;
+            text-align:center;
+        }
+
+        .card{
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            display: table-cell;
+            overflow: scroll;
+
+        }
+
+        div.header {
+            font-family: 'Courgette', cursive;
+            background-color: #FFCC33;
+            color: #333333;
+            padding: 10px;
+            font-size: 150%;
+        }
+
+        div.container {
+            font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+            font-size: 150%;
+            padding: 10px;
+            background-color: #CCCCCC;
+        }
+        div.result{
+            overflow: scroll;
+        }
+
+        #text{
+            border-radius: 5px;
+            display: inline-block;
+            width : 50%;
+            height: 30%;
+        }
+
+        .modal {
+		    display: none; /* Hidden by default */
+		    position: fixed; /* Stay in place */
+		    z-index: 1; /* Sit on top */
+		    padding-top: 100px; /* Location of the box */
+		    left: 0;
+		    top: 0;
+		    width: 100%; /* Full width */
+		    height: 100%; /* Full height */
+		    overflow: auto; /* Enable scroll if needed */
+		    background-color: rgb(0,0,0); /* Fallback color */
+		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			font-size: 150%;
+			font-family: 'Courgette', cursive;
+		    margin: auto;
+		    padding: 20px;
+		    border: 1px solid #888;
+		    width: 80%;
+		    background-color: #FF9933;
+            color:#fff;
+            border-radius: 20px;
+		}
+
+		/* The Close Button */
+		.close {
+		    color: #aaaaaa;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		    color: #000;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+        textarea{
+            resize:none;
+            border-radius:3px;
+            border:1px solid #000;
+        }
+
+
+
+
+    </style>
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3I_iEfRAhIEL--bKFtp2fjRs7ov-FaKU&libraries=places">
+    </script>
+</head>
+
+
+<body>
+
+
+<div id = "startbtn">
+    <button class = "button" id = "btn1">Go Find Food</button>
+</div>
+
+
+<div id="dropback"></div>
+
+<div id="top">
+    <button class="button" id = "Find">Find Food</button>
+    <button class="button" id = "Comment">Comment</button>
+    <a class = "button" href="mailto:jiayulee88@outlook.com" id = "Contact">contact</a>
+</div>
+
+<div id = "map" ></div>
+<div id = "map2" ></div>
+
+<div class = "result" id = 'result'>
+    <ul class="modify" id = "result-list"></ul>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id = "modal-text"></div>
+  </div>
+</div>
+
+<!--main application-->
+<div class="app" id='1'>
+    <h1 id = 'p1'>Select a building from the following list</h1>
+    <select id = "list">
+        <option value="BA">Bahen Centre for Information Technology - BA</option>
+        <option value="SS">Sidney Smith Hall - SS</option>
+        <option value="LM">Lash Miller Chemical Laboratories - LM</option>
+        <option value="SF">Sandford Fleming Building - SF</option>
+    </select>
+    <!--<form action="" id = "choice">
+        Or type in a building in U of T:<br>
+        <input type="text" name="building" id = "inputName" style="width: 87%;">
+        <br>
+    </form>-->
+
+    <h1 id = 'p2'>Select Your Distance Bound</h1>
+    <select id = "inputBound">
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="800">800</option>
+        <option value="2000">1000+</option>
+    </select>
+    <button id='command'>
+        click to see restaurants around
+    </button>
+</div>
+
+
+<!--comments-->
+<div class="comment" id='2'>
+    <h1 id='commenttitle'>Comment Here!</h1>
+    <textarea id="text" name="Comment"  background-color="#CCCCCC"></textarea>
+    <br>
+    <br>
+    <button type="button" class="buttonsubmit" onclick="record()">Submit</button>
+</div>
+<div class="card">
+    <div class="header">Restaurant Name
+        <h1 id = "restaurant-name"></h1>
+    </div>
+
+    <div class="container" id="container">
+        <p id="recorder">User Comments:</p>
+    </div>
+    <script type="text/javascript" id="script">
+
+    </script>
+</div>
+
+
+
+</body>
+
+
+<script type="text/javascript">
+    var screen = document.getElementById('dropback');
+    screen.style.height = document.documentElement.clientHeight*2+50 + 'px'
+    var map;
+    var reslist={};
+    $(document).ready(function () {
+
+        var startbtn = document.getElementById('startbtn');
+        var close = document.getElementsByClassName('button');
+
+        var app = document.getElementById('1');
+        var comment = document.getElementById('2')
+        var top = (document.documentElement.clientHeight - 50) / 2 ;
+        var left = (document.documentElement.clientWidth - 400) / 2;
+
+        // Get the modal
+		var modal = document.getElementById('myModal');
+		var span = document.getElementsByClassName("close")[0];
+		// Get the button that opens the modal
+		//var btn = document.getElementById("button-result");
+
+		// Get the <span> element that closes the modal.
+
+		// When the user clicks the button, open the modal 
+        //  
+        var ba = {lat:43.6596,lng:-79.3977};
+
+        map = new google.maps.Map(document.getElementById('map2'), {
+          center: ba,
+          zoom: 15
+        });
+		$(document).on('click', '.button-result', function () {
+            document.getElementById("modal-text").innerHTML = "";
+		    modal.style.display = "block";
+		    var id = $(this).attr('id');
+            var p = reslist[id];
+            if (p==undefined){
+                $("#modal-text").append('<p>No Detail Information</p>');
+            }
+            else{
+                var loc = p.geometry.location
+                var url = p.url;
+                var name = p.name;
+                var ad = p.formatted_address;
+                var rating = p.rating;
+                $("#modal-text").append('<p>'+name+'<br>'+'Full Adress:&ensp;'+ad+'<br>'+'Rating:&ensp;'+rating+'<br>'+'<a href="'+url+'">'+'Google Map Page</a></p>');
+                map.panTo(loc);
+            }
+		    $("#restaurant-name").html($(this).text());
+            
+            
+		    //document.getElementById("restaurant-name").innerHTML = $(".button-result").val();
+            $("#container").empty();
+            $("#container").append("User Comments:");
+		});
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+
+        startbtn.style.left = left + 'px';
+        startbtn.style.top = top + 'px';
+        app.style.height = document.documentElement.clientHeight + 'px';
+        comment.style.height = document.documentElement.clientHeight + 'px';
+
+        $("#Find").click(function() {
+            $('html,body').animate({
+                    scrollTop: 0},
+                'slow');
+        });
+
+        $("#Comment").click(function() {
+            $('html,body').animate({
+                    scrollTop: $("#2").offset().top},
+                'slow');
+        });
+        
+        $("#btn1").click(function() {
+            $('html,body').animate({scrollTop: 0},'slow');
+            $("#startbtn").hide();
+            $("#dropback").fadeOut('slow');
+        });
+
+
+
+
+
+        
+        /*
+        function hide(obj) {
+            obj.style.display = 'none';
+            screen.style.display = 'none';
+        }
+        
+        close[0].addEventListener("click", function () {
+            hide(startbtn)
+        }, false);
+        */
+        
+
+    });
+    function record() {
+    comment = document.getElementById("text").value;
+    if (comment=="")
+        alert("Please comment before submit.")
+
+    // document.getElementById('recorder').innerHTML = comment
+
+    newp = document.createElement("p");
+    newcomment = document.createTextNode(comment);
+    newp.appendChild(newcomment);
+    container.appendChild(newp)
+    }
+    var service = new google.maps.places.PlacesService(document.getElementById('map'));
+    var bahen = new google.maps.LatLng(43.6596,-79.3977);
+    var ss = new google.maps.LatLng(43.662668,-79.398465);
+    var lm = new google.maps.LatLng(43.661639,-79.397787);
+    var sf = new google.maps.LatLng(43.660005,-79.394795);
+    /*var dict = {"BA":{lat:43.6596,lng:-79.3977},"SS":{lat:43.662668,lng:-79.398465},"LM":{lat:43.661639,lng:-79.397787},"SF":{lat:43.660005,lng:-79.394795}};*/
+    var dict = {"BA":bahen,"SS":ss,"LM":lm,"SF":sf};
+    var markers=[];
+
+    $("#command").click(function(){
+            document.getElementById("result").innerHTML = "";
+            for(i=0;i<markers.length;i++) {
+                markers[i].setMap(null);
+
+            };
+            markers.length=0;
+            var resdict=[]
+            var placeString = document.getElementById('list').value
+            var place = dict[placeString]
+            var bound = document.getElementById('inputBound').value
+            var infowindow = new google.maps.InfoWindow();
+            service.nearbySearch({
+                location: place,
+                radius: bound,
+                type: ['restaurant']
+            }, callback);
+
+
+
+            /*var markersArray = [];
+
+            function clearOverlays() {
+                for (var i = 0; i < markersArray.length; i++ ) {
+                    markersArray[i].setMap(null);
+                }
+                markersArray.length = 0;
+            }
+
+            function clearMap() {
+                markersArray.push(marker);
+                google.maps.event.addListener(marker,"click",function(){
+                    
+                });
+
+            }*/
+
+
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location
+                });
+                markers.push(marker)
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent('<div><a href="'+place.url+'">'+place.name+ '</a></div>');
+                    infowindow.open(map, this);
+                });
+            }
+
+            function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var arr = [];
+                    $.each(results,function(i,item){
+                        arr.push(item.place_id);
+                        
+                    })
+                    $.each(results,function (i,item) {
+                        // body...
+
+                        //var button = $('<input type="button" value= ''/>');
+                        //$('<li>').text(item.name).appendTo('.modify')
+                        $('#result').append('<button class="button-result" id = '+item.place_id+'>'+item.name+'</button>');
+
+                        //$('#result').after('<input type="button" id='item.name' class="abc" value='item.name'/>')
+                            
+                        
+                    })
+                    $.each(arr,function(i,item){
+                        service.getDetails({placeId:item},function(res,status){
+                            if (status === google.maps.places.PlacesServiceStatus.OK){
+                                createMarker(res);
+                                reslist[res.place_id]=res;
+                            }
+
+                            
+                        })
+                        
+                    })
+
+                }
+            }
+            
+
+        }
+
+    );
+</script>
+</html>
