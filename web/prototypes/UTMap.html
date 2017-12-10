@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin" content="*" />
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Lilita+One|Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
+    <title>CSC309 - Food Map</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        body{
+            margin:0;
+            background-image: url("https://static.pexels.com/photos/64208/pexels-photo-64208.jpeg");
+            background-size: cover;
+            z-index : -1;
+        }
+        ::-webkit-scrollbar {display:none}
+        .button {
+            font-family: 'Cabin', sans-serif;
+            display: inline-block;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            padding: 0.4% 1%;
+            font-size: 100%;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(153,204,0,0.65);
+            color: white;
+            text-decoration: none;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+
+        .button:hover {
+            background-color: #006633;;
+            color: white;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .button-result{
+            font-family: 'Fjalla One', sans-serif;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            padding: 3%;
+            font-size: 150%;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+            color: black;
+            background-color: #CC9933;
+            display : inline-block;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+
+        .button-result span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button-result span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button-result:hover span {
+            padding-right: 25px;
+        }
+
+        .button-result:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .button-result:hover {background-color: #FFCC00}
+
+        #command{
+            font-family: 'Fira Sans', sans-serif;
+            font-size:120%;
+            border-radius: 4px;
+            background-color: rgba(102,153,51,0.7);
+            display: inline-block;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            width: 90%;
+            padding: 2%;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            color: white;
+            text-decoration: none;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+
+        #command:hover {
+            background-color: #996633;
+            color: white;
+            box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 5px 10px 0 rgba(0,0,0,0.19);
+        }
+
+        #command:active {
+            color: white;
+            background-color: #996633;
+            box-shadow: 0 5px #663300;
+            transform: translateY(2px);
+        }
+
+        a {
+            color:#CC6600;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #FF9999;
+        }
+
+        .app{
+            margin-top:1.5%;
+            margin-left:2%;
+            margin-right:2%;
+            width:32%;
+            vertical-align: middle;
+            text-align: center;
+            font-size:120%;
+        }
+
+        #map{
+            display : none;
+            margin-top: 2%;
+            margin-left: 30%;
+            margin-right: 5%;
+            width:60%;
+            height:100%;
+            position: absolute;
+            background-color: rgb(60, 60, 60);
+        }
+        #map2{
+            display :inline-block;
+            top: 35%;
+            left: 45%;
+            width: 50%;
+            height: 60%;
+            position: absolute;
+            border: 1px solid #fafafa;
+        }
+
+        body{padding-top: 2%}
+        #top{
+            position: fixed;
+            top:0;
+            width:100%;
+            height: 3%;
+            z-index:800;
+            font-color: #333333;
+        }
+
+        #p1{
+            font-family: 'Amaranth', sans-serif;
+            font-size: 100%;
+            margin-top:5%;
+            margin-left:2%;
+            color: #fff;
+            display: inline-block;
+        }
+        #p2{
+            font-family: 'Amaranth', sans-serif;
+            font-size: 100%;
+            color: #fff;
+            display: inline-block;
+        }
+
+        #list{
+            font-family: 'Amaranth', sans-serif;
+            display : inline-block;
+            background: rgb(255, 255, 236);
+            font-size: 85%;
+            margin-left: 2%;
+        }
+
+        #inputBound{
+            font-family: 'Amaranth', sans-serif;
+            display : inline-block;
+            background: rgb(255, 255, 236);
+            font-size: 85%;
+            margin-left: 2%;
+        }
+
+
+        #inputName{
+            font-family: 'Amaranth', sans-serif;
+            font-size:85%;
+        }
+
+        .topleft-block{
+            font-family: 'Amaranth', sans-serif;
+            left: 3%;
+            top: 4%;
+            width: 65%;
+            height: 44%;
+            position: absolute;
+            display: table-cell;
+        }
+
+        .search-method-block{
+            font-family: 'Amaranth', sans-serif;
+            left: 0%;
+            top: 3%;
+            width: 59%;
+            height: 100%;
+            overflow: scroll;
+            position: absolute;
+            text-align: center;
+            display: table-cell;
+        }
+
+        .search-button-block{
+            left: 60%;
+            top: 15%;
+            width: 10%;
+            height: 70%;
+            position: absolute;
+            text-align: center;
+            display: table-cell;
+        }
+
+        .resultcard{
+            left: 3.5%;
+            top: 50%;
+            width: 37%;
+            height: 45.2%;
+            position: absolute;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            display: table-cell;
+            overflow: scroll;
+        }
+
+        div.resultcardheader {
+            font-family: 'Amaranth', sans-serif;
+            background-color: rgba(0,51,0,0.5);
+            color: white;
+            padding: 1%;
+            font-size: 120%;
+            width: 100%;
+            height: 10%;
+            overflow: scroll;
+            position: absolute;
+        }
+
+        #result{
+            font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+            left:0%;
+            top: 10%;
+            width:100%;
+            height:90%;
+            background-color: #CC99;
+            color: #333333;
+            position: absolute;
+            font-size:100%;
+            overflow: scroll;
+            text-align: center;
+        }
+
+        .detailcard{
+            left: 45%;
+            top: 5%;
+            width: 50%;
+            height: 25%;
+            position: absolute;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            display: table-cell;
+            overflow: scroll;
+        }
+
+        div.detailcardheader {
+            font-family: 'Amaranth', sans-serif;
+            background-color: rgba(0,51,0,0.5);
+            color: white;
+            padding: 1%;
+            font-size: 100%;
+        }
+
+        div.detailcardcontainer {
+            font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+            padding: 12%;
+            font-size: 120%;
+            background-color: #CC99;
+        }
+    </style>>
+
+    <!-- JS -->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3I_iEfRAhIEL--bKFtp2fjRs7ov-FaKU&libraries=places">
+    </script>
+</head>
+
+<body>
+
+<!-- TOP buttons -->
+<div id="top">
+    <a class = "button" href="mailto:wzh630754075@outlook.com">contact</a>
+</div>
+
+<!-- MAP -->
+<div id = "map" ></div>
+<div id = "map2" ></div>
+
+<!--main application-->
+<div class="app" id='1'>
+
+    <div class="topleft-block" id="topleft">
+        <div class="search-method-block" id="searchmethod">
+
+            <h1 id = 'p1'>Enter the Building CODE (2 capital letters, like BA) into Main Search Box:</h1>
+            <input type="text" name="building" id = "inputName" style="width: 87%;">
+            <h1 id = 'p1'>Or select from the Buildings List:</h1>
+            <select  style="width:89%" id = "list">
+                <option value="AB">AB - Astronomy and Astrophysics</option>
+                <option value="AD">AD - Enrolment Services</option>
+                <option value="AH">AH - Muzzo Family Alumni Hall</option>
+                <option value="AN">AN - Annesley Hall</option>
+                <option value="AP">AP - Anthropology Building</option>
+
+                <option value="BA">BA - Bahen Centre for Information Technology</option>
+                <option value="BC">BC - Birge-Carnegie Library</option>
+                <option value="BF">BF - Bancroft Building</option>
+                <option value="BI">BI - Banting Institute</option>
+                <option value="BL">BL - Claude T Bissell Building</option>
+                <option value="BN">BN - Clara Benson Building</option>
+                <option value="BR">BR - Brennan Hall</option>
+                <option value="BS">BS - St Basils Church</option>
+                <option value="BT">BT - Isabel Bader Theatre</option>
+                <option value="BW">BW - Burwash Hall</option>
+
+                <option value="CA">CA - Campus Co-op Day Care</option>
+                <option value="CB">CB - Best Institute</option>
+                <option value="CE">CE - Centre for Engineering Innovation</option>
+                <option value="CG">CG - Canadiana Gallery</option>
+                <option value="CH">CH - Convocation Hall</option>
+                <option value="CM">CM - Student Commons</option>
+                <option value="CN">CN - 89 Chestnut Residence</option>
+                <option value="CO">CO - Comparative Education Services 162 St George St</option>
+                <option value="CR">CR - Carr Hall</option>
+                <option value="CS">CS - School of Continuing Studies</option>
+                <option value="CU">CU - Cumberland House</option>
+                <option value="CX">CX - Communication House</option>
+
+                <option value="DA">DA - Daniels Building</option>
+                <option value="DC">DC - Terrence Donnelly CCBR</option>
+                <option value="DN">DN - Dentistry Building</option>
+                <option value="DR">DR - J Robert S Prichard Alumni House</option>
+
+                <option value="EA">EA - Engineering Annex</option>
+                <option value="EH">EH - Elmsley Hall</option>
+                <option value="EJ">EJ - Edward Johnson Building</option>
+                <option value="EM">EM - Emmanuel College</option>
+                <option value="EP">EP - Stewart building</option>
+                <option value="ER">ER - Early Learning Centre</option>
+                <option value="ES">ES - Earth Sciences Centre</option>
+                <option value="EX">EX - Exam Centre</option>
+
+                <option value="FA">FA - Faculty Association</option>
+                <option value="FC">FC - Faculty Club</option>
+                <option value="FE">FE - 371 Bloor Street West</option>
+                <option value="FG">FG - FitzGerald Building</option>
+                <option value="FH">FH - Falconer Hall</option>
+                <option value="FI">FI - Fields Institute</option>
+
+                <option value="GA">GA - Gage Building</option>
+                <option value="GB">GB - Galbraith Building</option>
+                <option value="GC">GC - Goldring Student Centre</option>
+                <option value="GD">GD - Graduate House</option>
+                <option value="GE">GE - Max Gluskin House</option>
+                <option value="GI">GI - George Ignatieff Theatre</option>
+                <option value="GM">GM - Luella Massey Studio Theatre</option>
+                <option value="GO">GO - Goldring Centre for High Performance Sport</option>
+                <option value="GR">GR - Graham (John W) Library</option>
+                <option value="GS">GS - School of Graduate Studies</option>
+                <option value="GU">GU - School of Graduate Studies</option>
+
+                <option value="HA">HA - Haultain Building</option>
+                <option value="HH">HH - Hart House</option>
+                <option value="HI">HI - St Hildas College</option>
+                <option value="HS">HS - Health Sciences Building</option>
+                <option value="HU">HU - 215 Huron Street</option>
+
+                <option value="IA">IA - Internal Audit</option>
+                <option value="IN">IN - Innis College</option>
+                <option value="IR">IR - Centre for Industrial Relations</option>
+                <option value="IS">IS - Innis College Student Residence</option>
+
+                <option value="JH">JH - Jackman Humanities Building</option>
+                <option value="JP">JP - 90 Wellesley St W</option>
+
+                <option value="KL">KL - J M Kelly Library</option>
+                <option value="KP">KP - Koffler House</option>
+                <option value="KS">KS - Koffler Student Services Centre</option>
+                <option value="KX">KX - Knox College</option>
+
+                <option value="LA">LA - Gerald Larkin Building</option>
+                <option value="LB">LB - Lower Burwash House</option>
+                <option value="LC">LC - Loretto College</option>
+                <option value="LG">LG - Fasken Martineau Building</option>
+                <option value="LI">LI - Lillian Massey Building</option>
+                <option value="LM">LM - Lash Miller Chemical Laboratories</option>
+                <option value="LW">LW - Faculty of Law</option>
+
+                <option value="M2">M2 - MARS 2</option>
+                <option value="MA">MA - Massey College</option>
+                <option value="MB">MB - Lassonde Mining Building</option>
+                <option value="MC">MC - Mechanical Engineering Building</option>
+                <option value="ME">ME - 39 Queens Park Cres East</option>
+                <option value="MG">MG - Margaret Addison Hall</option>
+                <option value="MK">MK - Munk School of Global Affairs at Observatory</option>
+                <option value="ML">ML - McLuhan Program</option>
+                <option value="MM">MM - MacDonald-Mowat House</option>
+                <option value="MO">MO - Morrison Hall</option>
+                <option value="MP">MP - McLennan Physical Labs</option>
+                <option value="MR">MR - McMurrich Building</option>
+                <option value="MS">MS - Medical Sciences Building</option>
+                <option value="MU">MU - Munk School of Global Affairs at Trinity</option>
+
+                <option value="NB">NB - North Borden Building</option>
+                <option value="NC">NC - New College</option>
+                <option value="NF">NF - Northrop Frye Hall</option>
+                <option value="NL">NL - C David Naylor Building</option>
+                <option value="NR">NR - New College III</option>
+
+                <option value="OA">OA - Old Admin Building Board of Education (263 McCaul St)</option>
+                <option value="OH">OH - Odette Hall</option>
+                <option value="OI">OI - Ontario Institute for Studies in Education</option>
+
+                <option value="PB">PB - Leslie L Dan Pharmacy Building</option>
+                <option value="PG">PG - Physical Geography Laboratories (45 St George St)</option>
+                <option value="PI">PI - Pontifical Institute</option>
+                <option value="PR">PR - E J Pratt Library</option>
+                <option value="PT">PT - D L Pratt Building</option>
+
+                <option value="RB">RB - Fisher Rare Book Library</option>
+                <option value="RG">RG - Regis College</option>
+                <option value="RJ">RJ - Rowell Jackman Hall</option>
+                <option value="RL">RL - John P Robarts Library</option>
+                <option value="RM">RM - 254-56 McCaul Street</option>
+                <option value="RS">RS - Rosebrugh Building</option>
+                <option value="RT">RT - Rotman School of Management</option>
+                <option value="RU">RU - Rehabilitation Sciences Building</option>
+                <option value="RW">RW - Ramsay Wright Laboratories</option>
+
+                <option value="SA">SA - 713 Spadina Ave</option>
+                <option value="SB">SB - South Borden Building</option>
+                <option value="SC">SC - Sussex Court</option>
+                <option value="SD">SD - Sir Daniel Wilson Residence</option>
+                <option value="SF">SF - Sandford Fleming Building</option>
+                <option value="SI">SI - Simcoe Hall</option>
+                <option value="SK">SK - Factor-Inwentash Social Work</option>
+                <option value="SM">SM - Gerstein Science Info Centre in Sigmund Samuel Lib Bldg</option>
+                <option value="SO">SO - Stewart Observatory</option>
+                <option value="SR">SR - Sam Sorbara Hall Student Res</option>
+                <option value="SS">SS - Sidney Smith Hall</option>
+                <option value="SU">SU - 40 Sussex Ave</option>
+
+                <option value="TC">TC - Trinity College</option>
+                <option value="TF">TF - Teefy Hall</option>
+                <option value="TH">TH - Toronto School of Theology</option>
+                <option value="TR">TR - Soldiers Tower</option>
+                <option value="TT">TT - 455 Spadina Ave</option>
+
+                <option value="UB">UB - Upper Burwash House</option>
+                <option value="UC">UC - University College</option>
+                <option value="UP">UP - University College Union</option>
+
+                <option value="VA">VA - Varsity Centre</option>
+                <option value="VC">VC - Victoria College</option>
+                <option value="VI">VI - Nona MacDonald Visitors Centre</option>
+                <option value="VP">VP - Varsity Pavilion</option>
+
+                <option value="WA">WA - 123 St George St</option>
+                <option value="WB">WB - Wallberg Building</option>
+                <option value="WE">WE - Wetmore Hall, New College</option>
+                <option value="WI">WI - Wilson Hall, New College</option>
+                <option value="WO">WO - Woodsworth College Residence</option>
+                <option value="WR">WR - McCarthy House/Jackman Institute of Child Study</option>
+                <option value="WS">WS - Warren Stevens Building</option>
+                <option value="WT">WT - Whitney Hall</option>
+                <option value="WW">WW - Woodsworth College</option>
+                <option value="WY">WY - Wycliffe College</option>
+
+                <option value="XG">XG - 665 Spadina Avenue</option>
+                <option value="ZC">ZC - 88 College Street</option>
+            </select>
+
+            <h1 id = 'p2'>Select Your Distance Bound:</h1>
+            <select id = "inputBound">
+                <option value="200">200</option>
+                <option value="500">500</option>
+                <option value="800">800</option>
+                <option value="2000">1000+</option>
+            </select>
+
+            <button id='command'><span>Search Restaurants Around!</span></button>
+
+        </div>
+    </div>
+
+    <div class="resultcard">
+        <div class="resultcardheader" id="result-header">Search Results
+        </div>
+
+        <div class = "result" id = 'result'>
+            <ul class="modify" id = "result-list"></ul>
+        </div>
+    </div>
+
+    <div class="detailcard">
+        <div class="detailcardheader" id="detail-header">Restaurant Info
+        </div>
+
+        <div class="detailcardcontainer" id="detail_container">
+            <p id="detail_info"></p>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+    var map;
+    var reslist={};
+    var refresh = function() {
+        $.ajax({
+            url: "/api/getmessage",
+            cache: false,
+            success: success
+        });
+    }
+
+    var success = function(res) {
+        if (res.data==undefined){
+            document.getElementById("back_info").innerHTML = 'No Info'
+        }
+        else{
+            document.getElementById("back_info").innerHTML = res.data
+        }
+        setTimeout(refresh, 1000);
+    }
+
+    $(document).ready(function () {
+
+        var startbtn = document.getElementById('startbtn');
+        var close = document.getElementsByClassName('button');
+
+        var app = document.getElementById('1');
+
+        var top = (document.documentElement.clientHeight - 50) / 2 ;
+        var left = (document.documentElement.clientWidth - 400) / 2;
+
+        var center = {lat:43.663397,lng:-79.396122};
+        map = new google.maps.Map(document.getElementById('map2'), {
+            center: center,
+            zoom: 15
+        });
+
+        refresh();
+        $(document).on('click', '.button-result', function () {
+            var id = $(this).attr('id');
+            var p = reslist[id];
+            if (p==undefined){
+                $("#detail-header").empty();
+                $("#detail-header").append('No Detail Information');
+                document.getElementById("detail_container").innerHTML = "";
+                comment = "No Comments";
+                newp = document.createElement("p");
+                newcomment = document.createTextNode(comment);
+                newp.appendChild(newcomment);
+                $("#detail_container").append(newp);
+            }
+            else{
+                var loc = p.geometry.location
+                var googleurl = p.url;
+                var name = p.name;
+                var ad = p.formatted_address;
+                var rate = p.rating;
+                $.ajax({type:'post',
+                    url:'/detail',
+                    data:{
+                        resname:name,
+                        gurl:googleurl,
+                        address:ad,
+                        rating:rate},
+                });
+                map.panTo(loc);
+                $("#detail-header").empty();
+                $("#detail-header").append('<p style="color:white;">'+
+                    name+'<br>'+
+                    'Full Adress:&ensp;'+ad+'<br>'+
+                    'Rating:&ensp;'+rate+'<br>'+
+                    '<a href="'+googleurl+'">'+'Google Map Page</a></p>');
+                if (p.reviews[0].text=='') {
+                    document.getElementById("detail_container").innerHTML = "";
+                    comment = "No Comments";
+                    newp = document.createElement("p");
+                    newcomment = document.createTextNode(comment);
+                    newp.appendChild(newcomment);
+                    $("#detail_container").append(newp);
+                } else {
+                    document.getElementById("detail_container").innerHTML = "";
+                    comment = "Other's Comment:";
+                    newp = document.createElement("p");
+                    newcomment = document.createTextNode(comment);
+                    newp.appendChild(newcomment);
+                    $("#detail_container").append(newp);
+                    $("#detail_container").append(p.reviews[0].text);
+                }
+            }
+        });
+        app.style.height = document.documentElement.clientHeight + 'px';
+    });
+
+    var service = new google.maps.places.PlacesService(document.getElementById('map'));
+    var ab = new google.maps.LatLng(43.659724,-79.396774);
+    var ad = new google.maps.LatLng(43.668097,-79.400255);
+    var ah = new google.maps.LatLng(43.665019,-79.390244);
+    var an = new google.maps.LatLng(43.667524,-79.392614);
+    var ap = new google.maps.LatLng(43.660066,-79.398537);
+
+    var ba = new google.maps.LatLng(43.659724,-79.396774);
+    var bc = new google.maps.LatLng(43.66721,-79.392909);
+    var bf = new google.maps.LatLng(43.660975,-79.399587);
+    var bi = new google.maps.LatLng(43.660418,-79.38854);
+    var bl = new google.maps.LatLng(43.664993,-79.399091);
+    var bn = new google.maps.LatLng(43.663048,-79.399926);
+    var br = new google.maps.LatLng(43.666337,-79.390072);
+    var bs = new google.maps.LatLng(43.66626,-79.388929);
+    var bt = new google.maps.LatLng(43.667365,-79.392561);
+    var bw = new google.maps.LatLng(43.666975,-79.391113);
+
+    var ca = new google.maps.LatLng(43.664485,-79.400582);
+    var cb = new google.maps.LatLng(43.660229,-79.389225);
+    var ce = new google.maps.LatLng(43.660634,-79.396745);
+    var cg = new google.maps.LatLng(43.661916,-79.392763);
+    var ch = new google.maps.LatLng(43.66097,-79.395158);
+    var cm = new google.maps.LatLng(43.658454,-79.397899);
+    var cn = new google.maps.LatLng(43.654095,-79.385443);
+    var co = new google.maps.LatLng(43.667105,-79.399786);
+    var cr = new google.maps.LatLng(43.665111,-79.390396);
+    var cs = new google.maps.LatLng(43.666813,-79.399642);
+    var cu = new google.maps.LatLng(43.659379,-79.396185);
+    var cx = new google.maps.LatLng(43.659088,-79.393641);
+
+    var da = new google.maps.LatLng(43.659341,-79.400626);
+    var dc = new google.maps.LatLng(43.660084,-79.3927);
+    var dn = new google.maps.LatLng(43.655988,-79.386637);
+    var dr = new google.maps.LatLng(43.662138,-79.396541);
+
+    var ea = new google.maps.LatLng(43.659738,-79.395248);
+    var eh = new google.maps.LatLng(43.666742,-79.390278);
+    var ej = new google.maps.LatLng(43.666506,-79.39424);
+    var em = new google.maps.LatLng(43.666613,-79.392819);
+    var ep = new google.maps.LatLng(43.659393,-79.392078);
+    var er = new google.maps.LatLng(43.664022,-79.401214);
+    var es = new google.maps.LatLng(43.660993,-79.399659);
+    var ex = new google.maps.LatLng(43.658499,-79.393135);
+
+    var fa = new google.maps.LatLng(43.665461,-79.403313);
+    var fc = new google.maps.LatLng(43.661293,-79.400608);
+    var fe = new google.maps.LatLng(43.666775,-79.402327);
+    var fg = new google.maps.LatLng(43.660226,-79.392233);
+    var fh = new google.maps.LatLng(43.666784,-79.393804);
+    var fi = new google.maps.LatLng(43.658664,-79.397475);
+
+    var ga = new google.maps.LatLng(43.65831,-79.397217);
+    var gb = new google.maps.LatLng(43.659869,-79.396433);
+    var gc = new google.maps.LatLng(43.667726,-79.39322);
+    var gd = new google.maps.LatLng(43.663191,-79.401747);
+    var ge = new google.maps.LatLng(43.666072,-79.399528);
+    var gi = new google.maps.LatLng(43.665786,-79.397297);
+    var gm = new google.maps.LatLng(43.664254,-79.401124);
+    var go = new google.maps.LatLng(43.667136,-79.398106);
+    var gr = new google.maps.LatLng(43.664944,-79.39703);
+    var gs = new google.maps.LatLng(43.661958,-79.397334);
+    var gu = new google.maps.LatLng(43.660681,-79.400257);
+
+    var ha = new google.maps.LatLng(43.659758,-79.393653);
+    var hh = new google.maps.LatLng(43.663637,-79.394413);
+    var hi = new google.maps.LatLng(43.665726,-79.39776);
+    var hs = new google.maps.LatLng(43.65922,-79.392855);
+    var hu = new google.maps.LatLng(43.659319,-79.398496);
+
+    var ia = new google.maps.LatLng(43.665675,-79.402703);
+    var inn = new google.maps.LatLng(43.665438,-79.39941);
+    var ir = new google.maps.LatLng(43.666721,-79.399247);
+    var is = new google.maps.LatLng(43.665838,-79.398935);
+
+    var jh = new google.maps.LatLng(43.667451,-79.400382);
+    var jp = new google.maps.LatLng(43.66406,-79.389393);
+
+    var kl = new google.maps.LatLng(43.665038,-79.3898);
+    var kp = new google.maps.LatLng(43.660583,-79.400456);
+    var ks = new google.maps.LatLng(43.658806,-79.396603);
+    var kx = new google.maps.LatLng(43.661334,-79.397148);
+
+    var la = new google.maps.LatLng(43.665518,-79.397199);
+    var lb = new google.maps.LatLng(43.666601,-79.390821);
+    var lc = new google.maps.LatLng(43.667297,-79.389867);
+    var lg = new google.maps.LatLng(43.66406,-79.40218);
+    var li = new google.maps.LatLng(43.668393,-79.393802);
+    var lm = new google.maps.LatLng(43.661639,-79.397787);
+    var lw = new google.maps.LatLng(43.666206,-79.39394);
+
+    var m2 = new google.maps.LatLng(43.659741,-79.389833);
+    var ma = new google.maps.LatLng(43.664765,-79.397181);
+    var mb = new google.maps.LatLng(43.659418,-79.393403);
+    var mc = new google.maps.LatLng(43.659924,-79.394183);
+    var me = new google.maps.LatLng(43.664412,-79.390259);
+    var mg = new google.maps.LatLng(43.668192,-79.392479);
+    var mk = new google.maps.LatLng(43.667572,-79.398607);
+    var ml = new google.maps.LatLng(43.664049,-79.389418);
+    var mm = new google.maps.LatLng(43.661648,-79.397207);
+    var mo = new google.maps.LatLng(43.663039,-79.39784);
+    var mp = new google.maps.LatLng(43.660743,-79.398168);
+    var mr = new google.maps.LatLng(43.661286,-79.392835);
+    var md = new google.maps.LatLng(43.661133,-79.393973);
+    var mu = new google.maps.LatLng(43.664586,-79.396462);
+
+    var nb = new google.maps.LatLng(43.6603,-79.400352);
+    var nc = new google.maps.LatLng(43.661432,-79.400886);
+    var nf = new google.maps.LatLng(43.666559,-79.392097);
+    var nl = new google.maps.LatLng(43.660509,-79.391747);
+    var nr = new google.maps.LatLng(43.661222,-79.400994);
+
+    var oa = new google.maps.LatLng(43.658896,-79.392603);
+    var oh = new google.maps.LatLng(43.666243,-79.388976);
+    var oi = new google.maps.LatLng(43.667888,-79.39855);
+
+    var pb = new google.maps.LatLng(43.659933,-79.391399);
+    var pg = new google.maps.LatLng(43.660315,-79.396744);
+    var pi = new google.maps.LatLng(43.665506,-79.390947);
+    var pr = new google.maps.LatLng(43.666515,-79.391319);
+    var pt = new google.maps.LatLng(43.659538,-79.394452);
+
+    var rb = new google.maps.LatLng(43.664145,-79.399132);
+    var rg = new google.maps.LatLng(43.663914,-79.390047);
+    var rj = new google.maps.LatLng(43.667704,-79.390924);
+    var rl = new google.maps.LatLng(43.664559,-79.398833);
+    var rm = new google.maps.LatLng(43.658596,-79.393418);
+    var rs = new google.maps.LatLng(43.659828,-79.392892);
+    var rt = new google.maps.LatLng(43.664991,-79.398596);
+    var ru = new google.maps.LatLng(43.655671,-79.389088);
+    var rw = new google.maps.LatLng(43.662976,-79.399218);
+
+    var sa = new google.maps.LatLng(43.666001,-79.40294);
+    var sb = new google.maps.LatLng(43.660115,-79.399922);
+    var sc = new google.maps.LatLng(43.664825,-79.401014);
+    var sd = new google.maps.LatLng(43.662507,-79.397548);
+    var sf = new google.maps.LatLng(43.660005,-79.394795);
+    var si = new google.maps.LatLng(43.660931,-79.395828);
+    var sk = new google.maps.LatLng(43.668114,-79.397739);
+    var sm = new google.maps.LatLng(43.662176,-79.394115);
+    var so = new google.maps.LatLng(43.663172,-79.394786);
+    var sr = new google.maps.LatLng(43.665735,-79.389108);
+    var ss = new google.maps.LatLng(43.662668,-79.398465);
+    var su = new google.maps.LatLng(43.66495,-79.401796);
+
+    var tc = new google.maps.LatLng(43.665062,-79.395548);
+    var tf = new google.maps.LatLng(43.665265,-79.391097);
+    var th = new google.maps.LatLng(43.664756,-79.390855);
+    var tr = new google.maps.LatLng(43.663512,-79.39523);
+    var tt = new google.maps.LatLng(43.658213,-79.39989);
+
+    var ub = new google.maps.LatLng(43.667255,-79.391081);
+    var uc = new google.maps.LatLng(43.662498,-79.395477);
+    var up = new google.maps.LatLng(43.663301,-79.397814);
+
+    var va = new google.maps.LatLng(43.667008,-79.397236);
+    var vc = new google.maps.LatLng(43.666976,-79.391998);
+    var vi = new google.maps.LatLng(43.661489,-79.396369);
+    var vp = new google.maps.LatLng(43.666293,-79.396817);
+
+    var wa = new google.maps.LatLng(43.666901,-79.39938);
+    var wb = new google.maps.LatLng(43.65904,-79.395275);
+    var we = new google.maps.LatLng(43.662403,-79.400414);
+    var wi = new google.maps.LatLng(43.661488,-79.400888);
+    var wo = new google.maps.LatLng(43.667454,-79.399289);
+    var wr = new google.maps.LatLng(43.669625,-79.405952);
+    var ws = new google.maps.LatLng(43.663096,-79.401476);
+    var wt = new google.maps.LatLng(43.663738,-79.397978);
+    var ww = new google.maps.LatLng(43.666264,-79.399046);
+    var wy = new google.maps.LatLng(43.664586,-79.395219);
+
+    var xg = new google.maps.LatLng(43.664379,-79.402342);
+    var zc = new google.maps.LatLng(43.660584,-79.387776);
+
+    var dict = {"AB":ab,"AD":ad,"AH":ah,"AN":an,"AP":ap,
+        "BA":ba,"BC":bc,"BF":bf,"BI":bi,"BL":bl,"BN":bn,"BR":br,"BS":bs,"BT":bt,"BW":bw,
+        "CA":ca,"CB":cb,"CE":ce,"CG":cg,"CH":ch,"CM":cm,"CN":cn,"CO":co,"CR":cr,"CS":cs,"CU":cu,"CX":cx,
+        "DA":da,"DC":dc,"DN":dn,"DR":dr,
+        "EA":ea,"EH":eh,"EJ":ej,"EM":em,"EP":ep,"ER":er,"ES":es,"EX":ex,
+        "FA":fa,"FC":fc,"FE":fe,"FG":fg,"FH":fh,"FI":fi,
+        "GA":ga,"GB":gb,"GC":gc,"GD":gd,"GE":ge,"GI":gi,"GM":gm,"GO":go,"GR":gr,"GS":gs,"GU":gu,
+        "HA":ha,"HH":hh,"HI":hi,"HS":hs,"HU":hu,
+        "IA":ia,"IN":inn,"IR":ir,"IS":is,
+        "JH":jh,"JP":jp,
+        "KL":kl,"KP":kp,"KS":ks,"KX":kx,
+        "LA":la,"LB":lb,"LC":lc,"LG":lg,"LI":li,"LM":lm,"LW":lw,
+        "M2":m2,"MA":ma,"MB":mb,"MC":mc,"ME":me,"MG":mg,"MK":mk,"ML":ml,"MM":mm,"MO":mo,"MP":mp,"MR":mr,"MS":md,"MU":mu,
+        "NB":nb,"NC":nc,"NF":nf,"NL":nl,"NR":nr,
+        "OA":oa,"OH":oh,"OI":oi,
+        "PB":pb,"PG":pg,"PI":pi,"PR":pr,"PT":pt,
+        "RB":rb,"RG":rg,"RJ":rj,"RL":rl,"RM":rm,"RS":rs,"RT":rt,"RU":ru,"RW":rw,
+        "SA":sa,"SB":sb,"SC":sc,"SD":sd,"SF":sf,"SI":si,"SK":sk,"SM":sm,"SO":so,"SR":sr,"SS":ss,"SU":su,
+        "TC":tc,"TF":tf,"TH":th,"TR":tr,"TT":tt,
+        "UB":ub,"UC":uc,"UP":up,
+        "VA":va,"VC":vc,"VI":vi,"VP":vp,
+        "WA":wa,"WB":wb,"WE":we,"WI":wi,"WO":wo,"WR":wr,"WS":ws,"WT":wt,"WW":ww,"WY":wy,
+        "XG":xg,"ZC":zc};
+    var markers=[];
+
+    $("#command").click(function(){
+            document.getElementById("result").innerHTML = "";
+            for(i=0;i<markers.length;i++) {
+                markers[i].setMap(null);
+
+            };
+            markers.length=0;
+            var resdict=[]
+            var placeString = document.getElementById('inputName').value
+            var placeString_select = document.getElementById('list').value
+            if(placeString.length == 0){
+                var place = dict[placeString_select];
+                $("#result-header").empty();
+                $("#result-header").append('Restaurants around ' + placeString_select);
+            } else if (!(placeString in dict)) {
+                alert("Invalid Building Code");
+            } else{
+                var place = dict[placeString];
+                $("#result-header").empty();
+                $("#result-header").append('Restaurants around ' + placeString);
+            }
+            var bound = document.getElementById('inputBound').value
+            var infowindow = new google.maps.InfoWindow();
+            service.nearbySearch({
+                location: place,
+                radius: bound,
+                type: ['restaurant']
+            }, callback);
+
+
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location
+                });
+                markers.push(marker)
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent('<div><a href="'+place.url+'">'+place.name+ '</a></div>');
+                    infowindow.open(map, this);
+                });
+            }
+
+            function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var arr = [];
+                    $.each(results,function(i,item){
+                        arr.push(item.place_id);
+
+                    })
+
+                    var rowItem = $(".resultrow");
+
+                    $.each(results,function (i,item) {
+                        if (item.geometry.location != undefined) {
+
+                            var newRow = rowItem.clone(true, true);
+                            var button = ' <button class="button-result" id='+item.place_id+'> <span>'+item.name+'</span> </button> <br>';
+
+                            newRow.attr(button);
+
+                            $('#result').append(button);
+                        }
+                    })
+                    $.each(arr,function(i,item){
+                        service.getDetails({placeId:item},function(res,status){
+                            if (status === google.maps.places.PlacesServiceStatus.OK){
+                                createMarker(res);
+                                reslist[res.place_id]=res;
+                            }
+
+
+                        })
+
+                    })
+
+                }
+            }
+
+
+        }
+
+    );
+</script>
+</html>
