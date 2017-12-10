@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Favourite List</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/form-elements.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+  </head>
+  <body style="padding:40px;">
+
+  <div class="top-content">
+
+    <div class="inner-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text">
+            <h1><strong>My Favourite List</strong></h1>
+            <div class="description">
+              <p>Please make sure you only favourite one restaurant once.</p>
+            </div>
+            <div class="description" style="overflow-x:auto;" style="color:black">
+              <table class="ftable">
+                  <% for (let entry in data) { %>
+                <tr>
+                  <td><%= data[entry].name %></td>
+                  <td><%= data[entry].comment %></td>
+                  <td>
+                    <a href="/favourites/<%= data[entry].name %>/edit" class="btn btn-default" >Edit</a>
+                  </td>
+                  <td>
+                    <form action="/favourites/<%= data[entry].name %>?_method=DELETE" method="POST">
+                      <button class="btn">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+                  <%}%>
+              </table>
+            </div>
+            <a href="/main" class="button" >Back to Main Page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  </body>
+</html>

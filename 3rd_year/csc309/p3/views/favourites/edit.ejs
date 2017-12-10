@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Notes</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/form-elements.css"/>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+
+<style type="text/css">
+  #resname{
+    display: none;
+  }
+</style>
+
+<body style="padding:40px;">
+
+<div class="top-content">
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text">
+          <h1><strong>Edit Your Notes!</strong></h1>
+          <div class="description">
+            <p>
+              You can edit your notes of the restaurant here.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
+          <div class="form-top">
+            <div class="form-top-left">
+              <h3><%= data['resname'] %></h3>
+            </div>
+          </div>
+          <div class="form-bottom">
+
+            <form role="form" action="/favourites/<%=data['resname'] %>?_method=PUT" method="post" class="login-form">
+              <input id="resname" type="text" name="resname" value="<%= data['resname'] %>">
+              <div class="input-group">
+                <input type="text" name="comment" placeholder="Notes..." class="form-control" id="comment" value="<%= data['comment']%>">
+                <span class="input-group-btn">
+						<button class="btn btn-default" type="submit">
+							Submit!
+						</button>
+					</span>
+              </div><!-- /input-group -->
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
