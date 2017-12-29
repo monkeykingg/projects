@@ -25,8 +25,22 @@
             background-image: url("https://static.pexels.com/photos/64208/pexels-photo-64208.jpeg");
             background-size: cover;
             z-index : -1;
+            overflow-x:hidden;
+            overflow-y:hidden;
         }
         ::-webkit-scrollbar {display:none}
+        .scroll_content{
+            -ms-scroll-chaining: chained;
+            -ms-overflow-style: none;
+            -ms-content-zooming: zoom;
+            -ms-scroll-rails: none;
+            -ms-content-zoom-limit-min: 100%;
+            -ms-content-zoom-limit-max: 500%;
+            -ms-scroll-snap-type: proximity;
+            -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+            -ms-overflow-style: none;
+            overflow: auto;
+        }
         .button {
             font-family: 'Cabin', sans-serif;
             display: inline-block;
@@ -239,16 +253,6 @@
             display: table-cell;
         }
 
-        .search-button-block{
-            left: 60%;
-            top: 15%;
-            width: 10%;
-            height: 70%;
-            position: absolute;
-            text-align: center;
-            display: table-cell;
-        }
-
         .resultcard{
             left: 3.5%;
             top: 50%;
@@ -258,7 +262,6 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
             display: table-cell;
-            overflow: scroll;
         }
 
         div.resultcardheader {
@@ -309,7 +312,7 @@
 
         div.detailcardcontainer {
             font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
-            padding: 12%;
+            padding: 3%;
             font-size: 120%;
         }
     </style>
