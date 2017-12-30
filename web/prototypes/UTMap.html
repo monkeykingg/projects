@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin" content="*" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Baloo|Lilita+One|Righteous" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
@@ -19,14 +19,14 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <style type="text/css">
         body{
             margin:0;
             background-image: url("https://static.pexels.com/photos/64208/pexels-photo-64208.jpeg");
             background-size: cover;
             z-index : -1;
-            overflow-x:hidden;
-            overflow-y:hidden;
+            overflow: scroll;
         }
         ::-webkit-scrollbar {display:none}
         .scroll_content{
@@ -162,6 +162,7 @@
             vertical-align: middle;
             text-align: center;
             font-size:120%;
+            overflow: scroll;
         }
 
         #map{
@@ -314,6 +315,52 @@
             font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
             padding: 3%;
             font-size: 120%;
+        }
+        @media (max-width: 767px) {
+            .topleft-block{
+                font-family: 'Amaranth', sans-serif;
+                left: 2%;
+                right: 2%;
+                top: 3%;
+                width: 160%;
+                height: 35%;
+                position: absolute;
+                display: table-cell;
+            }
+            #map2{
+                display :inline-block;
+                top: 40%;
+                left: 2%;
+                right: 2%;
+                width: 96%;
+                height: 60%;
+                position: absolute;
+                border: 1px solid #fafafa;
+            }
+            .resultcard{
+                left: 2%;
+                right: 2%;
+                top: 105%;
+                width: 96%;
+                height: 45%;
+                position: absolute;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                text-align: center;
+                display: table-cell;
+            }
+            .detailcard{
+                left: 2%;
+                right: 2%;
+                top: 155%;
+                width: 96%;
+                height: 45%;
+                position: absolute;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                text-align: center;
+                display: table-cell;
+                overflow: scroll;
+            }
+
         }
     </style>
 
