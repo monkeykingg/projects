@@ -1,0 +1,14 @@
+a).
+	There are 8 trees.
+
+
+b).
+	1). NP -> NP PP | Det N
+	This causes a non-stop loop and produces infinite NP branches.
+	This formula is infinitely recursive.
+
+	2). NP -> Det N | NP PP
+	This solves the infinite loop.
+	This formula ends the NP loop when the parser finds a noun follows a determiner.
+	However, this does not work in general since we cannot guarantee that a noun will always follow a determiner.
+	If there is a noun without the determiner in the sentence, it will reach NP -> NP PP, then the rd parser will loop infinitely again.

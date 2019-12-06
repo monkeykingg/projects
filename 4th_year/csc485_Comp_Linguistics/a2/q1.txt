@@ -1,0 +1,46 @@
+#Grammar:
+
+S -> NP VP
+S -> VP
+S -> Aux NP VP
+
+S -> Who_NP VP
+S -> Who_NP Aux NP V PP
+
+S -> Where_NP Aux NP VP
+S -> Where_NP Aux NP V Adv
+S -> Where_NP Aux NP V NP Adv
+
+S -> What_NP Aux NP V PP
+S -> What_NP Aux NP V
+S -> What_NP Aux NP V Adv
+S -> What_NP Aux NP V Adv PP
+
+NP -> N
+NP -> Det N
+NP -> Adj N
+
+PP -> P NP
+
+VP -> V
+VP -> V Adv
+VP -> V NP
+VP -> V NP Adv
+VP -> V NP Adv PP
+VP -> V NP PP
+
+#Lexicon:
+
+Det -> 'the' | 'their' | 'your'
+Adj -> 'old' | 'red' | 'happy'
+Adv -> 'quickly' | 'slowly'
+N -> 'dogs' | 'parks' | 'statues' | 'people'
+V -> 'race' | 'walk' | 'eat' | 'saw' | 'ate'
+P -> 'in' | 'to' | 'on' | 'under' | 'with'
+Aux -> 'should' | 'will'
+Who_NP -> 'who'
+Where_NP -> 'where'
+What_NP -> 'what'
+
+
+

@@ -1,0 +1,45 @@
+<'fido feeds the dog with biscuits'
+{ :'npsg_vpsg__s:fido feeds the dog with biscuits'
+    s
+    { :'nprp__npsg:fido'
+        npsg
+        { :'lexicon:fido'
+            nprp
+        }
+    }
+    { :'vsg_np__vpsg:feeds the dog with biscuits'
+        vpsg
+        { :'lexicon:feeds'
+            vsg
+        }
+        { :'npsg__np:the dog with biscuits'
+            np
+            { :'det_nsg_pp__npsg:the dog with biscuits'
+                npsg
+                { :'lexicon:the'
+                    det
+                }
+                { :'lexicon:dog'
+                    nsg
+                }
+                { :'p_np__pp:with biscuits'
+                    pp
+                    { :'lexicon:with'
+                        p
+                    }
+                    { :'nppl__np:biscuits'
+                        np
+                        { :'npl__nppl:biscuits'
+                            nppl
+                            { :'lexicon:biscuits'
+                                npl
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+>
+
