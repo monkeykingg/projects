@@ -1,7 +1,0 @@
-Q1.A
-compile_gram('/h/u15/c5/00/wangz154/CSC485/a3/onea.pl').
-rec[fido,feeds,the,dog,with,biscuits].
-
-Q1.B
-compile_gram('/h/u15/c5/00/wangz154/CSC485/a3/oneb.pl').
-rec[fido,feeds,the,dog,with,biscuits].
